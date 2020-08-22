@@ -13,11 +13,6 @@ from azureml.core.experiment import Experiment
 from azureml.core.workspace import Workspace
 from azureml.train.automl import AutoMLConfig
 
-seed = 42
-os.environ["PYTHONHASHSEED"] = str(seed)
-rn.seed(seed)
-np.random.seed(seed)
-
 
 def main(args):
     train_path = args.train_path
@@ -38,7 +33,7 @@ def main(args):
     }
     automl_config = AutoMLConfig(task="forecasting", training_data=df_train, label_column_name=target,
                                  max_cores_per_iteration=-1, enable_early_stopping=True,
-                                 n_cross_validations=5, verbosity=logging.INFO, **time_series_settings)
+                                 n_cross_validations=50, verbosity=logging.INFO, **time_series_settings)
     ws = Workspace.from_config()
     experiment = Experiment(ws, "experiment")
     best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
@@ -52,8 +47,8 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("train_path")
-    parser.add_argument("pred_path")
+    parser.add_argument("train_path", type=str)
+    parser.add_argument("pred_path", type=str)
     parser.add_argument("n_pred", type=int)
     parser.add_argument("dt", type=str)
     parser.add_argument("target", type=str)
