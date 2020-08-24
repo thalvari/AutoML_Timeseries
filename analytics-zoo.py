@@ -8,9 +8,8 @@ warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
-import tensorflow as tf
 from zoo import init_spark_on_local
-from zoo.automl.config.recipe import BayesRecipe, RandomRecipe
+from zoo.automl.config.recipe import BayesRecipe
 from zoo.automl.regression.time_sequence_predictor import TimeSequencePredictor
 from zoo.ray import RayContext
 
