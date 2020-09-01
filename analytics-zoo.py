@@ -14,12 +14,8 @@ from zoo.automl.regression.time_sequence_predictor import TimeSequencePredictor
 from zoo.ray import RayContext
 
 
-def main(args):
-    train_path = args.train_path
-    pred_path = args.pred_path
-    n_pred = args.n_pred
-    dt = args.dt
-    target = args.target
+def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
+    os.environ["TRIALRUNNER_WALLTIME_LIMIT"] = str(time_limit_min*60)
 
     df_train = pd.read_csv(train_path)
     df_train[dt] = pd.to_datetime(df_train[dt])
@@ -29,8 +25,8 @@ def main(args):
     ray_ctx.init()
 
     tsp = TimeSequencePredictor(dt_col=dt, target_col=target, future_seq_len=n_pred)
-    pipeline = tsp.fit(df_train, resources_per_trial={"cpu": 4}, distributed=False,
-                       recipe=BayesRecipe(num_samples=500, look_back=(2, n_pred)))
+    pipeline = tsp.fit(df_train, resources_per_trial={"cpu": 4},
+                       recipe=BayesRecipe(num_samples=10000, training_iteration=10000))
 
     df_pred = pipeline.predict(df_train)
     x_pred = pd.date_range(df_pred.iloc[-1][0], periods=n_pred, freq=pd.infer_freq(df_train[dt]))
@@ -46,5 +42,7 @@ if __name__ == "__main__":
     parser.add_argument("n_pred", type=int)
     parser.add_argument("dt", type=str)
     parser.add_argument("target", type=str)
+    parser.add_argument("time_limit_min", type=int)
     args = parser.parse_args()
-    main(args)
+    
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)

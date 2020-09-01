@@ -14,13 +14,7 @@ from azureml.core.workspace import Workspace
 from azureml.train.automl import AutoMLConfig
 
 
-def main(args):
-    train_path = args.train_path
-    pred_path = args.pred_path
-    n_pred = args.n_pred
-    dt = args.dt
-    target = args.target
-
+def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
     df_train = pd.read_csv(train_path)
     df_train[dt] = pd.to_datetime(df_train[dt])
 
@@ -28,12 +22,11 @@ def main(args):
         "time_column_name": dt,
         "max_horizon": "auto",
         "target_lags": "auto",
-        "target_rolling_window_size": "auto",
-        "featurization": "auto"
+        "target_rolling_window_size": "auto"
     }
     automl_config = AutoMLConfig(task="forecasting", training_data=df_train, label_column_name=target,
-                                 max_cores_per_iteration=-1, enable_early_stopping=True,
-                                 n_cross_validations=50, verbosity=logging.INFO, **time_series_settings)
+                                 n_cross_validations=5, max_cores_per_iteration=-1, path=os.environ["TMPDIR"],
+                                 experiment_timeout_minutes=time_limit_min, **time_series_settings)
     ws = Workspace.from_config()
     experiment = Experiment(ws, "experiment")
     best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
@@ -41,6 +34,7 @@ def main(args):
 
     x_pred = pd.date_range(df_train[dt].iloc[-1], periods=n_pred+1, freq=pd.infer_freq(df_train[dt]))[1:]
     y_pred = fitted_model.forecast(pd.DataFrame({dt: x_pred}))[0]
+
     df_pred = pd.DataFrame({dt: x_pred, target: y_pred})
     df_pred.to_csv(pred_path, index=False)
 
@@ -52,5 +46,7 @@ if __name__ == "__main__":
     parser.add_argument("n_pred", type=int)
     parser.add_argument("dt", type=str)
     parser.add_argument("target", type=str)
+    parser.add_argument("time_limit_min", type=int)
     args = parser.parse_args()
-    main(args)
+    
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)

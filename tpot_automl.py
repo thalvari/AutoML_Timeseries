@@ -12,19 +12,13 @@ from sklearn.model_selection import TimeSeriesSplit
 from tpot import TPOTRegressor
 
 
-def main(args):
-    train_path = args.train_path
-    pred_path = args.pred_path
-    n_pred = args.n_pred
-    dt = args.dt
-    target = args.target
-
+def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
     df_train = pd.read_csv(train_path)
     df_train[dt] = pd.to_datetime(df_train[dt])
     
     x_train_idx = df_train.index.values
     y_train = df_train[target].values
-    tpot = TPOTRegressor(cv=TimeSeriesSplit(n_splits=50), n_jobs=-1, verbosity=2)
+    tpot = TPOTRegressor(max_time_mins=time_limit_min, cv=TimeSeriesSplit(), n_jobs=-1, verbosity=3)
     tpot.fit(x_train_idx.reshape(-1, 1), y_train)
 
     x_pred = pd.date_range(df_train[dt].iloc[-1], periods=n_pred+1, freq=pd.infer_freq(df_train[dt]))[1:]
@@ -41,5 +35,7 @@ if __name__ == "__main__":
     parser.add_argument("n_pred", type=int)
     parser.add_argument("dt", type=str)
     parser.add_argument("target", type=str)
+    parser.add_argument("time_limit_min", type=int)
     args = parser.parse_args()
-    main(args)
+    
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
