@@ -30,7 +30,18 @@ def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
     ws = Workspace.from_config()
     experiment = Experiment(ws, "experiment")
     best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
-    print(fitted_model.steps)
+
+    print("Best pipeline:")
+    try:
+        ensemble = vars(fitted_model.steps[1][1])["_wrappedEnsemble"]
+        print(ensemble.__class__)
+        steps = ensemble.estimators_
+    except:
+        steps = fitted_model.steps
+    best_pipeline = ""
+    for i, step in enumerate(steps):
+        best_pipeline += f"{i}. {str(step)}\n"
+    print(best_pipeline)
 
     x_pred = pd.date_range(df_train[dt].iloc[-1], periods=n_pred+1, freq=pd.infer_freq(df_train[dt]))[1:]
     y_pred = fitted_model.forecast(pd.DataFrame({dt: x_pred}))[0]

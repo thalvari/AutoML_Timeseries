@@ -20,6 +20,10 @@ def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
     y_train = df_train[target].values
     tpot = TPOTRegressor(max_time_mins=time_limit_min, cv=TimeSeriesSplit(), n_jobs=-1, verbosity=3)
     tpot.fit(x_train_idx.reshape(-1, 1), y_train)
+    best_pipeline = "Best pipeline:"
+    for i, step in enumerate(tpot.fitted_pipeline_.steps):
+        best_pipeline += f"\n{i}. {str(step[1])}"
+    print(best_pipeline)
 
     x_pred = pd.date_range(df_train[dt].iloc[-1], periods=n_pred+1, freq=pd.infer_freq(df_train[dt]))[1:]
     x_pred_idx = np.arange(len(x_train_idx), len(x_train_idx)+n_pred)
