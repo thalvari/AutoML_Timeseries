@@ -1,0 +1,119 @@
+Running on local machine
+Parent Run ID: AutoML_642c0973-d228-49c4-875f-ebc456f651f5
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0', Max_Horizon = '2'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler DecisionTree                      0:00:24       0.0262    0.0262
+         1   MinMaxScaler DecisionTree                      0:00:22       0.0297    0.0262
+         2   StandardScalerWrapper LassoLars                0:00:24       0.0069    0.0069
+         3   RobustScaler ElasticNet                        0:00:22       0.0084    0.0069
+         4   StandardScalerWrapper LassoLars                0:00:23       0.0069    0.0069
+         5   RobustScaler ElasticNet                        0:00:24       0.0084    0.0069
+         6   RobustScaler DecisionTree                      0:00:23       0.0307    0.0069
+         7   MinMaxScaler DecisionTree                      0:00:22       0.0167    0.0069
+         8   RobustScaler DecisionTree                      0:00:24       0.0222    0.0069
+         9   MinMaxScaler DecisionTree                      0:00:23       0.0174    0.0069
+        10   StandardScalerWrapper DecisionTree             0:00:22       0.0387    0.0069
+        11   StandardScalerWrapper DecisionTree             0:00:22       0.0233    0.0069
+        12   RobustScaler DecisionTree                      0:00:22       0.0326    0.0069
+        13   RobustScaler ElasticNet                        0:00:17       0.0163    0.0069
+        14   StandardScalerWrapper DecisionTree             0:00:22       0.0169    0.0069
+        15   MinMaxScaler DecisionTree                      0:00:23       0.0450    0.0069
+        16   MinMaxScaler DecisionTree                      0:00:23       0.0361    0.0069
+        17   RobustScaler DecisionTree                      0:00:21       0.0326    0.0069
+        18   RobustScaler DecisionTree                      0:00:22       0.0232    0.0069
+        19   StandardScalerWrapper DecisionTree             0:00:22       0.0221    0.0069
+        20   StandardScalerWrapper DecisionTree             0:00:23       0.0238    0.0069
+        21   StandardScalerWrapper DecisionTree             0:00:22       0.0240    0.0069
+        22   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.0200    0.0069
+        23   MinMaxScaler LightGBM                          0:00:23       0.0115    0.0069
+        24   StandardScalerWrapper DecisionTree             0:00:24       0.0252    0.0069
+        25   TruncatedSVDWrapper LassoLars                  0:00:19       0.0087    0.0069
+        26   MinMaxScaler DecisionTree                      0:00:25       0.0304    0.0069
+        27   MinMaxScaler SGD                               0:00:23       0.0221    0.0069
+        28   StandardScalerWrapper RandomForest             0:00:25       0.0119    0.0069
+        29   MinMaxScaler ExtremeRandomTrees                0:00:24       0.0208    0.0069
+        30   TruncatedSVDWrapper LassoLars                  0:00:23       0.0091    0.0069
+        31   MinMaxScaler ExtremeRandomTrees                0:00:33       0.0149    0.0069
+        32   StandardScalerWrapper DecisionTree             0:00:34       0.0282    0.0069
+        33   RobustScaler RandomForest                      0:00:29       0.0120    0.0069
+        34   RobustScaler RandomForest                      0:00:27       0.0207    0.0069
+        35   PCA LassoLars                                  0:00:23       0.0808    0.0069
+        36   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.0141    0.0069
+        37   StandardScalerWrapper RandomForest             0:00:24       0.0167    0.0069
+        38   RobustScaler ExtremeRandomTrees                0:00:24       0.0207    0.0069
+        39   MinMaxScaler ExtremeRandomTrees                0:00:28       0.0189    0.0069
+        40   RobustScaler LassoLars                         0:00:23       0.0069    0.0069
+        41   StandardScalerWrapper ElasticNet               0:00:23       0.0084    0.0069
+        42   RobustScaler ExtremeRandomTrees                0:00:28       0.0188    0.0069
+        43   RobustScaler ExtremeRandomTrees                0:00:25       0.0193    0.0069
+        44   MinMaxScaler ExtremeRandomTrees                0:00:24       0.0198    0.0069
+        45   TruncatedSVDWrapper LassoLars                  0:00:23       0.0105    0.0069
+        46   RobustScaler ExtremeRandomTrees                0:00:26       0.0164    0.0069
+        47   MinMaxScaler ExtremeRandomTrees                0:00:25       0.0245    0.0069
+        48   RobustScaler ExtremeRandomTrees                0:00:24       0.0227    0.0069
+        49   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.0180    0.0069
+        50   TruncatedSVDWrapper LassoLars                  0:00:22       0.0105    0.0069
+        51   RobustScaler RandomForest                      0:00:24       0.0142    0.0069
+        52   MinMaxScaler ExtremeRandomTrees                0:00:25       0.0136    0.0069
+        53   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.0136    0.0069
+        54   RobustScaler ExtremeRandomTrees                0:00:26       0.0270    0.0069
+        55   TruncatedSVDWrapper LassoLars                  0:00:24       0.0101    0.0069
+        56   MinMaxScaler ExtremeRandomTrees                0:00:25       0.0183    0.0069
+        57   MinMaxScaler ExtremeRandomTrees                0:00:25       0.0093    0.0069
+        58   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.0219    0.0069
+        59   MinMaxScaler ExtremeRandomTrees                0:00:25       0.0144    0.0069
+        60   TruncatedSVDWrapper LassoLars                  0:00:25       0.0083    0.0069
+        61   StandardScalerWrapper RandomForest             0:00:29       0.0226    0.0069
+        62   MinMaxScaler ExtremeRandomTrees                0:00:24       0.0212    0.0069
+        63   
