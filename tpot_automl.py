@@ -18,7 +18,8 @@ def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
     
     x_train_idx = df_train.index.values
     y_train = df_train[target].values
-    tpot = TPOTRegressor(max_time_mins=time_limit_min, cv=TimeSeriesSplit(), n_jobs=-1, verbosity=3)
+    tpot = TPOTRegressor(generations=None, max_time_mins=time_limit_min, cv=TimeSeriesSplit(), n_jobs=-1,
+                         verbosity=3)
     tpot.fit(x_train_idx.reshape(-1, 1), y_train)
     best_pipeline = "Best pipeline:"
     for i, step in enumerate(tpot.fitted_pipeline_.steps):
