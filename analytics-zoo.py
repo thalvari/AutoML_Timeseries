@@ -24,13 +24,16 @@ def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
     ray_ctx = RayContext(sc=sc)
     ray_ctx.init()
 
-    tsp = TimeSequencePredictor(dt_col=dt, target_col=target, future_seq_len=n_pred)
-    pipeline = tsp.fit(df_train, resources_per_trial={"cpu": 4},
-                       recipe=BayesRecipe(num_samples=10000, training_iteration=10000))
+    extra_features_col = list(set(df_train.columns)-set([dt, target]))
+    if not extra_features_col:
+        extra_features_col = None
+    tsp = TimeSequencePredictor(dt_col=dt, target_col=target, extra_features_col=extra_features_col,
+                                future_seq_len=n_pred)
+    pipeline = tsp.fit(df_train, resources_per_trial={"cpu": 4}, recipe=BayesRecipe(num_samples=100000))
 
-    df_pred = pipeline.predict(df_train)
-    x_pred = pd.date_range(df_pred.iloc[-1][0], periods=n_pred, freq=pd.infer_freq(df_train[dt]))
-    y_pred = df_pred.iloc[-1][1:]
+    df_pred = pipeline.predict(df_train[-2:])
+    x_pred = pd.date_range(df_pred.iloc[0][dt], periods=n_pred, freq=pd.infer_freq(df_train[dt]))
+    y_pred = df_pred.iloc[0][1:]
     df_pred = pd.DataFrame({dt: x_pred, target: y_pred})
     df_pred.to_csv(pred_path, index=False)
 

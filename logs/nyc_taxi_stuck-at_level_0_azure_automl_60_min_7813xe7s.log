@@ -1,0 +1,254 @@
+Running on local machine
+Parent Run ID: AutoML_430590b3-3a1e-429f-aada-3d088ced6d2b
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0', Max_Horizon = '2'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler DecisionTree                      0:00:23       0.0668    0.0668
+         1   MinMaxScaler DecisionTree                      0:00:23       0.0806    0.0668
+         2   StandardScalerWrapper LassoLars                0:00:23       0.0905    0.0668
+         3   RobustScaler ElasticNet                        0:00:23       0.0889    0.0668
+         4   StandardScalerWrapper LassoLars                0:00:23       0.0905    0.0668
+         5   RobustScaler ElasticNet                        0:00:23       0.0903    0.0668
+         6   RobustScaler DecisionTree                      0:00:23       0.0827    0.0668
+         7   MinMaxScaler DecisionTree                      0:00:23       0.0212    0.0212
+         8   RobustScaler DecisionTree                      0:00:23       0.0647    0.0212
+         9   MinMaxScaler DecisionTree                      0:00:23       0.0367    0.0212
+        10   StandardScalerWrapper DecisionTree             0:00:24       0.0471    0.0212
+        11   StandardScalerWrapper DecisionTree             0:00:23       0.0564    0.0212
+        12   RobustScaler DecisionTree                      0:00:23       0.0668    0.0212
+        13   RobustScaler ElasticNet                        0:00:22       0.1212    0.0212
+        14   StandardScalerWrapper DecisionTree             0:00:23       0.0695    0.0212
+        15   MinMaxScaler DecisionTree                      0:00:26       0.0218    0.0212
+        16   MinMaxScaler DecisionTree                      0:00:33       0.0739    0.0212
+        17   RobustScaler DecisionTree                      0:00:23       0.0958    0.0212
+        18   RobustScaler DecisionTree                      0:00:23       0.0801    0.0212
+        19   StandardScalerWrapper DecisionTree             0:00:23       0.0571    0.0212
+        20   StandardScalerWrapper DecisionTree             0:00:23       0.0151    0.0151
+        21   MinMaxScaler DecisionTree                      0:00:23       0.0518    0.0151
+        22   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_430590b3-3a1e-429f-aada-3d088ced6d2b_22/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=nFCRjwn%2FHJRJd0XXv1gOErgGAn%2BffqQA0hCYh%2FSSPMU%3D&st=2020-09-13T05%3A31%3A17Z&se=2020-09-14T05%3A41%3A17Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler DecisionTree                      0:03:05       0.0542    0.0151
+        23   StandardScalerWrapper DecisionTree             0:00:24       0.0839    0.0151
+        24   RobustScaler DecisionTree                      0:00:23       0.0243    0.0151
+        25   StandardScalerWrapper DecisionTree             0:00:24       0.1056    0.0151
+        26   RobustScaler DecisionTree                      0:00:24       0.0215    0.0151
+        27   StandardScalerWrapper DecisionTree             0:00:25       0.0360    0.0151
+        28   StandardScalerWrapper DecisionTree             0:00:24       0.0913    0.0151
+        29   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1190    0.0151
+        30   StandardScalerWrapper DecisionTree             0:00:26       0.0800    0.0151
+        31   StandardScalerWrapper DecisionTree             0:00:24       0.0992    0.0151
+        32   MinMaxScaler DecisionTree                      0:00:24       0.0212    0.0151
+        33   StandardScalerWrapper DecisionTree             0:00:23       0.0634    0.0151
+        34   RobustScaler DecisionTree                      0:00:25       0.0147    0.0147
+        35   StandardScalerWrapper DecisionTree             0:00:26       0.0617    0.0147
+        36   RobustScaler DecisionTree                      0:00:24       0.0354    0.0147
+        37   RobustScaler DecisionTree                      0:00:23       0.0159    0.0147
+        38   StandardScalerWrapper DecisionTree             0:00:24       0.0231    0.0147
+        39   StandardScalerWrapper DecisionTree             0:00:24       0.0338    0.0147
+        40   StandardScalerWrapper DecisionTree             0:00:23       0.0487    0.0147
+        41   StandardScalerWrapper DecisionTree             0:00:23       0.0402    0.0147
+        42   StandardScalerWrapper RandomForest             0:00:25       0.0812    0.0147
+        43   RobustScaler DecisionTree                      0:00:23       0.0846    0.0147
+        44   MinMaxScaler DecisionTree                      0:00:23       0.0943    0.0147
+        45   StandardScalerWrapper DecisionTree             0:00:23       0.0788    0.0147
+        46   StandardScalerWrapper DecisionTree             0:00:23       0.0721    0.0147
+        47   StandardScalerWrapper DecisionTree             0:00:24       0.0583    0.0147
+        48   MinMaxScaler DecisionTree                      0:00:24       0.0264    0.0147
+        49   MinMaxScaler DecisionTree                      0:00:23       0.0310    0.0147
+        50   MinMaxScaler DecisionTree                      0:00:24       0.0244    0.0147
+        51   RobustScaler DecisionTree                      0:00:23       0.0159    0.0147
+        52   RobustScaler DecisionTree                      0:00:23       0.1003    0.0147
+        53   StandardScalerWrapper DecisionTree             0:00:26       0.0758    0.0147
+        54   MinMaxScaler DecisionTree                      0:00:25       0.0136    0.0136
+        55   StandardScalerWrapper DecisionTree             0:00:23       0.0843    0.0136
+        56   MinMaxScaler DecisionTree                      0:00:23       0.0648    0.0136
+        57   RobustScaler DecisionTree                      0:00:25       0.0161    0.0136
+        58   StandardScalerWrapper DecisionTree             0:00:24       0.0252    0.0136
+        59   MinMaxScaler DecisionTree                      0:00:24       0.0371    0.0136
+        60   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_430590b3-3a1e-429f-aada-3d088ced6d2b_60/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=MI89yLwgpH7RWwI0wdRII8wiHZ8%2BKNYwjwoQTwL238E%3D&st=2020-09-13T05%3A49%3A28Z&se=2020-09-14T05%3A59%3A28Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_430590b3-3a1e-429f-aada-3d088ced6d2b_60/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=u%2BmdQ%2BmBYbR9atAm0TO30jc5142acL%2BXmp0akoOjKRk%3D&st=2020-09-13T05%3A49%3A28Z&se=2020-09-14T05%3A59%3A28Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler DecisionTree                      0:03:06       0.1019    0.0136
+        61   MinMaxScaler DecisionTree                      0:00:25       0.0256    0.0136
+        62   MinMaxScaler DecisionTree                      0:00:26       0.0653    0.0136
+        63   StandardScalerWrapper DecisionTree             0:00:24       0.0310    0.0136
+        64   StandardScalerWrapper DecisionTree             0:00:18       0.0216    0.0136
+        65   MinMaxScaler DecisionTree                      0:00:24       0.1094    0.0136
+        66   RobustScaler DecisionTree                      0:00:24       0.0214    0.0136
+        67   StandardScalerWrapper DecisionTree             0:00:26       0.0604    0.0136
+        68   MinMaxScaler DecisionTree                      0:00:25       0.0713    0.0136
+        69   StandardScalerWrapper DecisionTree             0:00:24       0.0299    0.0136
+        70   RobustScaler DecisionTree                      0:00:24       0.0693    0.0136
+        71   MinMaxScaler DecisionTree                      0:00:24       0.0529    0.0136
+        72   RobustScaler DecisionTree                      0:00:24       0.0238    0.0136
+        73   StandardScalerWrapper DecisionTree             0:00:25       0.0203    0.0136
+        74   RobustScaler DecisionTree                      0:00:23       0.0363    0.0136
+        75   MinMaxScaler DecisionTree                      0:00:24       0.0996    0.0136
+        76   RobustScaler DecisionTree                      0:00:23       0.0634    0.0136
+        77   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_430590b3-3a1e-429f-aada-3d088ced6d2b_77/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=zkrngsp89cIPBZ%2BEPlquM0KMCqZgddCfte9tkXaGzq4%3D&st=2020-09-13T05%3A59%3A05Z&se=2020-09-14T06%3A09%3A05Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper DecisionTree             0:03:04       0.0128    0.0128
+        78   MinMaxScaler DecisionTree                      0:00:25       0.0637    0.0128
+        79   RobustScaler DecisionTree                      0:00:24       0.0745    0.0128
+        80   MinMaxScaler DecisionTree                      0:00:26       0.1040    0.0128
+        81   MinMaxScaler DecisionTree                      0:00:25       0.0779    0.0128
+        82   MinMaxScaler DecisionTree                      0:00:25       0.0522    0.0128
+        83   RobustScaler DecisionTree                      0:00:24       0.0281    0.0128
+        84   MinMaxScaler DecisionTree                      0:00:24       0.0336    0.0128
+        85   MinMaxScaler DecisionTree                      0:00:18       0.1078    0.0128
+        86   RobustScaler DecisionTree                      0:00:24       0.0604    0.0128
+        87   StandardScalerWrapper DecisionTree             0:00:24       0.0571    0.0128
+        88   StandardScalerWrapper DecisionTree             0:00:24       0.0376    0.0128
+        89   StandardScalerWrapper RandomForest             0:00:26       0.0303    0.0128
+        90   MinMaxScaler DecisionTree                      0:00:26       0.0404    0.0128
+        91   MinMaxScaler DecisionTree                      0:00:24       0.0613    0.0128
+        92   RobustScaler DecisionTree                      0:00:25       0.0398    0.0128
+        93   MinMaxScaler DecisionTree                      0:00:25       0.0647    0.0128
+        94   MinMaxScaler DecisionTree                      0:00:24       0.0160    0.0128
+        95   RobustScaler DecisionTree                      0:00:24       0.1441    0.0128
+        96   MinMaxScaler DecisionTree                      0:00:24       0.0463    0.0128
+        97   StandardScalerWrapper DecisionTree             0:00:24       0.0146    0.0128
+        98   StandardScalerWrapper RandomForest             0:00:26       0.0165    0.0128
+        99   MinMaxScaler DecisionTree                      0:00:23       0.0871    0.0128
+       100   RobustScaler DecisionTree                      0:00:24       0.1087    0.0128
+       101   MinMaxScaler RandomForest                      0:00:26       0.0584    0.0128
+       102   StandardScalerWrapper DecisionTree             0:00:24       0.0577    0.0128
+       103   StandardScalerWrapper DecisionTree             0:00:23       0.0280    0.0128
+       104   MinMaxScaler DecisionTree                      0:00:24       0.0367    0.0128
+       105   RobustScaler DecisionTree                      0:00:24       0.0175    0.0128
+       106   StandardScalerWrapper DecisionTree             0:00:24       0.0398    0.0128
+       107   StandardScalerWrapper DecisionTree             0:00:27       0.0547    0.0128
+       108   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_430590b3-3a1e-429f-aada-3d088ced6d2b_108/outputs/model.pkl?sv=2019-02-02&sr=b&sig=RovnVjbFA4mAFam4xM1HBZYeYcIVNGIyhgJjhTsGhB4%3D&st=2020-09-13T06%3A14%3A35Z&se=2020-09-14T06%3A24%3A35Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler RandomForest                      0:03:01       0.0303    0.0128
+       109   MinMaxScaler DecisionTree                      0:00:24       0.0908    0.0128
+       110   StandardScalerWrapper DecisionTree             0:00:24       0.0562    0.0128
+       111   MinMaxScaler DecisionTree                      0:00:24       0.0510    0.0128
+       112   MinMaxScaler DecisionTree                      0:00:25       0.0570    0.0128
+       113   StandardScalerWrapper DecisionTree             0:00:23       0.0177    0.0128
+       114   StandardScalerWrapper DecisionTree             0:00:24       0.0635    0.0128
+       115   RobustScaler DecisionTree                      0:00:24       0.0607    0.0128
+       116   StandardScalerWrapper DecisionTree             0:00:24       0.0199    0.0128
+       117   StandardScalerWrapper DecisionTree             0:00:24       0.0729    0.0128
+       118   RobustScaler DecisionTree                      0:00:24       0.0850    0.0128
+       119   RobustScaler DecisionTree                      0:00:24       0.0372    0.0128
+       120   StandardScalerWrapper DecisionTree             0:00:26       0.0245    0.0128
+       121   VotingEnsemble                                 0:01:28       0.0104    0.0104
+Stopping criteria reached at iteration 122. Ending experiment.
+****************************************************************************************************
+Current status: BestRunExplainModel. Best run model explanations started
+Current status: ModelExplanationDataSetSetup. Model explanations data setup completed
+Current status: PickSurrogateModel. Choosing LightGBM as the surrogate model for explanations
+Current status: EngineeredFeatureExplanations. Computation of engineered features started
+Current status: EngineeredFeatureExplanations. Computation of engineered features completed
+Current status: BestRunExplainModel. Best run model explanations completed
+****************************************************************************************************
+Best pipeline:
+<class 'sklearn.ensemble._voting.VotingRegressor'>
+0. Pipeline(memory=None,
+         steps=[('standardscalerwrapper',
+                 <azureml.automl.runtime.shared.model_wrappers.StandardScalerWrapper object at 0x7fd5e81cac50>),
+                ('decisiontreeregressor',
+                 DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse',
+                                       max_depth=None, max_features=0.8,
+                                       max_leaf_nodes=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.0030712916328495916,
+                                       min_samples_split=0.0010734188827013528,
+                                       min_weight_fraction_leaf=0.0,
+                                       presort='deprecated', random_state=None,
+                                       splitter='best'))],
+         verbose=False)
+1. Pipeline(memory=None,
+         steps=[('robustscaler',
+                 RobustScaler(copy=True, quantile_range=[25, 75],
+                              with_centering=True, with_scaling=False)),
+                ('decisiontreeregressor',
+                 DecisionTreeRegressor(ccp_alpha=0.0, criterion='friedman_mse',
+                                       max_depth=None, max_features=0.8,
+                                       max_leaf_nodes=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.002742668396429022,
+                                       min_samples_split=0.0037087774117744725,
+                                       min_weight_fraction_leaf=0.0,
+                                       presort='deprecated', random_state=None,
+                                       splitter='best'))],
+         verbose=False)
+2. Pipeline(memory=None,
+         steps=[('standardscalerwrapper',
+                 <azureml.automl.runtime.shared.model_wrappers.StandardScalerWrapper object at 0x7fd5d3f8a6d0>),
+                ('decisiontreeregressor',
+                 DecisionTreeRegressor(ccp_alpha=0.0, criterion='friedman_mse',
+                                       max_depth=None, max_features=None,
+                                       max_leaf_nodes=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.0024492073147059966,
+                                       min_samples_split=0.031067599098338297,
+                                       min_weight_fraction_leaf=0.0,
+                                       presort='deprecated', random_state=None,
+                                       splitter='best'))],
+         verbose=False)
+3. Pipeline(memory=None,
+         steps=[('minmaxscaler', MinMaxScaler(copy=True, feature_range=(0, 1))),
+                ('decisiontreeregressor',
+                 DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse',
+                                       max_depth=None, max_features=0.9,
+                                       max_leaf_nodes=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.006056302831963706,
+                                       min_samples_split=0.005285388593079247,
+                                       min_weight_fraction_leaf=0.0,
+                                       presort='deprecated', random_state=None,
+                                       splitter='best'))],
+         verbose=False)
+

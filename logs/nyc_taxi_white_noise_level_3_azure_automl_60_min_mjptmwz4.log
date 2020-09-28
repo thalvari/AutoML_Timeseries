@@ -1,0 +1,227 @@
+Running on local machine
+Parent Run ID: AutoML_b024e735-25cf-4c67-9d89-9a68b9db1605
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0', Max_Horizon = '2'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler DecisionTree                      0:00:25       0.0833    0.0833
+         1   MinMaxScaler DecisionTree                      0:00:23       0.0903    0.0833
+         2   StandardScalerWrapper LassoLars                0:00:33       0.0986    0.0833
+         3   RobustScaler ElasticNet                        0:00:23       0.1045    0.0833
+         4   StandardScalerWrapper LassoLars                0:00:22       0.0986    0.0833
+         5   RobustScaler ElasticNet                        0:00:22       0.1042    0.0833
+         6   RobustScaler DecisionTree                      0:00:24       0.1003    0.0833
+         7   MinMaxScaler DecisionTree                      0:00:22       0.0853    0.0833
+         8   RobustScaler DecisionTree                      0:00:22       0.0948    0.0833
+         9   MinMaxScaler DecisionTree                      0:00:22       0.0915    0.0833
+        10   StandardScalerWrapper DecisionTree             0:00:16       0.0970    0.0833
+        11   StandardScalerWrapper DecisionTree             0:00:21       0.0966    0.0833
+        12   RobustScaler DecisionTree                      0:00:24       0.0806    0.0806
+        13   RobustScaler ElasticNet                        0:00:22       0.1134    0.0806
+        14   StandardScalerWrapper DecisionTree             0:00:22       0.0816    0.0806
+        15   MinMaxScaler DecisionTree                      0:00:16       0.1015    0.0806
+        16   MinMaxScaler DecisionTree                      0:00:16       0.1031    0.0806
+        17   RobustScaler DecisionTree                      0:00:22       0.0914    0.0806
+        18   RobustScaler DecisionTree                      0:00:21       0.0980    0.0806
+        19   StandardScalerWrapper DecisionTree             0:00:21       0.0776    0.0776
+        20   StandardScalerWrapper DecisionTree             0:00:23       0.1032    0.0776
+        21   StandardScalerWrapper DecisionTree             0:00:23       0.0844    0.0776
+        22   MinMaxScaler DecisionTree                      0:00:22       0.0978    0.0776
+        23   MinMaxScaler DecisionTree                      0:00:22       0.0937    0.0776
+        24   StandardScalerWrapper ExtremeRandomTrees       0:00:23       0.1064    0.0776
+        25   RobustScaler DecisionTree                      0:00:17       0.0966    0.0776
+        26   StandardScalerWrapper DecisionTree             0:00:22       0.0980    0.0776
+        27   MinMaxScaler DecisionTree                      0:00:22       0.0935    0.0776
+        28   MinMaxScaler DecisionTree                      0:00:22       0.0976    0.0776
+        29   MinMaxScaler LightGBM                          0:00:24       0.1000    0.0776
+        30   RobustScaler DecisionTree                      0:00:23       0.1006    0.0776
+        31   StandardScalerWrapper RandomForest             0:00:25       0.1091    0.0776
+        32   MinMaxScaler ExtremeRandomTrees                0:00:27       0.1088    0.0776
+        33   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1143    0.0776
+        34   MinMaxScaler ExtremeRandomTrees                0:00:28       0.1151    0.0776
+        35   StandardScalerWrapper DecisionTree             0:00:21       0.1174    0.0776
+        36   RobustScaler ExtremeRandomTrees                0:00:31       0.1053    0.0776
+        37   RobustScaler RandomForest                      0:00:32       0.1016    0.0776
+        38   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1108    0.0776
+        39   RobustScaler RandomForest                      0:00:24       0.0902    0.0776
+        40   RobustScaler DecisionTree                      0:00:22       0.0988    0.0776
+        41   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1051    0.0776
+        42   StandardScalerWrapper RandomForest             0:00:25       0.1005    0.0776
+        43   MinMaxScaler RandomForest                      0:00:24       0.0945    0.0776
+        44   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1128    0.0776
+        45   StandardScalerWrapper DecisionTree             0:00:24       0.1101    0.0776
+        46   RobustScaler ExtremeRandomTrees                0:00:29       0.1087    0.0776
+        47   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1087    0.0776
+        48   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1023    0.0776
+        49   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1100    0.0776
+        50   StandardScalerWrapper DecisionTree             0:00:18       0.1071    0.0776
+        51   StandardScalerWrapper RandomForest             0:00:19       0.0706    0.0706
+        52   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1051    0.0706
+        53   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1145    0.0706
+        54   RobustScaler RandomForest                      0:00:25       0.0877    0.0706
+        55   StandardScalerWrapper RandomForest             0:00:26       0.1242    0.0706
+        56   RobustScaler ExtremeRandomTrees                0:00:29       0.1067    0.0706
+        57   RobustScaler ExtremeRandomTrees                0:00:24       0.1022    0.0706
+        58   MinMaxScaler DecisionTree                      0:00:22       0.1056    0.0706
+        59   RobustScaler RandomForest                      0:00:26       0.0989    0.0706
+        60   StandardScalerWrapper RandomForest             0:00:18       0.1203    0.0706
+        61   RobustScaler RandomForest                      0:00:19       0.1040    0.0706
+        62   RobustScaler ExtremeRandomTrees                0:00:24       0.1146    0.0706
+        63   StandardScalerWrapper ExtremeRandomTrees       0:00:29       0.1109    0.0706
+        64   MinMaxScaler ExtremeRandomTrees                0:00:29       0.1008    0.0706
+        65   RobustScaler RandomForest                      0:00:25       0.1241    0.0706
+        66   StandardScalerWrapper ExtremeRandomTrees       0:00:29       0.1087    0.0706
+        67   RobustScaler DecisionTree                      0:00:23       0.0914    0.0706
+        68   RobustScaler ExtremeRandomTrees                0:00:24       0.0965    0.0706
+        69   MinMaxScaler RandomForest                      0:00:24       0.0946    0.0706
+        70   StandardScalerWrapper RandomForest             0:00:22       0.1141    0.0706
+        71   MinMaxScaler ExtremeRandomTrees                0:00:19       0.1095    0.0706
+        72   MinMaxScaler RandomForest                      0:00:25       0.1102    0.0706
+        73   RobustScaler ExtremeRandomTrees                0:00:24       0.1054    0.0706
+        74   RobustScaler ExtremeRandomTrees                0:00:25       0.1099    0.0706
+        75   RobustScaler RandomForest                      0:00:29       0.1166    0.0706
+        76   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1049    0.0706
+        77   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1097    0.0706
+        78   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1025    0.0706
+        79   StandardScalerWrapper RandomForest             0:00:21       0.0970    0.0706
+        80   MinMaxScaler RandomForest                      0:00:26       0.1119    0.0706
+        81   StandardScalerWrapper RandomForest             0:00:31       0.1033    0.0706
+        82   MinMaxScaler ExtremeRandomTrees                0:00:27       0.1109    0.0706
+        83   MinMaxScaler RandomForest                      0:00:25       0.0984    0.0706
+        84   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1108    0.0706
+        85   RobustScaler RandomForest                      0:00:23       0.1088    0.0706
+        86   StandardScalerWrapper ExtremeRandomTrees       0:00:30       0.1092    0.0706
+        87   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1060    0.0706
+        88   RobustScaler ExtremeRandomTrees                0:00:25       0.1125    0.0706
+        89   MinMaxScaler ExtremeRandomTrees                0:00:28       0.1190    0.0706
+        90   RobustScaler RandomForest                      0:00:25       0.1122    0.0706
+        91   RobustScaler RandomForest                      0:00:20       0.1132    0.0706
+        92   RobustScaler RandomForest                      0:00:26       0.1123    0.0706
+        93   StandardScalerWrapper ExtremeRandomTrees       0:00:21       0.1110    0.0706
+        94   RobustScaler ExtremeRandomTrees                0:00:24       0.1042    0.0706
+        95   MinMaxScaler RandomForest                      0:00:25       0.1275    0.0706
+        96   RobustScaler RandomForest                      0:00:26       0.0908    0.0706
+        97   MinMaxScaler RandomForest                      0:00:25       0.1105    0.0706
+        98   MinMaxScaler RandomForest                      0:00:26       0.0900    0.0706
+        99   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1110    0.0706
+       100   StandardScalerWrapper RandomForest             0:00:24       0.1295    0.0706
+       101   RobustScaler ExtremeRandomTrees                0:00:22       0.1130    0.0706
+       102   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1098    0.0706
+       103   RobustScaler RandomForest                      0:00:20       0.0906    0.0706
+       104   StandardScalerWrapper DecisionTree             0:00:23       0.0790    0.0706
+       105   StandardScalerWrapper RandomForest             0:00:20       0.1098    0.0706
+       106   StandardScalerWrapper GradientBoosting         0:00:24       0.1017    0.0706
+       107   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1095    0.0706
+       108   StandardScalerWrapper RandomForest             0:00:25       0.1086    0.0706
+       109   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.1035    0.0706
+       110   RobustScaler RandomForest                      0:00:24       0.1192    0.0706
+       111   MinMaxScaler ExtremeRandomTrees                0:00:20       0.0988    0.0706
+       112   RobustScaler ExtremeRandomTrees                0:00:25       0.1056    0.0706
+       113   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1072    0.0706
+       114   RobustScaler ExtremeRandomTrees                0:00:26       0.1108    0.0706
+       115   StandardScalerWrapper RandomForest             0:00:26       0.1249    0.0706
+       116   StandardScalerWrapper ExtremeRandomTrees       0:00:23       0.1131    0.0706
+       117   StandardScalerWrapper ExtremeRandomTrees       0:00:21       0.1082    0.0706
+       118   StandardScalerWrapper ExtremeRandomTrees       0:00:29       0.1139    0.0706
+       119   RobustScaler RandomForest                      0:00:31       0.0990    0.0706
+       120   RobustScaler RandomForest                      0:00:25       0.1102    0.0706
+       121   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1035    0.0706
+       122   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1033    0.0706
+       123   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1081    0.0706
+       124   MinMaxScaler ExtremeRandomTrees                0:00:23       0.0984    0.0706
+       125   StandardScalerWrapper RandomForest             0:00:29       0.1109    0.0706
+       126   MinMaxScaler RandomForest                      0:00:24       0.0993    0.0706
+       127   StandardScalerWrapper ExtremeRandomTrees       0:00:20       0.1101    0.0706
+       128   RobustScaler ExtremeRandomTrees                0:00:33       0.1044    0.0706
+       129   RobustScaler GradientBoosting                  0:00:26       0.1111    0.0706
+       130   MinMaxScaler RandomForest                      0:00:23       0.1088    0.0706
+       131   MinMaxScaler LightGBM                          0:00:26       0.0935    0.0706
+       132   RobustScaler RandomForest                      0:00:28       0.1061    0.0706
+       133   StandardScalerWrapper RandomForest             0:00:25       0.0965    0.0706
+       134   MinMaxScaler RandomForest                      0:00:32       0.0973    0.0706
+       135   MinMaxScaler RandomForest                      0:00:30       0.1084    0.0706
+       136   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.0991    0.0706
+       137   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.0971    0.0706
+       138   RobustScaler LightGBM                          0:00:23       0.0949    0.0706
+       139   StandardScalerWrapper RandomForest             0:00:25       0.0935    0.0706
+       140   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_b024e735-25cf-4c67-9d89-9a68b9db1605_140/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=Yi9Q3Q1vqq0jtpw4MqJ1WciHsrHl6ZUpwzuwyiUKcU8%3D&st=2020-09-19T16%3A36%3A35Z&se=2020-09-20T16%3A46%3A35Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+RobustScaler RandomForest                      0:03:04       0.1140    0.0706
+       141   VotingEnsemble                                 0:01:48       0.0706    0.0706
+Stopping criteria reached at iteration 142. Ending experiment.
+****************************************************************************************************
+Current status: BestRunExplainModel. Best run model explanations started
+Current status: ModelExplanationDataSetSetup. Model explanations data setup completed
+Current status: PickSurrogateModel. Choosing LightGBM as the surrogate model for explanations
+Current status: EngineeredFeatureExplanations. Computation of engineered features started
+Current status: EngineeredFeatureExplanations. Computation of engineered features completed
+Current status: BestRunExplainModel. Best run model explanations completed
+****************************************************************************************************
+Best pipeline:
+<class 'sklearn.ensemble._voting.VotingRegressor'>
+0. Pipeline(memory=None,
+         steps=[('standardscalerwrapper',
+                 <azureml.automl.runtime.shared.model_wrappers.StandardScalerWrapper object at 0x7f63bb3d6e90>),
+                ('randomforestregressor',
+                 RandomForestRegressor(bootstrap=True, ccp_alpha=0.0,
+                                       criterion='mse', max_depth=None,
+                                       max_features=0.7, max_leaf_nodes=None,
+                                       max_samples=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.0023646822772690063,
+                                       min_samples_split=0.00310675990983383,
+                                       min_weight_fraction_leaf=0.0,
+                                       n_estimators=25, n_jobs=-1,
+                                       oob_score=False, random_state=None,
+                                       verbose=0, warm_start=False))],
+         verbose=False)
+
