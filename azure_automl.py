@@ -20,7 +20,7 @@ def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
 
     time_series_settings = {
         "time_column_name": dt,
-        "max_horizon": "auto",
+        "max_horizon": n_pred,
         "target_lags": "auto",
         "target_rolling_window_size": "auto"
     }

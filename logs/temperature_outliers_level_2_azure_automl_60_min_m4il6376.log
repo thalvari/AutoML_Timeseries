@@ -1,0 +1,80 @@
+Running on local machine
+Parent Run ID: AutoML_81c2c683-649f-4c85-b973-8aea68943d0e
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0', Max_Horizon = '6'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 6)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler DecisionTree                      0:00:29       0.0947    0.0947
+         1   MinMaxScaler DecisionTree                      0:00:23       0.0886    0.0886
+         2   StandardScalerWrapper LassoLars                0:00:23       0.1062    0.0886
+         3   RobustScaler ElasticNet                        0:00:16       0.1029    0.0886
+         4   StandardScalerWrapper LassoLars                0:00:21       0.1061    0.0886
+         5   RobustScaler ElasticNet                        0:00:22       0.1062    0.0886
+         6   RobustScaler DecisionTree                      0:00:22       0.0866    0.0866
+         7   MinMaxScaler DecisionTree                      0:00:22       0.1198    0.0866
+         8   RobustScaler DecisionTree                      0:00:21       0.0916    0.0866
+         9   MinMaxScaler DecisionTree                      0:00:21       0.0944    0.0866
+        10   StandardScalerWrapper DecisionTree             0:00:22       0.1000    0.0866
+        11   StandardScalerWrapper DecisionTree             0:00:21       0.0950    0.0866
+        12   RobustScaler DecisionTree                      0:00:16       0.0935    0.0866
+        13   RobustScaler ElasticNet                        0:00:16       0.1006    0.0866
+        14   StandardScalerWrapper DecisionTree             0:00:22       0.0957    0.0866
+        15   MinMaxScaler DecisionTree                      0:00:23       0.0936    0.0866
+        16   MinMaxScaler DecisionTree                      0:00:21       0.0904    0.0866
+        17   RobustScaler DecisionTree                      0:00:24       0.0951    0.0866
+        18   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_81c2c683-649f-4c85-b973-8aea68943d0e_18/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=d8902DhXiY8NaTfcAGqHXkG7oejtByv7XoOl329%2BDig%3D&st=2020-09-29T12%3A31%3A30Z&se=2020-09-30T12%3A41%3A30Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_81c2c683-649f-4c85-b973-8aea68943d0e_18/outputs/conda_env_v_1_0_0.yml?sv=2019-02-02&sr=b&sig=Kls%2ByLvkHyC6dXbbYWcFH80zjzVOdG7TV0Yh4c92S4M%3D&st=2020-09-29T12%3A31%3A30Z&se=2020-09-30T12%3A41%3A30Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_81c2c683-649f-4c85-b973-8aea68943d0e_18/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=gq0XLVNpmprCFi%2BSUAVXOu2jFq6HXK0AFydZRGrcVX0%3D&st=2020-09-29T12%3A31%3A30Z&se=2020-09-30T12%3A41%3A30Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+RobustScaler DecisionTree                      0:03:07       0.0825    0.0825
+        19   StandardScalerWrapper DecisionTree             0:00:24       0.0914    0.0825
+        20   StandardScalerWrapper DecisionTree             0:00:18       0.1120    0.0825
+        21   

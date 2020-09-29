@@ -10,14 +10,14 @@ from tempfile import mktemp
 warnings.filterwarnings("ignore")
 
 
-def run_cmd(automl_name, train_path, n_pred, dt, target, time_limit_min, lang="python", verbose=False):
+def run_cmd(automl_name, train_path, n_pred, dt, target, time_limit_min, verbose=False):
     unique_id = Path(mktemp(prefix="")).stem
     log_path = f"logs/{Path(train_path).stem}_{automl_name}_{time_limit_min}_min_{unique_id}.log"
     pred_path = f"pred/{Path(train_path).stem}_{automl_name}_{time_limit_min}_min_{unique_id}.csv"
+    env_name = automl_name[:-4] if automl_name[-4:] == "_hpo" else automl_name
 
-    if lang == "python":
-        cmd = f"conda run -n {automl_name} bash -c 'python -u {automl_name}.py " \
-              f"{train_path} {pred_path} {n_pred} {dt} {target} {time_limit_min} > {log_path} 2>&1'"
+    cmd = f"conda run -n {env_name} bash -c 'python -u {automl_name}.py {train_path} {pred_path} " \
+          f"{n_pred} {dt} {target} {time_limit_min} > {log_path} 2>&1'"
     if verbose:
         print(f"[cmd] {cmd}")
     
