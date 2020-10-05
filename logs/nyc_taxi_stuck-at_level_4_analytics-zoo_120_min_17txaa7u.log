@@ -1,0 +1,290 @@
+Prepending /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/bigdl/share/conf/spark-bigdl.conf to sys.path
+Adding /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/share/lib/analytics-zoo-bigdl_0.10.0-spark_2.4.3-0.8.1-jar-with-dependencies.jar to BIGDL_JARS
+Prepending /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/share/conf/spark-analytics-zoo.conf to sys.path
+Current pyspark location is : /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/__init__.py
+Start to getOrCreate SparkContext
+Picked up _JAVA_OPTIONS: -Djava.io.tmpdir=/scratch/project_2003107
+Picked up _JAVA_OPTIONS: -Djava.io.tmpdir=/scratch/project_2003107
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/jars/spark-unsafe_2.11-2.4.3.jar) to method java.nio.Bits.unaligned()
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2020-10-02 11:47:28 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+2020-10-02 11:47:29 ERROR DiskBlockManager:91 - Failed to create local dir in /scratch/project_2003107. Ignoring this directory.
+java.io.IOException: Failed to create a temp directory (under /scratch/project_2003107) after 10 attempts!
+	at org.apache.spark.util.Utils$.createDirectory(Utils.scala:311)
+	at org.apache.spark.storage.DiskBlockManager$$anonfun$createLocalDirs$1.apply(DiskBlockManager.scala:141)
+	at org.apache.spark.storage.DiskBlockManager$$anonfun$createLocalDirs$1.apply(DiskBlockManager.scala:139)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.mutable.ArrayOps$ofRef.flatMap(ArrayOps.scala:186)
+	at org.apache.spark.storage.DiskBlockManager.createLocalDirs(DiskBlockManager.scala:139)
+	at org.apache.spark.storage.DiskBlockManager.<init>(DiskBlockManager.scala:42)
+	at org.apache.spark.storage.BlockManager.<init>(BlockManager.scala:143)
+	at org.apache.spark.SparkEnv$.create(SparkEnv.scala:349)
+	at org.apache.spark.SparkEnv$.createDriverEnv(SparkEnv.scala:175)
+	at org.apache.spark.SparkContext.createSparkEnv(SparkContext.scala:257)
+	at org.apache.spark.SparkContext.<init>(SparkContext.scala:424)
+	at org.apache.spark.api.java.JavaSparkContext.<init>(JavaSparkContext.scala:58)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:247)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:238)
+	at py4j.commands.ConstructorCommand.invokeConstructor(ConstructorCommand.java:80)
+	at py4j.commands.ConstructorCommand.execute(ConstructorCommand.java:69)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-10-02 11:47:29 ERROR DiskBlockManager:70 - Failed to create any local dir.
+ERROR:root:Exception while sending command.
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1159, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 985, in send_command
+    response = connection.send_command(command)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1164, in send_command
+    "Error while receiving", e, proto.ERROR_ON_RECEIVE)
+py4j.protocol.Py4JNetworkError: Error while receiving
+Traceback (most recent call last):
+  File "analytics-zoo.py", line 51, in <module>
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
+  File "analytics-zoo.py", line 23, in main
+    sc = init_spark_on_local(cores=mp.cpu_count(), spark_log_level="ERROR")
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/common/nncontext.py", line 39, in init_spark_on_local
+    python_location=python_location)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/util/spark.py", line 142, in init_spark_on_local
+    sc = init_nncontext(conf=zoo_conf, redirect_spark_log=self.redirect_spark_log)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/common/nncontext.py", line 118, in init_nncontext
+    sc = getOrCreateSparkContext(conf=conf)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/common/nncontext.py", line 138, in getOrCreateSparkContext
+    return SparkContext.getOrCreate(spark_conf)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/context.py", line 367, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/context.py", line 136, in __init__
+    conf, jsc, profiler_cls)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/context.py", line 198, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/context.py", line 306, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1525, in __call__
+    answer, self._gateway_client, None, self._fqn)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/protocol.py", line 336, in get_return_value
+    format(target_id, ".", name))
+py4j.protocol.Py4JError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused
+ERROR:py4j.java_gateway:An error occurred while trying to connect to the Java server (127.0.0.1:37852)
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 929, in _get_connection
+    connection = self.deque.pop()
+IndexError: pop from an empty deque
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1067, in start
+    self.socket.connect((self.address, self.port))
+ConnectionRefusedError: [Errno 111] Connection refused

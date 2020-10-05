@@ -1,0 +1,65 @@
+Prepending /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/bigdl/share/conf/spark-bigdl.conf to sys.path
+Adding /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/share/lib/analytics-zoo-bigdl_0.10.0-spark_2.4.3-0.8.1-jar-with-dependencies.jar to BIGDL_JARS
+Prepending /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/share/conf/spark-analytics-zoo.conf to sys.path
+Current pyspark location is : /projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/__init__.py
+Start to getOrCreate SparkContext
+Picked up _JAVA_OPTIONS: -Djava.io.tmpdir=/scratch/project_2003107
+Picked up _JAVA_OPTIONS: -Djava.io.tmpdir=/scratch/project_2003107
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/pyspark/jars/spark-unsafe_2.11-2.4.3.jar) to method java.nio.Bits.unaligned()
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2020-10-03 09:21:08 WARN  NativeCodeLoader:62 - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Traceback (most recent call last):
+  File "analytics-zoo.py", line 51, in <module>
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
+  File "analytics-zoo.py", line 23, in main
+    sc = init_spark_on_local(cores=mp.cpu_count(), spark_log_level="ERROR")
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/common/nncontext.py", line 39, in init_spark_on_local
+    python_location=python_location)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/util/spark.py", line 142, in init_spark_on_local
+    sc = init_nncontext(conf=zoo_conf, redirect_spark_log=self.redirect_spark_log)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/zoo/common/nncontext.py", line 123, in init_nncontext
+    init_engine()
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/bigdl/util/common.py", line 421, in init_engine
+    callBigDlFunc(bigdl_type, "initEngine")
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/bigdl/util/common.py", line 594, in callBigDlFunc
+    raise e
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/bigdl/util/common.py", line 590, in callBigDlFunc
+    result = callJavaFunc(api, *args)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/bigdl/util/common.py", line 639, in callJavaFunc
+    result = func(*args)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/java_gateway.py", line 1257, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/py4j/protocol.py", line 328, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o39.initEngine.
+: java.lang.UnsatisfiedLinkError: /scratch/project_2003107/dlNativeLoader4886910508529931174libiomp5.so: /scratch/project_2003107/dlNativeLoader4886910508529931174libiomp5.so: ELF load command past end of file
+	at java.base/java.lang.ClassLoader$NativeLibrary.load0(Native Method)
+	at java.base/java.lang.ClassLoader$NativeLibrary.load(ClassLoader.java:2442)
+	at java.base/java.lang.ClassLoader$NativeLibrary.loadLibrary(ClassLoader.java:2498)
+	at java.base/java.lang.ClassLoader.loadLibrary0(ClassLoader.java:2694)
+	at java.base/java.lang.ClassLoader.loadLibrary(ClassLoader.java:2627)
+	at java.base/java.lang.Runtime.load0(Runtime.java:768)
+	at java.base/java.lang.System.load(System.java:1837)
+	at com.intel.analytics.bigdl.mkl.MKL.<clinit>(MKL.java:56)
+	at com.intel.analytics.bigdl.utils.Engine$.initThreadPool(Engine.scala:367)
+	at com.intel.analytics.bigdl.utils.Engine$.setCoreNumber(Engine.scala:293)
+	at com.intel.analytics.bigdl.utils.Engine$.setNodeAndCore(Engine.scala:437)
+	at com.intel.analytics.bigdl.utils.Engine$.init(Engine.scala:116)
+	at com.intel.analytics.bigdl.python.api.PythonBigDL.initEngine(PythonBigDL.scala:2508)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+

@@ -68,4 +68,63 @@ BEST: The best observed score thus far.
 MaxAbsScaler DecisionTree                      0:06:59       0.0457    0.0457
          1   MinMaxScaler DecisionTree                      0:06:32       0.0447    0.0447
          2   StandardScalerWrapper LassoLars                0:03:35       0.2040    0.0447
-         3   
+         3   RobustScaler ElasticNet                        0:24:04       0.0799    0.0447
+         4   StandardScalerWrapper LassoLars                0:04:27       0.2038    0.0447
+         5   RobustScaler ElasticNet                        0:17:14       0.2028    0.0447
+         6   RobustScaler DecisionTree                      0:06:41       0.0435    0.0435
+         7   MinMaxScaler DecisionTree                      0:07:58       0.0463    0.0435
+         8   WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: timeseriesws4297462746.blob.core.windows.net
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+VotingEnsemble                                 0:02:20       0.2039    0.0435
+Stopping criteria reached at iteration 9. Ending experiment.
+Current status: FailedModelExplanations. Failed to explain best model
+****************************************************************************************************
+Best pipeline:
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+0. ('timeseriestransformer', TimeSeriesTransformer(featurization_config=None,
+                      pipeline_type=<TimeSeriesPipelineType.FULL: 1>))
+1. ('RobustScaler', RobustScaler(copy=True, quantile_range=[25, 75], with_centering=True,
+             with_scaling=False))
+2. ('DecisionTreeRegressor', DecisionTreeRegressor(ccp_alpha=0.0, criterion='friedman_mse', max_depth=None,
+                      max_features=0.7, max_leaf_nodes=None,
+                      min_impurity_decrease=0.0, min_impurity_split=None,
+                      min_samples_leaf=0.008504540352732381,
+                      min_samples_split=0.04427451843494491,
+                      min_weight_fraction_leaf=0.0, presort='deprecated',
+                      random_state=None, splitter='best'))
+
+['horizon_origin', '_automl_target_col_lag1H', '_automl_target_col_min_window2H', '_automl_target_col_max_window2H', '_automl_target_col_mean_window2H', 'year', 'half', 'quarter', 'month', 'day', 'hour', 'am_pm', 'hour12', 'wday', 'qday', 'week']
+       RawFeatureName TypeDetected Dropped  EngineeredFeatureCount  \
+0  datetime            DateTime     No      12                       
+1  _automl_target_col  Numeric      No      4                        
+
+                                                                                                                                                                                                                                                 Transformations  
+0  [MaxHorizonFeaturizer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer]  
+1  [Lag, minRollingWindow, maxRollingWindow, meanRollingWindow]                                                                                                                                                                                                   
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/shared/time_series_data_frame.py:2399: UserWarning: The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object
+  ' first object').format(name))
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:706: FutureWarning: Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass 'sort=False'.
+
+To retain the current behavior and silence the warning, pass 'sort=True'.
+
+  tsdf_full = pd.concat([self._cache, X])
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/shared/time_series_data_frame.py:2399: UserWarning: The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object
+  ' first object').format(name))

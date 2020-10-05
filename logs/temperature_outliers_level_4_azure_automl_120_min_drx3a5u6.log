@@ -1,0 +1,120 @@
+Running on local machine
+Parent Run ID: AutoML_e264d3fe-5e91-46a5-9f3d-49e764b7f749
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2223)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler DecisionTree                      0:00:19       0.1912    0.1912
+         1   MinMaxScaler DecisionTree                      0:00:18       0.1919    0.1912
+         2   StandardScalerWrapper LassoLars                0:00:27       0.1948    0.1912
+         3   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e264d3fe-5e91-46a5-9f3d-49e764b7f749_3/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=EjAISd12fbrzzf7Q0O%2FtKRfAvtrNHXq2B%2BgRzqErTR4%3D&st=2020-09-30T11%3A43%3A56Z&se=2020-10-01T11%3A53%3A56Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+RobustScaler ElasticNet                        0:03:48       0.1938    0.1912
+         4   StandardScalerWrapper LassoLars                0:00:25       0.1949    0.1912
+         5   RobustScaler ElasticNet                        0:00:53       0.1949    0.1912
+         6   RobustScaler DecisionTree                      0:00:51       0.1914    0.1912
+         7   MinMaxScaler DecisionTree                      0:01:38       0.1995    0.1912
+         8   RobustScaler DecisionTree                      0:00:19       0.1904    0.1904
+         9   MinMaxScaler DecisionTree                      0:00:18       0.1926    0.1904
+        10   StandardScalerWrapper DecisionTree             0:00:21       0.1924    0.1904
+        11   StandardScalerWrapper DecisionTree             0:00:32       0.1928    0.1904
+        12   RobustScaler DecisionTree                      0:00:23       0.1930    0.1904
+        13   RobustScaler ElasticNet                        0:01:27       0.1928    0.1904
+        14   StandardScalerWrapper DecisionTree             0:00:34       0.1943    0.1904
+        15   MinMaxScaler DecisionTree                      0:00:23       0.1948    0.1904
+        16   MinMaxScaler DecisionTree                      0:00:32       0.1924    0.1904
+        17   RobustScaler DecisionTree                      0:00:19       0.1929    0.1904
+        18   RobustScaler DecisionTree                      0:00:22       0.1917    0.1904
+        19   StandardScalerWrapper DecisionTree             0:00:21       0.1925    0.1904
+        20   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e264d3fe-5e91-46a5-9f3d-49e764b7f749_20/outputs/model.pkl?sv=2019-02-02&sr=b&sig=%2BWx5neXzu1F2moOZv0Ryrouzk4Hvdo9ZOb8XeO83%2BeQ%3D&st=2020-09-30T11%3A57%3A44Z&se=2020-10-01T12%3A07%3A44Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper DecisionTree             0:03:11       0.1950    0.1904
+        21   StandardScalerWrapper ExtremeRandomTrees       0:00:30       0.1891    0.1891
+        22   MinMaxScaler LightGBM                          0:01:59       0.1888    0.1888
+        23   MinMaxScaler DecisionTree                      0:00:19       0.1941    0.1888
+        24   MinMaxScaler DecisionTree                      0:00:21       0.1918    0.1888
+        25   MinMaxScaler LightGBM                          0:00:34       0.1885    0.1885
+        26   StandardScalerWrapper RandomForest             0:01:43       0.1889    0.1885
+        27   StandardScalerWrapper ExtremeRandomTrees       0:01:23       0.1888    0.1885
+        28   RobustScaler ExtremeRandomTrees                0:00:52       0.1894    0.1885
+        29   MinMaxScaler ExtremeRandomTrees                0:00:30       0.1893    0.1885
+        30   StandardScalerWrapper LightGBM                 0:00:35       0.1882    0.1882
+        31   StandardScalerWrapper RandomForest             0:00:31       0.1891    0.1882
+        32   StandardScalerWrapper ExtremeRandomTrees       0:00:31       0.1895    0.1882
+        33   RobustScaler RandomForest                      0:00:27       0.1907    0.1882
+        34   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1891    0.1882
+        35   MinMaxScaler LightGBM                          0:00:21       0.1884    0.1882
+        36   StandardScalerWrapper ExtremeRandomTrees       0:00:42       0.1898    0.1882
+        37   RobustScaler ExtremeRandomTrees                0:01:34       0.1897    0.1882
+ERROR: Run AutoML_e264d3fe-5e91-46a5-9f3d-49e764b7f749_37 failed with exception of type: ClientRequestError. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 3f6a2aaaf867a20cb9c0975d1c430181f6a13c19
+        38   MinMaxScaler RandomForest                      0:00:57       0.1896    0.1882
+        39   RobustScaler RandomForest                      0:00:27       0.1906    0.1882
+        40   RobustScaler LightGBM                          0:00:24       0.1888    0.1882
+        41   RobustScaler ExtremeRandomTrees                0:00:29       0.1904    0.1882
+        42   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1883    0.1882
+        43   RobustScaler RandomForest                      0:00:50       0.1884    0.1882
+        44   RobustScaler ExtremeRandomTrees                0:01:23       0.1887    0.1882
+        45   MinMaxScaler LightGBM                          0:01:15       0.1889    0.1882
+        46   RobustScaler ExtremeRandomTrees                0:00:51       0.1893    0.1882
+        47   StandardScalerWrapper ExtremeRandomTrees       0:00:32       0.1891    0.1882
+        48   MinMaxScaler ExtremeRandomTrees                0:00:30       0.1899    0.1882
+        49   MinMaxScaler ExtremeRandomTrees                0:01:31       0.1897    0.1882
+        50   StandardScalerWrapper LightGBM                 0:01:34       0.1891    0.1882
+        51   RobustScaler ExtremeRandomTrees                0:00:57       0.1889    0.1882
+        52   RobustScaler RandomForest                      0:00:22       0.1891    0.1882
+        53   RobustScaler ExtremeRandomTrees                0:01:21       0.1886    0.1882
+        54   MinMaxScaler ExtremeRandomTrees                0:00:34       0.1895    0.1882
+        55   RobustScaler LightGBM                          0:00:24       0.1883    0.1882
+        56   StandardScalerWrapper RandomForest             0:00:23       0.1889    0.1882
+        57   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.1882    0.1882
+        58   StandardScalerWrapper ExtremeRandomTrees       0:00:55       0.1892    0.1882
+        59   StandardScalerWrapper ExtremeRandomTrees       0:00:31       0.1894    0.1882
+        60   MinMaxScaler LightGBM                          0:00:48       0.2165    0.1882
+        61   

@@ -1,0 +1,62 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Running on local machine
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/clientbase.py", line 334, in _execute_func_internal
+    return func(*args, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/operations/jasmine_operations.py", line 370, in create_parent_run
+    raise ErrorResponseException(self._deserialize, response)
+azureml._restclient.models.error_response.ErrorResponseException: (UserError) Authorization failed for {resourceName}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "azure_automl.py", line 72, in <module>
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
+  File "azure_automl.py", line 33, in main
+    best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/experiment.py", line 211, in submit
+    run = submit_func(config, self.workspace, self.name, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 100, in _automl_static_submit
+    show_output)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 258, in _start_execution
+    automl_run = _default_execution(experiment, settings_obj, fit_params, True, show_output, parent_run_id)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 124, in _default_execution
+    return automl_estimator.fit(**fit_params)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/_azureautomlclient.py", line 357, in fit
+    parent_run_id=parent_run_id)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/runtime/_runtime_client.py", line 315, in _fit_local
+    parent_run_id=parent_run_id)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/runtime/_runtime_client.py", line 156, in _create_parent_run_for_local
+    parent_run_dto)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/jasmine_client.py", line 70, in post_parent_run
+    self._client.jasmine.create_parent_run, create_parent_run_dto)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/experiment_client.py", line 257, in _execute_with_experiment_arguments
+    return self._execute_with_arguments(func, copy.deepcopy(self._experiment_arguments), *args, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/workspace_client.py", line 86, in _execute_with_arguments
+    return self._call_api(func, *args_list, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/clientbase.py", line 232, in _call_api
+    return self._execute_with_base_arguments(func, *args, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/clientbase.py", line 321, in _execute_with_base_arguments
+    back_off, total_retry, self._logger, func, _noop_reset, *args, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/clientbase.py", line 336, in _execute_func_internal
+    left_retry = cls._handle_retry(back_off, left_retry, total_retry, error, logger, func)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/clientbase.py", line 377, in _handle_retry
+    raise_from(UserErrorException(error_msg), error)
+  File "<string>", line 3, in raise_from
+azureml.exceptions._azureml_exception.UserErrorException: UserErrorException:
+	Message: 
+Operation returned an invalid status code 'Forbidden'. The possible reason could be:
+1. You are not authorized to access this resource, or directory listing denied.
+2. you may not login your azure service, or use other subscription, you can check your
+default account by running azure cli commend:
+'az account list -o table'.
+3. You have multiple objects/login session opened, please close all session and try again.
+                
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "\nOperation returned an invalid status code 'Forbidden'. The possible reason could be:\n1. You are not authorized to access this resource, or directory listing denied.\n2. you may not login your azure service, or use other subscription, you can check your\ndefault account by running azure cli commend:\n'az account list -o table'.\n3. You have multiple objects/login session opened, please close all session and try again.\n                "
+    }
+}

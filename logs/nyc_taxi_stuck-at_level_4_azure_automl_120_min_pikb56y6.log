@@ -1,0 +1,187 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Running on local machine
+Parent Run ID: AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[1]', Target_Rolling_Window = '2'.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/workspace_client.py:380: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  self._logger.warn('Converting non-string tag to string: (%s: %s)', key, val)
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [1])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 2)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2064)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "center" is not a configurable window option.
+  'a configurable window option.')
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "closed" is not a configurable window option.
+  'a configurable window option.')
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:81: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_start_time = time.clock()
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:89: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_end_time = time.clock()
+         0   /projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+MaxAbsScaler DecisionTree                      0:06:16       0.7460    0.7460
+         1   MinMaxScaler DecisionTree                      0:05:18       0.7460    0.7460
+         2   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370_2/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=hYLv1fH9t3YFmhFPDC%2Fj%2B04pF6w3FZTjaXOJ8KS6eeo%3D&st=2020-10-02T16%3A26%3A49Z&se=2020-10-03T16%3A36%3A49Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper LassoLars                0:03:25       0.7888    0.7460
+         3   RobustScaler ElasticNet                        0:18:48       0.7892    0.7460
+         4   StandardScalerWrapper LassoLars                0:03:42       0.7888    0.7460
+         5   RobustScaler ElasticNet                        0:16:19       0.7907    0.7460
+ERROR: Run AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370_5 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: a420420d1d035a7a090fb1dca3298e66f57d6f02
+         6   RobustScaler DecisionTree                      0:09:05       0.7460    0.7460
+ERROR: Run AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370_6 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 0dcd72a2a6694c43a5151d2bba1d69d16125f375
+         7   MinMaxScaler DecisionTree                      0:08:17       0.7460    0.7460
+         8   RobustScaler DecisionTree                      0:07:48       0.7460    0.7460
+         9   MinMaxScaler DecisionTree                      0:05:31       0.6727    0.6727
+        10   WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+VotingEnsemble                                 0:03:20       0.6643    0.6643
+Stopping criteria reached at iteration 11. Ending experiment.
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+****************************************************************************************************
+numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+Current status: BestRunExplainModel. Best run model explanations started
+Current status: ModelExplanationDataSetSetup. Model explanations data setup completed
+Current status: PickSurrogateModel. Choosing LightGBM as the surrogate model for explanations
+Current status: EngineeredFeatureExplanations. Computation of engineered features started
+Setting feature_perturbation = "tree_path_dependent" because no background data was given.
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370_10/explanation/4b69f290/global_rank/0.interpret.json?sv=2019-02-02&sr=b&sig=t1hBvwj0bLD8k4n1cFHqB5KlQoFTOEXgNaEuU4ub4%2BI%3D&st=2020-10-02T17%3A43%3A23Z&se=2020-10-03T17%3A53%3A23Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370_10/explanation/4b69f290/features.interpret.json?sv=2019-02-02&sr=b&sig=uo6k2%2FVahUf26MT3auBdyvsc9si7SyKg6dziek6S7%2Bs%3D&st=2020-10-02T17%3A43%3A21Z&se=2020-10-03T17%3A53%3A21Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370_10/explanation/4b69f290/ys_pred_viz.interpret.json?sv=2019-02-02&sr=b&sig=GfXoNiYvfAsOnomGmz136ZzPg9tTsm4QT1qj1S7uiHQ%3D&st=2020-10-02T17%3A43%3A21Z&se=2020-10-03T17%3A53%3A21Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+Current status: EngineeredFeatureExplanations. Computation of engineered features completed
+Current status: BestRunExplainModel. Best run model explanations completed
+****************************************************************************************************
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_be7b28b8-5daa-4828-9327-1fc8d7941370_10/outputs/model.pkl?sv=2019-02-02&sr=b&sig=H8LZ3EphFx8Bk0Y3ekLDSfps0ORtX2O8YZHLL%2FozVaA%3D&st=2020-10-02T17%3A45%3A33Z&se=2020-10-03T01%3A55%3A33Z&sp=r
+Best pipeline:
+<class 'sklearn.ensemble._voting.VotingRegressor'>
+0. Pipeline(memory=None,
+         steps=[('minmaxscaler', MinMaxScaler(copy=True, feature_range=(0, 1))),
+                ('decisiontreeregressor',
+                 DecisionTreeRegressor(ccp_alpha=0.0, criterion='friedman_mse',
+                                       max_depth=None, max_features=0.6,
+                                       max_leaf_nodes=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.008504540352732381,
+                                       min_samples_split=0.0008991789964660114,
+                                       min_weight_fraction_leaf=0.0,
+                                       presort='deprecated', random_state=None,
+                                       splitter='best'))],
+         verbose=False)
+1. Pipeline(memory=None,
+         steps=[('robustscaler',
+                 RobustScaler(copy=True, quantile_range=[10, 90],
+                              with_centering=False, with_scaling=False)),
+                ('decisiontreeregressor',
+                 DecisionTreeRegressor(ccp_alpha=0.0, criterion='friedman_mse',
+                                       max_depth=None, max_features=0.8,
+                                       max_leaf_nodes=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.04146860325085487,
+                                       min_samples_split=0.031067599098338297,
+                                       min_weight_fraction_leaf=0.0,
+                                       presort='deprecated', random_state=None,
+                                       splitter='best'))],
+         verbose=False)
+
+['horizon_origin', '_automl_target_col_lag1T', '_automl_target_col_min_window2T', '_automl_target_col_max_window2T', '_automl_target_col_mean_window2T', 'quarter', 'month', 'day', 'hour', 'minute', 'am_pm', 'hour12', 'wday', 'qday', 'yday']
+       RawFeatureName TypeDetected Dropped  EngineeredFeatureCount  \
+0  timestamp           DateTime     No      11                       
+1  _automl_target_col  Numeric      No      4                        
+
+                                                                                                                                                                                                                            Transformations  
+0  [MaxHorizonFeaturizer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer]  
+1  [Lag, minRollingWindow, maxRollingWindow, meanRollingWindow]                                                                                                                                                                              
+The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object
+Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass 'sort=False'.
+
+To retain the current behavior and silence the warning, pass 'sort=True'.
+
+The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object

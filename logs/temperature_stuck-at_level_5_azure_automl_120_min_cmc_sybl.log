@@ -1,0 +1,46 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/runconfig.py", line 1450, in _save_with_default_comments
+    ruamel.yaml.round_trip_dump(commented_map_dict, outfile)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/ruamel/yaml/main.py", line 1314, in round_trip_dump
+    prefix_colon=prefix_colon,
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/ruamel/yaml/main.py", line 1192, in dump_all
+    dumper._representer.represent(data)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/ruamel/yaml/representer.py", line 86, in represent
+    self.serializer.serialize(node)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/ruamel/yaml/serializer.py", line 118, in serialize
+    self.emitter.emit(DocumentEndEvent(explicit=self.use_explicit_end))
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/ruamel/yaml/emitter.py", line 254, in emit
+    self.state()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/ruamel/yaml/emitter.py", line 386, in expect_document_end
+    self.flush_stream()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/ruamel/yaml/emitter.py", line 1184, in flush_stream
+    self.stream.flush()
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "azure_automl.py", line 72, in <module>
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
+  File "azure_automl.py", line 33, in main
+    best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/experiment.py", line 211, in submit
+    run = submit_func(config, self.workspace, self.name, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 100, in _automl_static_submit
+    show_output)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 258, in _start_execution
+    automl_run = _default_execution(experiment, settings_obj, fit_params, True, show_output, parent_run_id)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 124, in _default_execution
+    return automl_estimator.fit(**fit_params)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/_azureautomlclient.py", line 334, in fit
+    run_configuration.save(self.automl_settings.path, name)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/runconfig.py", line 1109, in save
+    project_dir_case=project_dir_case)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/runconfig.py", line 1450, in _save_with_default_comments
+    ruamel.yaml.round_trip_dump(commented_map_dict, outfile)
+OSError: [Errno 122] Disk quota exceeded

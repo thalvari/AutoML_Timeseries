@@ -18,12 +18,10 @@ def prophet_objective(trial, df, n_pred):
     seasonality_prior_scale = trial.suggest_float("seasonality_prior_scale", 0.01, 10, log=True)
     holidays_prior_scale = trial.suggest_float("holidays_prior_scale", 0.01, 10, log=True)
     seasonality_mode = trial.suggest_categorical("seasonality_mode", ["additive", "multiplicative"])
-#     changepoint_range = trial.suggest_float("changepoint_range", 0.5, 0.95)
-    m = Prophet(changepoint_prior_scale=changepoint_prior_scale,
-                seasonality_prior_scale=seasonality_prior_scale,
-                holidays_prior_scale=holidays_prior_scale, seasonality_mode=seasonality_mode)
-#                 holidays_prior_scale=holidays_prior_scale, seasonality_mode=seasonality_mode,
-#                 changepoint_range=changepoint_range)
+    changepoint_range = trial.suggest_float("changepoint_range", 0.5, 0.95)
+    m = Prophet(changepoint_prior_scale=changepoint_prior_scale, seasonality_prior_scale=seasonality_prior_scale,
+                holidays_prior_scale=holidays_prior_scale, seasonality_mode=seasonality_mode,
+                changepoint_range=changepoint_range)
 #     for col in df.columns:
 #         if col not in ["ds", "y"]:
 #             m.add_regressor(col)
@@ -31,8 +29,8 @@ def prophet_objective(trial, df, n_pred):
     freq = pd.infer_freq(df["ds"])
 #     df_cv = cross_validation(m, horizon=pd.Timedelta(n_pred*freq), period=pd.Timedelta(freq),
 #                              initial=pd.Timedelta((len(df)-n_pred-5)*freq), parallel="processes")
-    df_cv = cross_validation(m, horizon=pd.Timedelta(n_pred*freq), period=pd.Timedelta(n_pred*freq),
-                             initial=pd.Timedelta((n_pred-1)*freq), parallel="processes")
+    df_cv = cross_validation(m, horizon=pd.Timedelta(n_pred*freq), initial=pd.Timedelta((n_pred-1)*freq),
+                             parallel="processes")
     df_p = performance_metrics(df_cv, rolling_window=1)
     mape = np.mean(df_p.mape)
     return mape

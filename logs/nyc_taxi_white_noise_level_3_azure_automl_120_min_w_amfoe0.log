@@ -1,0 +1,605 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Running on local machine
+Parent Run ID: AutoML_8dce63c8-4aeb-41e3-855d-32413768722b
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2064)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler DecisionTree                      0:00:22       0.1232    0.1232
+         1   MinMaxScaler DecisionTree                      0:00:22       0.1235    0.1232
+         2   StandardScalerWrapper LassoLars                0:00:18       0.1273    0.1232
+         3   RobustScaler ElasticNet                        0:00:23       0.1274    0.1232
+         4   StandardScalerWrapper LassoLars                0:00:23       0.1273    0.1232
+         5   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_5/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=IGsIdCkr02v9fC4Mi%2FAJcF%2Fz2GzCnRG7PCZkG%2BeGkts%3D&st=2020-10-03T05%3A20%3A07Z&se=2020-10-04T05%3A30%3A07Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+RobustScaler ElasticNet                        0:03:02       0.1273    0.1232
+         6   RobustScaler DecisionTree                      0:00:23       0.1235    0.1232
+         7   MinMaxScaler DecisionTree                      0:00:22       0.1269    0.1232
+         8   RobustScaler DecisionTree                      0:00:22       0.1246    0.1232
+         9   MinMaxScaler DecisionTree                      0:00:22       0.1234    0.1232
+        10   StandardScalerWrapper DecisionTree             0:00:41       0.1239    0.1232
+        11   StandardScalerWrapper DecisionTree             0:00:22       0.1229    0.1229
+        12   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_12/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=5aG8wqBV4y1CUvrjSyfC7zaShxeaDmke0lOT9qJl3w4%3D&st=2020-10-03T05%3A25%3A44Z&se=2020-10-04T05%3A35%3A44Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_12/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=WlX3sM8mUZzc9I8zgTwv6QsI1%2FBRjSw2UwGb%2FtI6KvY%3D&st=2020-10-03T05%3A25%3A44Z&se=2020-10-04T05%3A35%3A44Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+RobustScaler DecisionTree                      0:03:08       0.1231    0.1229
+        13   RobustScaler ElasticNet                        0:00:22       0.1271    0.1229
+        14   StandardScalerWrapper DecisionTree             0:00:22       0.1238    0.1229
+        15   MinMaxScaler DecisionTree                      0:00:23       0.1239    0.1229
+        16   MinMaxScaler DecisionTree                      0:00:22       0.1233    0.1229
+        17   RobustScaler DecisionTree                      0:00:18       0.1234    0.1229
+        18   RobustScaler DecisionTree                      0:00:23       0.1232    0.1229
+        19   StandardScalerWrapper DecisionTree             0:00:22       0.1237    0.1229
+        20   StandardScalerWrapper DecisionTree             0:00:26       0.1245    0.1229
+        21   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_21/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=MS62scCgH3bTVPwPulUFDvAWgoBp9CRfKZNkNqej5F0%3D&st=2020-10-03T05%3A31%3A56Z&se=2020-10-04T05%3A41%3A56Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_21/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=RKNCy6xNW5kM5%2FGAR9ADwkcKfJbaHbOECKBTsWAxCH8%3D&st=2020-10-03T05%3A31%3A56Z&se=2020-10-04T05%3A41%3A56Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_21/outputs/model.pkl?sv=2019-02-02&sr=b&sig=pX6oTmcAE2%2BFh%2F1gzpKXrWRqdAgnueRy8ZbaTkzqaak%3D&st=2020-10-03T05%3A31%3A56Z&se=2020-10-04T05%3A41%3A56Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper ExtremeRandomTrees       0:03:08       0.1241    0.1229
+        22   MinMaxScaler LightGBM                          0:00:25       0.1226    0.1226
+        23   MinMaxScaler DecisionTree                      0:00:22       0.1243    0.1226
+        24   MinMaxScaler DecisionTree                      0:00:18       0.1231    0.1226
+        25   MinMaxScaler LightGBM                          0:00:18       0.1252    0.1226
+        26   StandardScalerWrapper RandomForest             0:00:24       0.1238    0.1226
+        27   StandardScalerWrapper ExtremeRandomTrees       0:00:20       0.1238    0.1226
+        28   RobustScaler ExtremeRandomTrees                0:00:19       0.1233    0.1226
+        29   MinMaxScaler ExtremeRandomTrees                0:00:22       0.1229    0.1226
+        30   StandardScalerWrapper LightGBM                 0:00:25       0.1238    0.1226
+        31   StandardScalerWrapper RandomForest             0:00:25       0.1233    0.1226
+        32   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1228    0.1226
+        33   RobustScaler RandomForest                      0:00:24       0.1216    0.1216
+        34   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1234    0.1216
+        35   StandardScalerWrapper RandomForest             0:00:26       0.1258    0.1216
+        36   RobustScaler RandomForest                      0:00:25       0.1232    0.1216
+        37   RobustScaler ExtremeRandomTrees                0:00:29       0.1234    0.1216
+        38   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1229    0.1216
+        39   MinMaxScaler RandomForest                      0:00:25       0.1220    0.1216
+        40   MinMaxScaler RandomForest                      0:00:24       0.1253    0.1216
+        41   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1240    0.1216
+        42   RobustScaler ExtremeRandomTrees                0:00:29       0.1231    0.1216
+        43   MinMaxScaler DecisionTree                      0:00:40       0.1229    0.1216
+        44   RobustScaler ExtremeRandomTrees                0:00:24       0.1228    0.1216
+        45   RobustScaler RandomForest                      0:00:25       0.1256    0.1216
+        46   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1225    0.1216
+        47   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_47/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=GxW%2FOoxAAHZjv9DJEVOm276HjrMAR54AQQJd8ri9UAk%3D&st=2020-10-03T05%3A45%3A37Z&se=2020-10-04T05%3A55%3A37Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_47/outputs/model.pkl?sv=2019-02-02&sr=b&sig=7nJ%2FWsHT7k5KY3hnXX%2FMsU64eTjaP8%2B5LPj2ya9VqEI%3D&st=2020-10-03T05%3A45%3A37Z&se=2020-10-04T05%3A55%3A37Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+RobustScaler RandomForest                      0:03:06       0.1235    0.1216
+        48   RobustScaler ExtremeRandomTrees                0:00:25       0.1246    0.1216
+        49   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.1232    0.1216
+        50   RobustScaler RandomForest                      0:00:26       0.1242    0.1216
+        51   RobustScaler RandomForest                      0:00:25       0.1215    0.1215
+        52   RobustScaler ExtremeRandomTrees                0:00:24       0.1222    0.1215
+        53   MinMaxScaler ExtremeRandomTrees                0:00:28       0.1253    0.1215
+        54   RobustScaler RandomForest                      0:00:26       0.1243    0.1215
+        55   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_55/outputs/conda_env_v_1_0_0.yml?sv=2019-02-02&sr=b&sig=4hcS6n6V2xGq6rVp2nCLqNFc1tKUzFWJNLY6meBghs8%3D&st=2020-10-03T05%3A51%3A50Z&se=2020-10-04T06%3A01%3A50Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper RandomForest             0:03:03       0.1250    0.1215
+        56   RobustScaler ExtremeRandomTrees                0:00:19       0.1242    0.1215
+        57   MinMaxScaler RandomForest                      0:00:24       0.1232    0.1215
+        58   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1222    0.1215
+        59   MinMaxScaler ExtremeRandomTrees                0:00:28       0.1226    0.1215
+        60   RobustScaler RandomForest                      0:00:22       0.1254    0.1215
+        61   MinMaxScaler ExtremeRandomTrees                0:00:20       0.1237    0.1215
+        62   RobustScaler ExtremeRandomTrees                0:00:21       0.1236    0.1215
+        63   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1234    0.1215
+        64   MinMaxScaler ExtremeRandomTrees                0:00:27       0.1230    0.1215
+        65   MinMaxScaler RandomForest                      0:00:25       0.1263    0.1215
+        66   MinMaxScaler ExtremeRandomTrees                0:00:19       0.1233    0.1215
+        67   MinMaxScaler RandomForest                      0:00:19       0.1238    0.1215
+        68   RobustScaler RandomForest                      0:00:26       0.1239    0.1215
+        69   StandardScalerWrapper RandomForest             0:00:27       0.1233    0.1215
+        70   RobustScaler RandomForest                      0:00:24       0.1250    0.1215
+        71   StandardScalerWrapper ExtremeRandomTrees       0:00:29       0.1243    0.1215
+        72   StandardScalerWrapper RandomForest             0:00:26       0.1234    0.1215
+        73   RobustScaler ExtremeRandomTrees                0:00:30       0.1239    0.1215
+        74   RobustScaler RandomForest                      0:00:26       0.1232    0.1215
+        75   StandardScalerWrapper RandomForest             0:00:25       0.1263    0.1215
+        76   MinMaxScaler RandomForest                      0:00:30       0.1224    0.1215
+        77   RobustScaler ExtremeRandomTrees                0:00:20       0.1235    0.1215
+        78   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1243    0.1215
+        79   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.1245    0.1215
+        80   StandardScalerWrapper RandomForest             0:00:25       0.1250    0.1215
+        81   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1239    0.1215
+        82   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1232    0.1215
+        83   StandardScalerWrapper GradientBoosting         0:00:25       0.1229    0.1215
+        84   StandardScalerWrapper RandomForest             0:00:25       0.1230    0.1215
+        85   RobustScaler RandomForest                      0:00:25       0.1247    0.1215
+        86   StandardScalerWrapper ExtremeRandomTrees       0:00:21       0.1234    0.1215
+        87   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1231    0.1215
+        88   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.1231    0.1215
+        89   RobustScaler ExtremeRandomTrees                0:00:19       0.1244    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_89 failed with exception of type: OSError. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 96588da6688250b9e049319e9e3f11e8805b8fda
+        90   RobustScaler RandomForest                      0:00:26       0.1254    0.1215
+        91   RobustScaler RandomForest                      0:00:25       0.1239    0.1215
+        92   RobustScaler GradientBoosting                  0:00:39       0.1242    0.1215
+        93   RobustScaler ExtremeRandomTrees                0:00:29       0.1241    0.1215
+        94   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1248    0.1215
+        95   StandardScalerWrapper RandomForest             0:00:21       0.1253    0.1215
+        96   StandardScalerWrapper DecisionTree             0:00:23       0.1227    0.1215
+        97   StandardScalerWrapper RandomForest             0:00:20       0.1216    0.1215
+        98   StandardScalerWrapper RandomForest             0:00:28       0.1242    0.1215
+        99   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1234    0.1215
+       100   StandardScalerWrapper RandomForest             0:00:25       0.1255    0.1215
+       101   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1241    0.1215
+       102   RobustScaler ExtremeRandomTrees                0:00:24       0.1232    0.1215
+       103   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1230    0.1215
+       104   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1237    0.1215
+       105   StandardScalerWrapper RandomForest             0:00:24       0.1256    0.1215
+       106   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1232    0.1215
+       107   RobustScaler RandomForest                      0:00:26       0.1223    0.1215
+       108   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.1236    0.1215
+       109   MinMaxScaler ExtremeRandomTrees                0:00:30       0.1228    0.1215
+       110   RobustScaler RandomForest                      0:00:24       0.1256    0.1215
+       111   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1232    0.1215
+       112   RobustScaler ExtremeRandomTrees                0:00:25       0.1236    0.1215
+       113   RobustScaler ExtremeRandomTrees                0:00:20       0.1225    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_113 failed with exception of type: OSError. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 18d56674a73381cf7190b295b30e02e24e7dc271
+       114   MinMaxScaler ExtremeRandomTrees                0:00:17       0.1223    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_114 failed with exception of type: OSError. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: 0e1995b58cf6963b63527e3c153a12086cd5db89
+       115   StandardScalerWrapper RandomForest             0:00:25       0.1243    0.1215
+       116   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.1246    0.1215
+       117   StandardScalerWrapper RandomForest             0:00:17       0.1223    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_117 failed with exception of type: OSError. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 63d182f80c662f663bd89711edccb81351d59bb6
+       118   StandardScalerWrapper ExtremeRandomTrees       0:00:22       0.1253    0.1215
+       119   RobustScaler RandomForest                      0:00:26       0.1239    0.1215
+       120   StandardScalerWrapper RandomForest             0:00:24       0.1253    0.1215
+       121   StandardScalerWrapper ExtremeRandomTrees       0:00:20       0.1242    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_121 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 04a69543263fc5ac478a91b0bf869e43e8b7af02
+       122   RobustScaler ExtremeRandomTrees                0:00:28       0.1240    0.1215
+       123   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1240    0.1215
+       124   StandardScalerWrapper RandomForest             0:00:26       0.1241    0.1215
+       125   StandardScalerWrapper RandomForest             0:00:40       0.1238    0.1215
+       126                                                  0:00:15          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_126 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: ef53fe0e238cc4dfb5db6def81d4dad214038b51
+       127                                                  0:00:16          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_127 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 2f7b5c151216d32fba10d9dc54404fe92c7148d5
+       128   MinMaxScaler RandomForest                      0:00:28       0.1235    0.1215
+       129   MinMaxScaler RandomForest                      0:00:22       0.1226    0.1215
+       130   RobustScaler RandomForest                      0:00:27       0.1243    0.1215
+       131   RobustScaler RandomForest                      0:00:25       0.1220    0.1215
+       132   MinMaxScaler RandomForest                      0:00:26       0.1223    0.1215
+       133   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1220    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_133 failed with exception of type: OSError. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: fddc3e2e7eee3cde38f0be2b8e33e13a56f88cd2
+       134   MinMaxScaler RandomForest                      0:00:23       0.1239    0.1215
+       135   StandardScalerWrapper RandomForest             0:00:27       0.1242    0.1215
+       136   RobustScaler ExtremeRandomTrees                0:00:29       0.1228    0.1215
+       137                                                  0:00:13          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_137 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: c7b1517f97c2190c7bfa0f2683c7cd17f5791fd9
+       138   RobustScaler RandomForest                      0:00:27       0.1218    0.1215
+       139   StandardScalerWrapper ExtremeRandomTrees       0:00:29       0.1239    0.1215
+       140   RobustScaler RandomForest                      0:00:22       0.1216    0.1215
+       141   StandardScalerWrapper DecisionTree             0:00:19       0.1229    0.1215
+       142   StandardScalerWrapper RandomForest             0:00:30       0.1233    0.1215
+       143                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_143 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 75a05c5e1be335f471d08986a1d22639bc8f954d
+       144                                                  0:00:12          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_144 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 891bc9e1b5c09ead68c3f43a814ae7bd261ebb14
+       145   RobustScaler RandomForest                      0:00:25       0.1243    0.1215
+       146                                                  0:00:04          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_146 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 6c8732bbfe594be24d255ccf7f33c737e40e260f
+       147   RobustScaler DecisionTree                      0:00:25       0.1231    0.1215
+       148                                                  0:00:06          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_148 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: a156b9544b613556419ecf0e0c7d481aa399e798
+       149   MinMaxScaler RandomForest                      0:00:15       0.1230    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_149 failed with exception of type: ServiceException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 335199cb81bda093c9599a49fb05fd45e1fb7afd
+       150   MinMaxScaler RandomForest                      0:00:27       0.1253    0.1215
+       151   RobustScaler ExtremeRandomTrees                0:00:15       0.1241    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_151 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 36b7ebad0b5306b4218d28fe4eb0a6a1880adcaa
+       152   MinMaxScaler ExtremeRandomTrees                0:00:27       0.1251    0.1215
+       153   StandardScalerWrapper ExtremeRandomTrees       0:00:15       0.1245    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_153 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 0f862e72bd360f528838fb6bd37442de053641aa
+       154   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_154/outputs/model.pkl?sv=2019-02-02&sr=b&sig=9QidtevEEuC2xPiER8VZEkn%2B0ZyoTomBXw2pRRO%2BBtU%3D&st=2020-10-03T06%3A34%3A30Z&se=2020-10-04T06%3A44%3A30Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_154/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=q3BrAlBLuRMPB%2Fzu1ogZ93qJ8QEhv3ZQhbv%2FTR0W6bI%3D&st=2020-10-03T06%3A34%3A30Z&se=2020-10-04T06%3A44%3A30Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_154/outputs/conda_env_v_1_0_0.yml?sv=2019-02-02&sr=b&sig=jnGZSTko0mt4oxyUmVars5lfFwllrSdQ5Cjrrx%2BhLIk%3D&st=2020-10-03T06%3A34%3A30Z&se=2020-10-04T06%3A44%3A30Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper ExtremeRandomTrees       0:02:55       0.1242    0.1215
+       155                                                  0:00:10          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_155 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 77a2ab765f3f45cb84c4ac3613a1a35ba61448c3
+       156                                                  0:00:10          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_156 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 5000dc539c6fd0d8c2802dff6d03438b3f35832b
+       157   RobustScaler RandomForest                      0:00:24       0.1223    0.1215
+       158   MinMaxScaler RandomForest                      0:00:19       0.1229    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_158 failed with exception of type: ServiceException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 02d90b3a22e3e8a59bb9b56616445d5296191ce2
+       159                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_159 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: fddd8c6e31d11d636c8785ebe29953163b266159
+       160   StandardScalerWrapper RandomForest             0:00:16       0.1241    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_160 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: eba7f1cc87a84a670aa0b82d883774301f1148df
+       161                                                  0:00:15          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_161 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, ExtraTreesRegressor } Pipeline ID: c3360d9bbdf7f339b8f22f6ebf395387ade7010b
+       162                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_162 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 6b3b3b7316622ba8398cf629b31c8fa0348d546f
+       163                                                  0:00:06          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_163 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 9d1840cb1fed92cd733c05568c5cae7edc873ff3
+       164                                                  0:00:11          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_164 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: baa0117ee8dafc75d6b411690b3147196f0b6ab6
+       165   RobustScaler RandomForest                      0:00:20       0.1242    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_165 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: ff83ec3abd65eee4eaa56d0c31905c8976cb790f
+       166                                                  0:00:04          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_166 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 6913a82096645e887ec1caa6257dac9e4ed03a0a
+       167                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_167 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b3f24aaa744cb331325c43cd833125715ace5a33
+       168   MinMaxScaler LightGBM                          0:00:18       0.1221    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_168 failed with exception of type: OSError. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: 8759869b7a06a4b4a822e48f1bb3ef1ee31f48af
+       169   StandardScalerWrapper XGBoostRegressor         0:00:29       0.1431    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_169 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 682b890750fd2c76620090b45cb3123ea036d7da
+       170                                                  0:00:14          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_170 failed with exception of type: SubprocessException. Pipeline Class Names: { TruncatedSVDWrapper, RandomForestRegressor } Pipeline ID: e02edf2a0a4acd6a626bdef14e1be7b592f59884
+       171   StandardScalerWrapper LightGBM                 0:00:16       0.1221    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_171 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: dcf186497472486d80ae0407162aa329672588fa
+       172                                                  0:00:10          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_172 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: 297b001ca3ebd57fcaeaacf514d80b4b924aedf6
+       173   MinMaxScaler DecisionTree                      0:00:20       0.1251    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_173 failed with exception of type: ServiceException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: b301c01b4eb4a50532269c1fd2ff4c0cd80eaf1d
+       174                                                  0:00:13          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_174 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: c43d6df9b85f27ebc249302728a8ee6d6a503955
+       175                                                  0:00:14          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_175 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 17a111d9f54107034df551e425a110943ca0a38d
+       176                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_176 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LassoLars } Pipeline ID: fd440d139cc786f1c42d7e2e29505d7ecf09b4d0
+       177                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_177 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 0fc7c6b1ca786b4a008dd57848e871e47a3ee06e
+       178                                                  0:00:04          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_178 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: d1fe5636d3be52189a4b37dbe286db3ee9c3ea56
+       179                                                  0:00:07          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_179 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 7c34d1bc481a656325c7d70699df74ed7dd70476
+       180                                                  0:00:10          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_180 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 15ab76262d5ed61e4c04c1fce11a2134b0e4131e
+       181                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_181 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, SGDRegressor } Pipeline ID: cfe26554580c699b300e670532b4e64d5e3c9c19
+       182                                                  0:00:11          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_182 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 826ab43a7a7d58bc1ee77ea9376a7fca359ed973
+       183                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_183 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 57787f992e8b48145ea1d011ce5ac6995dc76bc9
+       184                                                  0:00:10          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_184 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 78cfad3fae3f6c9dece1f9b709ca171d6129f8c9
+       185                                                  0:00:13          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_185 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 2f6a6d1f9b3b5b9abefade937b0eb00b6125b388
+       186   RobustScaler GradientBoosting                  0:00:22       0.1229    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_186 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, GradientBoostingRegressor } Pipeline ID: 46165f15cd4afd979f573271a04dcfa9fa455f91
+       187   StandardScalerWrapper XGBoostRegressor         0:00:15       0.1753    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_187 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: d6f3e20b7ca371bcd192c70e26254677ffa70369
+       188                                                  0:00:12          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_188 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, ExtraTreesRegressor } Pipeline ID: 0b9431dd4c8d603c7c35fcc975e247f9b9f13fe8
+       189                                                  0:00:10          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_189 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: 56144204950c17088f65cd91f45cf2a280e5a8f8
+       190   StandardScalerWrapper RandomForest             0:00:17       0.1226    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_190 failed with exception of type: OSError. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 5f3abe3b9fd56fc25c831dd828350cd718991cfd
+       191                                                  0:00:05          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_191 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: 74f80433046d383114588a8dfe803f45b02a81f4
+       192                                                  0:00:09          nan    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_192 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: a63846b38ac45578c74d24a2d077a1933914ad2a
+       193   StandardScalerWrapper ExtremeRandomTrees       0:00:15       0.1239    0.1215
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_193 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: a4f3db5bbdc164875c4be7f38d70979efe60fdcf
+       194   MaxAbsScaler LightGBM                          0:00:15       0.1212    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_194 failed with exception of type: ServiceException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 0f5bfeb25b4b894c406fb4821187b86c8376110d
+       195   MaxAbsScaler LightGBM                          0:00:14       0.1215    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_195 failed with exception of type: ServiceException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 9e7bac2e0f02a2872e6091ebff4922e25d80fc99
+       196                                                  0:00:06          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_196 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 1631017c2238c2f746de94355c0350126180ddf3
+       197   MaxAbsScaler RandomForest                      0:00:15       0.1216    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_197 failed with exception of type: ServiceException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 65ef45bf2736ea7ad852ee1bafdf75755dd80468
+       198                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_198 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, ExtraTreesRegressor } Pipeline ID: 7405a4055da24e2beeaf9612c4c10ff5821104a1
+       199   StandardScalerWrapper LightGBM                 0:00:15       0.1222    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_199 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 673bd627f68c799c4955ae4a6099fd6435ab08da
+       200   StandardScalerWrapper LightGBM                 0:00:14       0.1220    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_200 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: e5df132cb07af479baf4ef3f950414ee54f90339
+       201                                                  0:00:09          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_201 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 602de25afb95a8f5aa702fada6084aba63b0c829
+       202   StandardScalerWrapper XGBoostRegressor         0:00:14       0.1253    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_202 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 620c2251cb8202665602151b5cee7597904985a4
+       203                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_203 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: f75ccb095dd2cf399184138c4ca1360251d86b22
+       204                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_204 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 431320925367a8829b333f296b2f80ae7a1d7297
+       205                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_205 failed with exception of type: PipelineRunException. Pipeline Class Names: { SparseNormalizer, LightGBMRegressor } Pipeline ID: 977a6f8074aced676e00cdcc5fba08e95ce4324b
+       206   TruncatedSVDWrapper ElasticNet                 0:00:24       0.1274    0.1212
+       207   MinMaxScaler RandomForest                      0:00:16       0.1217    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_207 failed with exception of type: ServiceException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 466acd8e75cbcdfd0c7a5802829e2d3cb1f9130c
+       208                                                  0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_208 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 6de827f57901b1bbee192c49f3b2466fe1395e54
+       209   StandardScalerWrapper SGD                      0:00:24       0.1278    0.1212
+       210   StandardScalerWrapper LightGBM                 0:00:24       0.1243    0.1212
+       211   StandardScalerWrapper SGD                      0:00:14       0.1279    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_211 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 0e4f1446b22d11ef2f2b4a3b7944566d92278369
+       212                                                  0:00:09          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_212 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: eaf8c51018ebfba76b111d7bb0a8db19142c8fdf
+       213   StandardScalerWrapper XGBoostRegressor         0:00:31       0.1605    0.1212
+       214                                                  0:00:14          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_214 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: aea81d4a9812a9036295426d6877444fa28c93b4
+       215   SparseNormalizer LightGBM                      0:00:25       0.1284    0.1212
+       216   SparseNormalizer XGBoostRegressor              0:00:20       0.1275    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_216 failed with exception of type: ServiceException. Pipeline Class Names: { SparseNormalizer, XGBoostRegressor } Pipeline ID: 9917b023d312c281405620ad04386a8f2b1f4164
+       217                                                  0:00:15          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_217 failed with exception of type: SubprocessException. Pipeline Class Names: { SparseNormalizer, XGBoostRegressor } Pipeline ID: 97d25998e55d7dee34ab7a2a6dd80263b3010f8e
+       218                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_218 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 3f43026893f9a10a04ea26537597a14de78108ef
+       219                                                  0:00:20          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_219 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 7c6f84013c659f2deee0fa3ea015371159ab1fc4
+       220                                                  0:00:06          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_220 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: 57179a17be917e6e7a71b9eda84b16a72c14c4bf
+       221                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_221 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: 4a112802a23dbb620bfae18d37caf508b3d1c5af
+       222                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_222 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 95a1eee24c5920c87c966ebfc146320264261b77
+       223   StandardScalerWrapper RandomForest             0:00:16       0.1227    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_223 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: f3dc3dab31b1c5d230db15118936664dac21e342
+       224                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_224 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: f60cd2c35b0f8eaacbc682f8d9221a66b8f64392
+       225                                                  0:00:14          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_225 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: ba3adb7868909cf816aa8f0a5347a5095434f9c6
+       226   StandardScalerWrapper ElasticNet               0:00:26       0.1273    0.1212
+       227   MinMaxScaler GradientBoosting                  0:00:17       0.1230    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_227 failed with exception of type: ServiceException. Pipeline Class Names: { MinMaxScaler, GradientBoostingRegressor } Pipeline ID: 0159ef2e32f3477b029afde51a95b8059cf652e5
+       228   RobustScaler RandomForest                      0:00:18       0.1212    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_228 failed with exception of type: OSError. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: c2119462f9a0da7f0ceaf509a704d1777903878e
+       229                                                  0:00:06          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_229 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 5fb08528ad38ba4b2abc552037202415e6c82e29
+       230   MaxAbsScaler LightGBM                          0:00:15       0.1217    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_230 failed with exception of type: ServiceException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: bfe5473c50f622cfd409d17820fec6a62a89f237
+       231                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_231 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: d997d7a5f82aa49764903dbe180fd84f098d9cea
+       232                                                  0:00:14          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_232 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 30b99dcd8f5c02b69a91ae2d476cfa5aa2b72622
+       233                                                  0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_233 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 01d7f25351d28ac1e395fa1c5efa40ac59677000
+       234                                                  0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_234 failed with exception of type: PipelineRunException. Pipeline Class Names: { SparseNormalizer, XGBoostRegressor } Pipeline ID: 1affb0d9b7d04d4b6313517bedf19c19ce255c63
+       235                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_235 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: 05cb50c18df93e93399d5f06ef1447259f234a62
+       236                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_236 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: cdfe24bb3f7f50696149c530b09a6fe45edce655
+       237                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_237 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 37d4058423aefbdf90b627705abf689c8682763a
+       238                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_238 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: efec4ebf4ef4b400228ae241b089d7a41df8cbf1
+       239                                                  0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_239 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: cb8006f15f7f73de19f785c35c900541b763b4d1
+       240                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_240 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: fb246da24818acd5d01a475560e17a615d880bb2
+       241                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_241 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 133392855ea9c812ebfb23dd42c0afdf18f343d5
+       242                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_242 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 2c9d36c9df87e1e891b76390431cb9f99c1b6254
+       243                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_243 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 4025cde889f1d2a770b684dc2ab2e7b5e7912fd9
+       244                                                  0:00:06          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_244 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 037393b2b43f52656075979e877e0eb0e25f66a6
+       245                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_245 failed with exception of type: SubprocessException. Pipeline Class Names: { SparseNormalizer, LightGBMRegressor } Pipeline ID: 04be2e13544ea10a01073ec9100b79c85b01a9d5
+       246                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_246 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: aed75f255b4a77da1bbce24c7125ed18b559adab
+       247                                                  0:00:06          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_247 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: b2003de75f042ba430a7e083dbdc47298dc91856
+       248                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_248 failed with exception of type: PipelineRunException. Pipeline Class Names: { SparseNormalizer, XGBoostRegressor } Pipeline ID: 21e2fb63a7b898e93507421d1ec8cb1b37831f2f
+       249                                                  0:00:14          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_249 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 3c847885aa2bf73ceea9035149e2e8b8e3a222b8
+       250   MaxAbsScaler LightGBM                          0:00:14       0.1241    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_250 failed with exception of type: ServiceException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: c7055b2b54eddc89347e61de376183ab968f95ac
+       251   RobustScaler RandomForest                      0:00:16       0.1233    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_251 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 215c0e9fac93bd007fc0971bec787433790325cd
+       252   RobustScaler DecisionTree                      0:00:14       0.1232    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_252 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: d4b69ccfa6072323a1ee81d5e0a1169a896f4f03
+       253                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_253 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: c570588eb3074b5634191d338ca4d626ff5d1941
+       254                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_254 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 8aa0bb8644a1a94adce88d86a884e0db42bfb8b9
+       255   RobustScaler LightGBM                          0:00:15       0.1258    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_255 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: f8b30aa5ab77245df84e0c5331576739d502a6f9
+       256                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_256 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 2b67fd2647174b35a490cf7929a9a1d8c7532bcd
+       257                                                  0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_257 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 3fe033ca072292b3c6dde01cc836ac5a5f728fc9
+       258                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_258 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: a87f8db0597da25786cdc0bd0ba50219096638d4
+       259   StandardScalerWrapper ElasticNet               0:00:15       0.1273    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_259 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 4e3fdcf0e9d9f4a6a22ed939ac76519ea80381b6
+       260                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_260 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: c63682591751eaa45a4c3d922ef643e38ae573ab
+       261                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_261 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: e3961e43a215e93bdcd6b98af192204d86e4066b
+       262   StandardScalerWrapper ElasticNet               0:00:14       0.1271    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_262 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 43e8d0bbe4bd15198d7ca073cd19254966b065a2
+       263                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_263 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: c67f51639f5793c67c63baeadd1cdd2f09a6df66
+       264                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_264 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 2537322917fea0eca3f66ba03d5a6000e579ba23
+       265   StandardScalerWrapper LightGBM                 0:00:16       0.1792    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_265 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 789d503b4ce9d000f38b0d7e874c8d93ecc0046c
+       266   RobustScaler RandomForest                      0:00:18       0.1215    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_266 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 0d6b480045130bc8119daee1baebc9d94bbd27b7
+       267                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_267 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, GradientBoostingRegressor } Pipeline ID: 26a65cf1ae1dd0c26786e4a4562dbbc6db5a1be5
+       268                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_268 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 6ad153961bc58c1ef812646fdb86aae2866aaccb
+       269                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_269 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: 188f81dbe080b234336f246d0ffcecaef1b89b7b
+       270   StandardScalerWrapper LightGBM                 0:00:16       0.1256    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_270 failed with exception of type: OSError. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: a91771d2b4e86afba9cdbcd8c4a8c77d4b8f8f81
+       271                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_271 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 2963cb86c8d063b64163f24428d019e9d0197435
+       272                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_272 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 0401d037f03346e2ae003649d6e261717dbe85d0
+       273   MinMaxScaler RandomForest                      0:00:15       0.1216    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_273 failed with exception of type: ServiceException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 82d2f11ac8ef0761b9be45347be83d11f9ed21ee
+       274                                                  0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_274 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, ExtraTreesRegressor } Pipeline ID: a80efdb999cb5983786598584bfbe581238b6453
+       275                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_275 failed with exception of type: PipelineRunException. Pipeline Class Names: { SparseNormalizer, LightGBMRegressor } Pipeline ID: 559880ad0beed8f191280eba1528ab86701b9990
+       276                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_276 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 6f0a476f67456261165ab184f01b3404c971a8cb
+       277                                                  0:00:06          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_277 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: 47b90a8664e731357399198abf3c146e7664272f
+       278                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_278 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 0d4c47b7a464811d0c2d79f82116878230a11fb8
+       279                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_279 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: b9fe368a8a957d3b7a6b1959c34e84cb18bc35f5
+       280                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_280 failed with exception of type: PipelineRunException. Pipeline Class Names: { SparseNormalizer, LightGBMRegressor } Pipeline ID: 8cb74cd2d421e2c9a3305f3d1d735148a4205e10
+       281                                                  0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_281 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 35b51d6f5b5731f40b0ec90bc80841364a5abbab
+       282                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_282 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 19a27e6ed616512feebd25f215bf247e279af11f
+       283                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_283 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: f04335beb47175ded855df7397c3f2439e257c7c
+       284                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_284 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: dee9af36785ae2e625de011f109d34bc82b5d947
+       285                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_285 failed with exception of type: SubprocessException. Pipeline Class Names: { SparseNormalizer, LightGBMRegressor } Pipeline ID: ff729b2c00a9943dd87c06dc27b348b50f17e1b9
+       286                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_286 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: 123e9aa8e49434e0397904ba569165a53ad1b9db
+       287                                                  0:00:16          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_287 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, GradientBoostingRegressor } Pipeline ID: dc6f2636f12772ec3ff9b4dd935875b9a4b163c5
+       288   MinMaxScaler RandomForest                      0:00:16       0.1216    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_288 failed with exception of type: ServiceException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 69b35c4fca150db7cd35b13e11f3816efc79ea03
+       289                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_289 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 6f47dca669ec5af8f8e2c5bdf7835add5b58528c
+       290                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_290 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 5d558f0dea0a8ec005a2cc6c6bca53b59b0b2d4d
+       291   StandardScalerWrapper ElasticNet               0:00:24       0.1273    0.1212
+       292                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_292 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 7a0ebfe030f92a9cb77ad2af948c6191819b2d91
+       293                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_293 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: c92b4465f07911f85d02ab728301b3666c3973a9
+       294                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_294 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 51182725d5a58170a3291f6395c47b00befa015b
+       295                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_295 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: c0d8412bc1e4667fd9dc9c3cf86dd11b6ffde70c
+       296                                                  0:00:06          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_296 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 69950e0af612842b3258f6d53c1154b2e4944629
+       297                                                  0:00:05          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_297 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 3d013ca57955f1f8159c205e05567866d34611e7
+       298                                                  0:00:09          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_298 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 4aea538ae73f7492ca9a345e62d3afdc025cecf0
+       299                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_299 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 73f1439a6d91252eff6971103877f010929c829f
+       300   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_300/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=GEvbr%2FDiT1eh%2BZxOWoKkIk%2BlY0TZqKtFlfaSJ8NgJQw%3D&st=2020-10-03T07%3A04%3A43Z&se=2020-10-04T07%3A14%3A43Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+PCA LightGBM                                   0:01:54       0.1315    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_300 failed with exception of type: OSError. Pipeline Class Names: { PCA, LightGBMRegressor } Pipeline ID: 949b99dfba790e89028ee9b33d775d2647be0c43
+       301                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_301 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 72b31d86de4a5930bc7dd151632b945945d095c7
+       302                                                  0:00:19          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_302 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: c95c696b69650b7431e079feb55c158a5e7d1996
+       303                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_303 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 357393c396b6454ec02b22c71294e894b56eaf16
+       304                                                  0:00:14          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_304 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 18020c4cedb2fa993f69771149f8cff653616426
+       305   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_305/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=FLjISUgw3VfHDCxyPBqW6el4nEMTBHnsNf%2F%2BNbGCO0c%3D&st=2020-10-03T07%3A07%3A33Z&se=2020-10-04T07%3A17%3A33Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_305/outputs/model.pkl?sv=2019-02-02&sr=b&sig=1CKZumuidUu%2FxcPeoZl84939UZUqXnp%2BgyL1uSDeN9s%3D&st=2020-10-03T07%3A07%3A33Z&se=2020-10-04T07%3A17%3A33Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+PCA LightGBM                                   0:00:44       0.1313    0.1212
+       306   StandardScalerWrapper ElasticNet               0:00:24       0.1273    0.1212
+       307   StandardScalerWrapper XGBoostRegressor         0:00:39       0.1546    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_307 failed with exception of type: ServiceException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 111e317fa824d0d42b8837266909460baf3403fd
+       308                                                  0:00:26          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_308 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: ca4e72af0c7c9e827b52b406b7b4e3c0c0e75eed
+       309   StandardScalerWrapper ElasticNet               0:00:39       0.1272    0.1212
+       310   PCA LightGBM                                   0:00:26       0.1313    0.1212
+       311   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_311/outputs/conda_env_v_1_0_0.yml?sv=2019-02-02&sr=b&sig=%2BlGHUYed%2F2LDGcq5pBrezBkQPkjqgFv82%2FEVe8BTYtw%3D&st=2020-10-03T07%3A10%3A55Z&se=2020-10-04T07%3A20%3A55Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper ElasticNet               0:02:59       0.1273    0.1212
+       312   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_312/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=F%2BguMPzZHC7%2FDJMt31E5hXkeCxmGjh1BUm6zIqjocQ0%3D&st=2020-10-03T07%3A13%3A56Z&se=2020-10-04T07%3A23%3A56Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MaxAbsScaler SGD                               0:00:28       0.1545    0.1212
+       313   MaxAbsScaler SGD                               0:00:19       0.1272    0.1212
+       314   MaxAbsScaler SGD                               0:00:24       0.1275    0.1212
+       315   TruncatedSVDWrapper LightGBM                   0:00:33       0.1603    0.1212
+       316                                                  0:00:17          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_316 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, SGDRegressor } Pipeline ID: c73eafaa17b5c40c80e06b80e97da55c80a91deb
+       317                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_317 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 4f64da38407455477dee421a729e2aa599811868
+       318                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_318 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, SGDRegressor } Pipeline ID: be93abfdcec6d6b16fcbb26720f753e8d09b91ff
+       319                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_319 failed with exception of type: SubprocessException. Pipeline Class Names: { MaxAbsScaler, SGDRegressor } Pipeline ID: 00fee9432fa191e74c1adc16b61ff87528211ead
+       320                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_320 failed with exception of type: SubprocessException. Pipeline Class Names: { PCA, LightGBMRegressor } Pipeline ID: c9baa18a090628c496590b6d6c4cc91341d2fe65
+       321                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_321 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: f9e53f3fc5e636d42a868396038ad16049fa0de7
+       322                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_322 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 71f1cd47ad31a091804d00b866be8ef191a23d54
+       323                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_323 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: 0652cf8dba08c86f9458cfdbae2d31a6b7cb3b7e
+       324                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_324 failed with exception of type: SubprocessException. Pipeline Class Names: { MinMaxScaler, SGDRegressor } Pipeline ID: 8413270ea33bfc947c32771bee6be0477037438d
+       325                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_325 failed with exception of type: SubprocessException. Pipeline Class Names: { TruncatedSVDWrapper, LightGBMRegressor } Pipeline ID: fafe533c2edea230436c9b1dd061939a0d44fd21
+       326                                                  0:00:11          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_326 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: eb80d4e8e1a7d846c089e306b4061106a18ab7c7
+       327                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_327 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 5826bd65dc6e6718e39e7f00a0455e15a7c08512
+       328                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_328 failed with exception of type: SubprocessException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: bb00e41d313e59bb619723cc0a578bcbccaa505a
+       329                                                  0:00:10          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_329 failed with exception of type: SubprocessException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 72269ec711f86ad9d1bbc2231dc1dba8ab17bb8c
+       330   WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+                                               0:00:04          nan    0.1212
+ERROR: Run AutoML_8dce63c8-4aeb-41e3-855d-32413768722b_330 failed with exception of type: PipelineRunException. Pipeline Class Names: { Ensemble } Pipeline ID: __AutoML_Ensemble__
+Stopping criteria reached at iteration 331. Ending experiment.
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Best pipeline:
+0. ('timeseriestransformer', TimeSeriesTransformer(featurization_config=None,
+                      pipeline_type=<TimeSeriesPipelineType.FULL: 1>))
+1. ('RobustScaler', RobustScaler(copy=True, quantile_range=[25, 75], with_centering=False,
+             with_scaling=False))
+2. ('RandomForestRegressor', RandomForestRegressor(bootstrap=False, ccp_alpha=0.0, criterion='mse',
+                      max_depth=None, max_features=0.5, max_leaf_nodes=None,
+                      max_samples=None, min_impurity_decrease=0.0,
+                      min_impurity_split=None,
+                      min_samples_leaf=0.0074478228980205795,
+                      min_samples_split=0.000753222139758624,
+                      min_weight_fraction_leaf=0.0, n_estimators=50, n_jobs=-1,
+                      oob_score=False, random_state=None, verbose=0,
+                      warm_start=False))
+
+['quarter', 'month', 'day', 'hour', 'minute', 'am_pm', 'hour12', 'wday', 'qday', 'yday']
+  RawFeatureName TypeDetected Dropped  EngineeredFeatureCount  \
+0  timestamp      DateTime     No      10                       
+
+                                                                                                                                                                                                      Transformations  
+0  [DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer]  

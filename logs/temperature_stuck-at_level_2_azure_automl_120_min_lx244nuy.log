@@ -1,0 +1,102 @@
+Running on local machine
+Parent Run ID: AutoML_8d264256-e81d-4e27-af5b-9eec4c76cedc
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[1]', Target_Rolling_Window = '2'.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/workspace_client.py:380: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  self._logger.warn('Converting non-string tag to string: (%s: %s)', key, val)
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [1])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 2)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2223)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "center" is not a configurable window option.
+  'a configurable window option.')
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "closed" is not a configurable window option.
+  'a configurable window option.')
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:81: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_start_time = time.clock()
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:89: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_end_time = time.clock()
+         0   /projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+MaxAbsScaler DecisionTree                      0:06:56       0.0471    0.0471
+         1   MinMaxScaler DecisionTree                      0:06:25       0.0465    0.0465
+         2   StandardScalerWrapper LassoLars                0:04:50       0.2040    0.0465
+         3   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_8d264256-e81d-4e27-af5b-9eec4c76cedc_3/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=0rgYjJ0cGNRfnz1Tmi7O0haodoHQ7yN5apeJRzXyueQ%3D&st=2020-09-30T10%3A55%3A32Z&se=2020-10-01T11%3A05%3A32Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNRFF4T1RRek1EUSUzRA%3D%3D&timeout=30
+RobustScaler ElasticNet                        0:26:34       0.0799    0.0465
+         4   WARNING - Retrying (Retry(total=2, connect=3, read=2, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /metric/v2.0/subscriptions/ac2bf819-e9d3-4a00-aa62-b57c563691f9/resourceGroups/automl-rg/providers/Microsoft.MachineLearningServices/workspaces/automl-ws/runs/AutoML_8d264256-e81d-4e27-af5b-9eec4c76cedc_4/batch
+StandardScalerWrapper LassoLars                0:05:37       0.2038    0.0465
+         5   RobustScaler ElasticNet                        0:18:47       0.2028    0.0465
+         6   RobustScaler DecisionTree                      0:07:30       0.0449    0.0449
+         7   WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automlws9124637538.blob.core.windows.net
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+VotingEnsemble                                 0:02:24       0.0662    0.0449
+Stopping criteria reached at iteration 8. Ending experiment.
+Current status: FailedModelExplanations. Failed to explain best model
+****************************************************************************************************
+Traceback (most recent call last):
+  File "azure_automl.py", line 71, in <module>
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
+  File "azure_automl.py", line 32, in main
+    best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/run.py", line 666, in get_output
+    activity_name=automl_shared_constants.TelemetryConstants.GET_OUTPUT
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/run.py", line 591, in _get_child_run
+    curr_run, child_runs_and_scores = self._get_run_internal(iteration, metric, "get_output")
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/run.py", line 746, in _get_run_internal
+    child_runs_and_scores = self._get_all_automl_child_runs(metric)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/run.py", line 780, in _get_all_automl_child_runs
+    child_runs_scores.sort(key=lambda obj: obj[1], reverse=is_desc)
+TypeError: '<' not supported between instances of 'list' and 'float'

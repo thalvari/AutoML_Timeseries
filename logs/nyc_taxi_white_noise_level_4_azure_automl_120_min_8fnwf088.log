@@ -1,0 +1,397 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Running on local machine
+Parent Run ID: AutoML_e3810b48-af6a-4900-a468-88f284cd9227
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2064)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+         0   MaxAbsScaler DecisionTree                      0:00:23       0.1389    0.1389
+         1   MinMaxScaler DecisionTree                      0:00:21       0.1424    0.1389
+         2   StandardScalerWrapper LassoLars                0:00:22       0.1414    0.1389
+         3   RobustScaler ElasticNet                        0:00:23       0.1414    0.1389
+         4   StandardScalerWrapper LassoLars                0:00:21       0.1414    0.1389
+         5   RobustScaler ElasticNet                        0:00:21       0.1414    0.1389
+         6   RobustScaler DecisionTree                      0:00:21       0.1403    0.1389
+         7   MinMaxScaler DecisionTree                      0:00:21       0.1466    0.1389
+         8   RobustScaler DecisionTree                      0:00:20       0.1395    0.1389
+         9   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_9/outputs/model.pkl?sv=2019-02-02&sr=b&sig=JtRqgSLa9Ncgw30Avf5kd31wx6nd0yJj%2BunBexcC3Y4%3D&st=2020-09-30T22%3A10%3A54Z&se=2020-10-01T22%3A20%3A54Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_9/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=YYXHtx5mGRDbku5I%2B1bSVKSo535nHMkCq6VLgDoNd3w%3D&st=2020-09-30T22%3A10%3A54Z&se=2020-10-01T22%3A20%3A54Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler DecisionTree                      0:03:07       0.1410    0.1389
+        10   StandardScalerWrapper DecisionTree             0:00:22       0.1400    0.1389
+        11   StandardScalerWrapper DecisionTree             0:00:21       0.1395    0.1389
+        12   RobustScaler DecisionTree                      0:00:21       0.1403    0.1389
+        13   RobustScaler ElasticNet                        0:00:21       0.1416    0.1389
+        14   StandardScalerWrapper DecisionTree             0:00:22       0.1396    0.1389
+        15   MinMaxScaler DecisionTree                      0:00:22       0.1419    0.1389
+        16   MinMaxScaler DecisionTree                      0:00:22       0.1407    0.1389
+        17   RobustScaler DecisionTree                      0:00:21       0.1410    0.1389
+        18   RobustScaler DecisionTree                      0:00:22       0.1392    0.1389
+        19   StandardScalerWrapper DecisionTree             0:00:22       0.1412    0.1389
+        20   StandardScalerWrapper DecisionTree             0:00:21       0.1435    0.1389
+        21   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1398    0.1389
+        22   MinMaxScaler LightGBM                          0:00:22       0.1389    0.1389
+        23   MinMaxScaler DecisionTree                      0:00:22       0.1416    0.1389
+        24   MinMaxScaler DecisionTree                      0:00:21       0.1389    0.1389
+        25   MinMaxScaler LightGBM                          0:00:21       0.1403    0.1389
+        26   StandardScalerWrapper RandomForest             0:00:23       0.1400    0.1389
+        27   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1393    0.1389
+        28   RobustScaler ExtremeRandomTrees                0:00:23       0.1392    0.1389
+        29   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1387    0.1387
+        30   RobustScaler ExtremeRandomTrees                0:00:23       0.1407    0.1387
+        31   StandardScalerWrapper RandomForest             0:00:23       0.1393    0.1387
+        32   StandardScalerWrapper ExtremeRandomTrees       0:00:23       0.1390    0.1387
+        33   RobustScaler RandomForest                      0:00:24       0.1375    0.1375
+        34   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1389    0.1375
+        35   StandardScalerWrapper RandomForest             0:00:26       0.1407    0.1375
+        36   RobustScaler ExtremeRandomTrees                0:00:22       0.1382    0.1375
+        37   MinMaxScaler RandomForest                      0:00:22       0.1406    0.1375
+        38   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1382    0.1375
+        39   RobustScaler RandomForest                      0:00:23       0.1382    0.1375
+        40   MinMaxScaler RandomForest                      0:00:23       0.1405    0.1375
+        41   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.1389    0.1375
+        42   RobustScaler ExtremeRandomTrees                0:00:22       0.1384    0.1375
+        43   RobustScaler ExtremeRandomTrees                0:00:28       0.1389    0.1375
+        44   MinMaxScaler ExtremeRandomTrees                0:00:29       0.1404    0.1375
+        45   RobustScaler RandomForest                      0:00:24       0.1405    0.1375
+        46   RobustScaler ExtremeRandomTrees                0:00:23       0.1400    0.1375
+        47   RobustScaler RandomForest                      0:00:24       0.1392    0.1375
+        48   RobustScaler ExtremeRandomTrees                0:00:23       0.1399    0.1375
+        49   RobustScaler ExtremeRandomTrees                0:00:23       0.1391    0.1375
+        50   RobustScaler RandomForest                      0:00:24       0.1410    0.1375
+        51   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_51/outputs/model.pkl?sv=2019-02-02&sr=b&sig=1xvFwjLiYsw7wW5jBpStldkBpgCWhd5eecuxgyI672Q%3D&st=2020-09-30T22%3A30%3A10Z&se=2020-10-01T22%3A40%3A10Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler ExtremeRandomTrees                0:03:06       0.1392    0.1375
+        52   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1380    0.1375
+        53   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1386    0.1375
+        54   StandardScalerWrapper ExtremeRandomTrees       0:00:22       0.1396    0.1375
+        55   RobustScaler RandomForest                      0:00:24       0.1411    0.1375
+        56   RobustScaler RandomForest                      0:00:26       0.1397    0.1375
+        57   MinMaxScaler ExtremeRandomTrees                0:00:24       0.1386    0.1375
+        58   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1392    0.1375
+        59   RobustScaler GradientBoosting                  0:00:20       0.1401    0.1375
+        60   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_60/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=WXBbFLGoE49%2F6MFDqjKrW9hYXaNiy%2FzKEkylACDwp34%3D&st=2020-09-30T22%3A36%3A34Z&se=2020-10-01T22%3A46%3A34Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+RobustScaler RandomForest                      0:03:35       0.1405    0.1375
+        61   StandardScalerWrapper RandomForest             0:00:27       0.1396    0.1375
+        62   MinMaxScaler ExtremeRandomTrees                0:00:29       0.1389    0.1375
+        63   StandardScalerWrapper RandomForest             0:00:27       0.1391    0.1375
+        64   StandardScalerWrapper GradientBoosting         0:00:22       0.1394    0.1375
+        65   StandardScalerWrapper RandomForest             0:00:25       0.1408    0.1375
+        66   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.1390    0.1375
+        67   MinMaxScaler ExtremeRandomTrees                0:00:27       0.1393    0.1375
+        68   MinMaxScaler RandomForest                      0:00:27       0.1398    0.1375
+        69   StandardScalerWrapper ExtremeRandomTrees       0:00:33       0.1398    0.1375
+        70   StandardScalerWrapper RandomForest             0:00:35       0.1425    0.1375
+        71   MinMaxScaler RandomForest                      0:00:30       0.1386    0.1375
+        72   RobustScaler ExtremeRandomTrees                0:00:28       0.1389    0.1375
+        73   StandardScalerWrapper RandomForest             0:00:22       0.1397    0.1375
+        74   RobustScaler ExtremeRandomTrees                0:00:31       0.1395    0.1375
+        75   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_75/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=Rag2AqLrOIV33P%2BOwkWLpapavKD37aWUoGo%2BXnMkmdU%3D&st=2020-09-30T22%3A46%3A46Z&se=2020-10-01T22%3A56%3A46Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_75/outputs/model.pkl?sv=2019-02-02&sr=b&sig=6xzwI2cf7gSNA0FWPUi6I0BBjnmva3IZb%2FuQ6kkAItU%3D&st=2020-09-30T22%3A46%3A46Z&se=2020-10-01T22%3A56%3A46Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler RandomForest                      0:03:02       0.1424    0.1375
+        76   MinMaxScaler ExtremeRandomTrees                0:00:27       0.1387    0.1375
+        77   MinMaxScaler ExtremeRandomTrees                0:00:34       0.1389    0.1375
+        78   RobustScaler RandomForest                      0:00:25       0.1397    0.1375
+        79   RobustScaler RandomForest                      0:00:23       0.1392    0.1375
+        80   RobustScaler RandomForest                      0:01:19       0.1408    0.1375
+        81   MinMaxScaler ExtremeRandomTrees                0:00:28       0.1388    0.1375
+        82   RobustScaler ExtremeRandomTrees                0:00:32       0.1397    0.1375
+        83   StandardScalerWrapper ExtremeRandomTrees       0:00:35       0.1396    0.1375
+        84   StandardScalerWrapper RandomForest             0:00:21       0.1380    0.1375
+        85   RobustScaler RandomForest                      0:00:28       0.1406    0.1375
+        86   StandardScalerWrapper RandomForest             0:00:32       0.1399    0.1375
+        87   MinMaxScaler ExtremeRandomTrees                0:00:23       0.1390    0.1375
+        88   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.1399    0.1375
+        89   MinMaxScaler ExtremeRandomTrees                0:00:23       0.1396    0.1375
+        90   StandardScalerWrapper RandomForest             0:00:22       0.1399    0.1375
+        91   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_91/outputs/conda_env_v_1_0_0.yml?sv=2019-02-02&sr=b&sig=WSX6rVE6cXhtFtWBkJr0jTePgwXQ3AlblDzdrDz1Jx8%3D&st=2020-09-30T22%3A57%3A38Z&se=2020-10-01T23%3A07%3A38Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_91/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=85vofybrHvwl%2BgpIsqxNq1PySpgaGjF6LVV2efjCRzs%3D&st=2020-09-30T22%3A57%3A38Z&se=2020-10-01T23%3A07%3A38Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper ExtremeRandomTrees       0:03:12       0.1392    0.1375
+        92   RobustScaler RandomForest                      0:00:27       0.1397    0.1375
+        93   RobustScaler ExtremeRandomTrees                0:00:27       0.1395    0.1375
+        94   RobustScaler ExtremeRandomTrees                0:00:50       0.1394    0.1375
+        95   MinMaxScaler RandomForest                      0:00:34       0.1412    0.1375
+        96   RobustScaler LightGBM                          0:00:24       0.1394    0.1375
+        97   RobustScaler RandomForest                      0:00:26       0.1390    0.1375
+        98   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1387    0.1375
+        99   StandardScalerWrapper RandomForest             0:00:28       0.1401    0.1375
+       100   RobustScaler RandomForest                      0:00:30       0.1401    0.1375
+       101   MinMaxScaler LightGBM                          0:00:24       0.1383    0.1375
+       102   RobustScaler ExtremeRandomTrees                0:00:20       0.1391    0.1375
+       103   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1384    0.1375
+       104   StandardScalerWrapper RandomForest             0:00:28       0.1393    0.1375
+       105   StandardScalerWrapper RandomForest             0:00:20       0.1397    0.1375
+       106   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1403    0.1375
+       107   MinMaxScaler ExtremeRandomTrees                0:00:23       0.1389    0.1375
+       108   RobustScaler ExtremeRandomTrees                0:00:25       0.1382    0.1375
+       109   RobustScaler ExtremeRandomTrees                0:00:27       0.1401    0.1375
+       110   RobustScaler RandomForest                      0:00:20       0.1409    0.1375
+       111   StandardScalerWrapper ExtremeRandomTrees       0:00:23       0.1391    0.1375
+       112   MinMaxScaler RandomForest                      0:00:30       0.1389    0.1375
+       113   RobustScaler ExtremeRandomTrees                0:00:27       0.1394    0.1375
+       114   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.1404    0.1375
+       115   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_115/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=8PVJ0GkD7NymE%2BOIJv3y0ZCwY025%2FjECd89%2FJgUfctE%3D&st=2020-09-30T23%3A11%3A22Z&se=2020-10-01T23%3A21%3A22Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler RandomForest                      0:03:06       0.1397    0.1375
+       116   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1378    0.1375
+       117   RobustScaler ExtremeRandomTrees                0:00:31       0.1376    0.1375
+       118   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1387    0.1375
+       119   StandardScalerWrapper ExtremeRandomTrees       0:00:39       0.1381    0.1375
+       120   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_120/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=rci2uH0R7QgcZNJ%2F5DTKSdcJftGvOAj7VwR0a96Qe0E%3D&st=2020-09-30T23%3A16%3A29Z&se=2020-10-01T23%3A26%3A29Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper RandomForest             0:03:00       0.1399    0.1375
+       121   RobustScaler RandomForest                      0:00:33       0.1399    0.1375
+       122   MinMaxScaler DecisionTree                      0:00:23       0.1383    0.1375
+       123   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1385    0.1375
+       124   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_124/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=yChzasGRSQmkEW5egZiJPmZj7emApg0Ld4t%2B3%2FlTuXk%3D&st=2020-09-30T23%3A20%3A53Z&se=2020-10-01T23%3A30%3A53Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_124/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=btjVnaQ37ss8E7Cx0UdISdTdwjKY2CsunpqelePtoig%3D&st=2020-09-30T23%3A20%3A53Z&se=2020-10-01T23%3A30%3A53Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper ExtremeRandomTrees       0:03:07       0.1387    0.1375
+       125   MinMaxScaler RandomForest                      0:00:35       0.1406    0.1375
+       126   RobustScaler RandomForest                      0:00:28       0.1388    0.1375
+       127   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1391    0.1375
+       128   MinMaxScaler RandomForest                      0:00:26       0.1394    0.1375
+       129   RobustScaler ExtremeRandomTrees                0:00:30       0.1397    0.1375
+       130   StandardScalerWrapper RandomForest             0:00:30       0.1407    0.1375
+       131   RobustScaler ExtremeRandomTrees                0:00:26       0.1385    0.1375
+       132   StandardScalerWrapper DecisionTree             0:00:23       0.1384    0.1375
+       133   MinMaxScaler RandomForest                      0:00:29       0.1383    0.1375
+       134   StandardScalerWrapper ExtremeRandomTrees       0:00:23       0.1389    0.1375
+       135   StandardScalerWrapper RandomForest             0:00:32       0.1404    0.1375
+       136   MinMaxScaler RandomForest                      0:00:38       0.1396    0.1375
+       137   StandardScalerWrapper RandomForest             0:00:27       0.1387    0.1375
+       138   StandardScalerWrapper RandomForest             0:00:27       0.1387    0.1375
+       139   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1389    0.1375
+       140   RobustScaler RandomForest                      0:00:25       0.1404    0.1375
+       141   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_141/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=xNn7xcKqZ4rB4BDOul5HceNWCyVQTu3RcVkCQgMDOfk%3D&st=2020-09-30T23%3A31%3A35Z&se=2020-10-01T23%3A41%3A35Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_141/outputs/model.pkl?sv=2019-02-02&sr=b&sig=IqDqynXzssQz802eNvJc1qX388dctaHE7m06y6lXRJU%3D&st=2020-09-30T23%3A31%3A35Z&se=2020-10-01T23%3A41%3A35Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_141/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=EOVNKRGZLqfyCQ5W6hPXRvc9MfYDZtK0OTxDrUDzELQ%3D&st=2020-09-30T23%3A31%3A35Z&se=2020-10-01T23%3A41%3A35Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper ExtremeRandomTrees       0:03:07       0.1397    0.1375
+       142   MinMaxScaler ExtremeRandomTrees                0:00:31       0.1386    0.1375
+       143   RobustScaler ExtremeRandomTrees                0:00:25       0.1398    0.1375
+       144   StandardScalerWrapper ExtremeRandomTrees       0:00:32       0.1392    0.1375
+       145   MinMaxScaler RandomForest                      0:00:25       0.1399    0.1375
+       146   RobustScaler RandomForest                      0:00:26       0.1408    0.1375
+       147   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1395    0.1375
+       148   RobustScaler RandomForest                      0:00:23       0.1394    0.1375
+       149   RobustScaler ExtremeRandomTrees                0:00:30       0.1393    0.1375
+       150   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_150/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=eWAbjsD%2Btk8FXTAqgQI58HSwgnpNFfgpCVjLAfvXkHg%3D&st=2020-09-30T23%3A38%3A26Z&se=2020-10-01T23%3A48%3A26Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper RandomForest             0:03:05       0.1402    0.1375
+       151   StandardScalerWrapper RandomForest             0:00:28       0.1391    0.1375
+       152   RobustScaler ExtremeRandomTrees                0:00:24       0.1397    0.1375
+       153   StandardScalerWrapper ExtremeRandomTrees       0:00:26       0.1395    0.1375
+       154   StandardScalerWrapper ExtremeRandomTrees       0:00:28       0.1394    0.1375
+       155   RobustScaler RandomForest                      0:00:24       0.1400    0.1375
+       156   RobustScaler RandomForest                      0:00:24       0.1393    0.1375
+       157   RobustScaler RandomForest                      0:00:24       0.1380    0.1375
+       158   MinMaxScaler RandomForest                      0:00:27       0.1402    0.1375
+       159   RobustScaler ExtremeRandomTrees                0:00:23       0.1385    0.1375
+       160   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_160/outputs/model.pkl?sv=2019-02-02&sr=b&sig=W90duqcsfGn%2BFdi1nb3KtzfMCGdNDvGcXzPG6nWyL9o%3D&st=2020-09-30T23%3A45%3A20Z&se=2020-10-01T23%3A55%3A20Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper RandomForest             0:03:08       0.1417    0.1375
+       161   MinMaxScaler RandomForest                      0:00:25       0.1376    0.1375
+       162   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1386    0.1375
+       163   MinMaxScaler ExtremeRandomTrees                0:00:19       0.1383    0.1375
+       164   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1390    0.1375
+       165   MinMaxScaler RandomForest                      0:00:23       0.1396    0.1375
+       166   StandardScalerWrapper ExtremeRandomTrees       0:00:27       0.1376    0.1375
+       167   MinMaxScaler RandomForest                      0:00:24       0.1398    0.1375
+       168   MinMaxScaler ExtremeRandomTrees                0:00:25       0.1382    0.1375
+       169   StandardScalerWrapper ExtremeRandomTrees       0:00:24       0.1395    0.1375
+       170   StandardScalerWrapper RandomForest             0:00:24       0.1412    0.1375
+       171   MinMaxScaler RandomForest                      0:00:24       0.1398    0.1375
+       172   StandardScalerWrapper RandomForest             0:00:24       0.1382    0.1375
+       173   StandardScalerWrapper ExtremeRandomTrees       0:00:25       0.1378    0.1375
+       174   RobustScaler ExtremeRandomTrees                0:00:27       0.1386    0.1375
+       175   StandardScalerWrapper RandomForest             0:00:24       0.1400    0.1375
+       176   StandardScalerWrapper RandomForest             0:00:26       0.1398    0.1375
+       177   StandardScalerWrapper ExtremeRandomTrees       0:00:19       0.1387    0.1375
+       178   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1395    0.1375
+       179   MinMaxScaler RandomForest                      0:00:25       0.1403    0.1375
+       180   RobustScaler RandomForest                      0:00:25       0.1393    0.1375
+       181   StandardScalerWrapper RandomForest             0:00:25       0.1393    0.1375
+       182   MinMaxScaler RandomForest                      0:00:26       0.1379    0.1375
+       183   StandardScalerWrapper RandomForest             0:00:24       0.1401    0.1375
+       184   MinMaxScaler ExtremeRandomTrees                0:00:29       0.1399    0.1375
+       185   RobustScaler RandomForest                      0:00:24       0.1392    0.1375
+       186   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_186/outputs/env_dependencies.json?sv=2019-02-02&sr=b&sig=2nITM6YjHmlBZNLdNe6RCUTpPeqvXIUh15hpzz8jZjA%3D&st=2020-09-30T23%3A58%3A53Z&se=2020-10-02T00%3A08%3A53Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+StandardScalerWrapper RandomForest             0:03:09       0.1391    0.1375
+       187   MinMaxScaler ExtremeRandomTrees                0:00:22       0.1389    0.1375
+       188   StandardScalerWrapper ExtremeRandomTrees       0:00:30       0.1394    0.1375
+       189   WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_189/outputs/scoring_file_v_1_0_0.py?sv=2019-02-02&sr=b&sig=IXwkbRKMqLwKbvKKaM4F9UXXGBdrW7rEuK0QbJdHjo0%3D&st=2020-10-01T00%3A02%3A57Z&se=2020-10-02T00%3A12%3A57Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_189/outputs/conda_env_v_1_0_0.yml?sv=2019-02-02&sr=b&sig=wWbex89DE2e1SHSE%2BZvGsykH8BWzKvuCV5kAf%2FUY640%3D&st=2020-10-01T00%3A02%3A57Z&se=2020-10-02T00%3A12%3A57Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_e3810b48-af6a-4900-a468-88f284cd9227_189/outputs/pipeline_graph.json?sv=2019-02-02&sr=b&sig=WZCfkU6fGL2y9YDHdYj9vPSwC0wGec1e8M0bPasuNL4%3D&st=2020-10-01T00%3A02%3A57Z&se=2020-10-02T00%3A12%3A57Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+MinMaxScaler ExtremeRandomTrees                0:03:05       0.1376    0.1375
+       190   StandardScalerWrapper RandomForest             0:00:24       0.1409    0.1375
+       191   MinMaxScaler ExtremeRandomTrees                0:00:26       0.1394    0.1375
+       192   RobustScaler ExtremeRandomTrees                0:00:32       0.1392    0.1375
+       193   StandardScalerWrapper ExtremeRandomTrees       0:00:32       0.1401    0.1375
+       194   WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+VotingEnsemble                                 0:03:28       0.1373    0.1373
+Stopping criteria reached at iteration 195. Ending experiment.
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+****************************************************************************************************
+Current status: BestRunExplainModel. Best run model explanations started
+Current status: ModelExplanationDataSetSetup. Model explanations data setup completed
+Current status: PickSurrogateModel. Choosing LightGBM as the surrogate model for explanations
+Current status: EngineeredFeatureExplanations. Computation of engineered features started
+Current status: EngineeredFeatureExplanations. Computation of engineered features completed
+Current status: BestRunExplainModel. Best run model explanations completed
+****************************************************************************************************
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Best pipeline:
+<class 'sklearn.ensemble._voting.VotingRegressor'>
+0. Pipeline(memory=None,
+         steps=[('robustscaler',
+                 RobustScaler(copy=True, quantile_range=[25, 75],
+                              with_centering=True, with_scaling=True)),
+                ('randomforestregressor',
+                 RandomForestRegressor(bootstrap=False, ccp_alpha=0.0,
+                                       criterion='mse', max_depth=None,
+                                       max_features=0.7, max_leaf_nodes=None,
+                                       max_samples=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.01091729022778783,
+                                       min_samples_split=0.0012814223889440828,
+                                       min_weight_fraction_leaf=0.0,
+                                       n_estimators=25, n_jobs=-1,
+                                       oob_score=False, random_state=None,
+                                       verbose=0, warm_start=False))],
+         verbose=False)
+1. Pipeline(memory=None,
+         steps=[('minmaxscaler', MinMaxScaler(copy=True, feature_range=(0, 1))),
+                ('randomforestregressor',
+                 RandomForestRegressor(bootstrap=False, ccp_alpha=0.0,
+                                       criterion='mse', max_depth=None,
+                                       max_features=0.5, max_leaf_nodes=None,
+                                       max_samples=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.01600296187889058,
+                                       min_samples_split=0.008991789964660124,
+                                       min_weight_fraction_leaf=0.0,
+                                       n_estimators=25, n_jobs=-1,
+                                       oob_score=False, random_state=None,
+                                       verbose=0, warm_start=False))],
+         verbose=False)
+2. Pipeline(memory=None,
+         steps=[('standardscalerwrapper',
+                 <azureml.automl.runtime.shared.model_wrappers.StandardScalerWrapper object at 0x7ff2652fcc10>),
+                ('extratreesregressor',
+                 ExtraTreesRegressor(bootstrap=True, ccp_alpha=0.0,
+                                     criterion='mse', max_depth=None,
+                                     max_features=0.7, max_leaf_nodes=None,
+                                     max_samples=None,
+                                     min_impurity_decrease=0.0,
+                                     min_impurity_split=None,
+                                     min_samples_leaf=0.003466237459044996,
+                                     min_samples_split=0.0012814223889440828,
+                                     min_weight_fraction_leaf=0.0,
+                                     n_estimators=200, n_jobs=-1,
+                                     oob_score=False, random_state=None,
+                                     verbose=0, warm_start=False))],
+         verbose=False)
+3. Pipeline(memory=None,
+         steps=[('minmaxscaler', MinMaxScaler(copy=True, feature_range=(0, 1))),
+                ('extratreesregressor',
+                 ExtraTreesRegressor(bootstrap=False, ccp_alpha=0.0,
+                                     criterion='mse', max_depth=None,
+                                     max_features=0.9, max_leaf_nodes=None,
+                                     max_samples=None,
+                                     min_impurity_decrease=0.0,
+                                     min_impurity_split=None,
+                                     min_samples_leaf=0.006151578686713196,
+                                     min_samples_split=0.012814223889440833,
+                                     min_weight_fraction_leaf=0.0,
+                                     n_estimators=10, n_jobs=-1,
+                                     oob_score=False, random_state=None,
+                                     verbose=0, warm_start=False))],
+         verbose=False)
+4. Pipeline(memory=None,
+         steps=[('robustscaler',
+                 RobustScaler(copy=True, quantile_range=[25, 75],
+                              with_centering=True, with_scaling=True)),
+                ('extratreesregressor',
+                 ExtraTreesRegressor(bootstrap=True, ccp_alpha=0.0,
+                                     criterion='mse', max_depth=None,
+                                     max_features=0.9, max_leaf_nodes=None,
+                                     max_samples=None,
+                                     min_impurity_decrease=0.0,
+                                     min_impurity_split=None,
+                                     min_samples_leaf=0.0074478228980205795,
+                                     min_samples_split=0.010734188827013528,
+                                     min_weight_fraction_leaf=0.0,
+                                     n_estimators=600, n_jobs=-1,
+                                     oob_score=False, random_state=None,
+                                     verbose=0, warm_start=False))],
+         verbose=False)
+5. Pipeline(memory=None,
+         steps=[('minmaxscaler', MinMaxScaler(copy=True, feature_range=(0, 1))),
+                ('decisiontreeregressor',
+                 DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse',
+                                       max_depth=None, max_features=0.9,
+                                       max_leaf_nodes=None,
+                                       min_impurity_decrease=0.0,
+                                       min_impurity_split=None,
+                                       min_samples_leaf=0.03306921600225926,
+                                       min_samples_split=0.0018261584682702607,
+                                       min_weight_fraction_leaf=0.0,
+                                       presort='deprecated', random_state=None,
+                                       splitter='best'))],
+         verbose=False)
+
+['quarter', 'month', 'day', 'hour', 'minute', 'am_pm', 'hour12', 'wday', 'qday', 'yday']
+  RawFeatureName TypeDetected Dropped  EngineeredFeatureCount  \
+0  timestamp      DateTime     No      10                       
+
+                                                                                                                                                                                                      Transformations  
+0  [DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer]  

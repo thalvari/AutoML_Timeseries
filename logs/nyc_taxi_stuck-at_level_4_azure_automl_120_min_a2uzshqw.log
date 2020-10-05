@@ -1,0 +1,1167 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Running on local machine
+Parent Run ID: AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[1]', Target_Rolling_Window = '2'.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/workspace_client.py:380: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  self._logger.warn('Converting non-string tag to string: (%s: %s)', key, val)
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [1])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 2)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2064)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "center" is not a configurable window option.
+  'a configurable window option.')
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "closed" is not a configurable window option.
+  'a configurable window option.')
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:81: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_start_time = time.clock()
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:89: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_end_time = time.clock()
+         0   /projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+MaxAbsScaler DecisionTree                      0:05:49       0.7460    0.7460
+         1   MinMaxScaler DecisionTree                      0:05:09       0.7446    0.7446
+         2   StandardScalerWrapper LassoLars                0:03:05       0.7888    0.7446
+         3   /projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_common/exceptions.py:245: DeprecationWarning: 'reference_code' is deprecated. Please provide an instance of AzureMLError as a keyword argument with key 'azureml_error'
+  "with key 'azureml_error'".format(param_name), DeprecationWarning)
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/shared/exceptions.py:300: DeprecationWarning: 'reference_code' is deprecated. Please provide an instance of AzureMLError as a keyword argument with key 'azureml_error'
+  "with key 'azureml_error'".format(param_name), DeprecationWarning)
+RobustScaler ElasticNet                        0:18:16       0.7892    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_3 failed with exception of type: ServiceException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 994ac9230f8a2cdd51464d09b7bb29a296787f03
+         4                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_4 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LassoLars } Pipeline ID: 1f5c0f633aa8d68d70ab2e97222afbf32aa4ac67
+         5                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_5 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: a420420d1d035a7a090fb1dca3298e66f57d6f02
+         6                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_6 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 0dcd72a2a6694c43a5151d2bba1d69d16125f375
+         7                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_7 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 986c62191b8b7091bc208bc025e9c503279fc386
+         8                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_8 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: e980fc30c223fa910fdfba5a88ac8305ae2d8a07
+         9                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_9 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 0a7ee6d660a81ba37cbc1fc311bac22edfe07b71
+        10                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_10 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: e8a5ec1d708e6e5c9f758e3aa8e072f1d096d973
+        11                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_11 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b602a28066d8b70641f78794b007da3913cb6ef6
+        12                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_12 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 681f50489ce2609840e6528b015027c3be5da0cc
+        13                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_13 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: f5d32fa6abe90877630e93b35f3c66e09eeff9c2
+        14                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_14 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: de747adb2e9b29fd1ce14621a60fda03ef609397
+        15                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_15 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: f9c8d9e2d0f281511e0611416293045d0565b21b
+        16                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_16 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: de8413ff179abcbbc80488259fb64be777e81d9c
+        17                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_17 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 26a4b12b2f649fe1c2d47f00eaebbdc12f0ffdb6
+        18                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_18 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 60fc2d711f8cea4e6bb477a7d71a0f687f15ea69
+        19                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_19 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 5cb4ea350f34b02859534a5b69591f562d697b41
+        20                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_20 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 4110b1f5890a24c4be1c6ade6cc114c461602f17
+        21                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_21 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 402513ad163204f5822f78494efc222d8cb90c61
+        22                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_22 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 5054da1069263fcc863eb69ef2aa5d6f292ec745
+        23                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_23 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: fa0e6d382bd77ab6603a43a6892ada634e155bcc
+        24                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_24 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 070eee673ed21a27b956acc4148af3a715c1c846
+        25                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_25 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 89a159bfff4d9c81db57053078fd8790cd3fb313
+        26                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_26 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 78cb5ccb706b1da5580b1a01b15ac226789c35c4
+        27                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_27 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, SGDRegressor } Pipeline ID: 8413270ea33bfc947c32771bee6be0477037438d
+        28                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_28 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 6e86f2f30f2909450e3cf38f7c6beeee84c1d32e
+        29                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_29 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 6b6d0e27c8a4fce8bca7e1cc6122c06a09a30c08
+        30                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_30 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 7f027596d68c94cb5edaad179d4db694b5c9d942
+        31                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_31 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 0e4f1446b22d11ef2f2b4a3b7944566d92278369
+        32                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_32 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: d6c7c18dec84463d8d602df200a62133ed413c8a
+        33                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_33 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 49025f413c0a9d9fe95b2319977be9171809083c
+        34                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_34 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 92c86559b6a12304d970595ca3b4efb889bbe61f
+        35                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_35 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 0857558b0d1e94cf1ddaac12c02052fd2a1e713b
+        36                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_36 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 279cb091c87967434717e190fc525df851cbf412
+        37                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_37 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 6884f748cf0959dfc5be5b41ed11a9cc82ccbc93
+        38                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_38 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 8bf1582a165a14c322d16d54d8e4f971399bbb90
+        39                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_39 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: b3fc46668a46c9ab7d987a10a29e2e12265c4b46
+        40                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_40 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: bab10c04e3fc04fc10bc12a3136b594e2c4c9af9
+        41                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_41 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 8281dc13a515be8dbdd64b0bae87d72c37f80e78
+        42                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_42 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 9c3da4b0efc05df777570afccfae8143b3640383
+        43                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_43 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: b36bf4737efc9979a3610bb0f8b6455f307aea1a
+        44                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_44 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 8438b8c0bccd92b047d0921aa897b99316f9c57f
+        45                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_45 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 52687ef51fcf28ef43fa97460e983216ee734fea
+        46                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_46 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: fb9796863094b1806a1a5b0b466ecbec0239b1db
+        47                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_47 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 4daf2969b5997a8465fd2eb1ae868dcecbff2c25
+        48                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_48 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 256f462188d5b30c5c4a8f17366bafb28e4ad8f1
+        49                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_49 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 07f089fe32a487d8d8f6a78b8411dd11bd169911
+        50                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_50 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 23db07ef67dfe75eed52b6791ebd07f0f39bdc37
+        51                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_51 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 9f4906740dc0f52786e8a575be05445bd14ca00c
+        52                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_52 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: bb5cb6c5cb962f43fc83c7a0cd0fb17bfcb8d7fc
+        53                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_53 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 9fdd0b442e60f83bc09f658d0c52156bf93c158a
+        54                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_54 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 25f83b241b8941c8c1f896a8338015dbab159f71
+        55                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_55 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 85276e10b5f9c5fd6f3372a55ff582e0564202a6
+        56                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_56 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 6cdf75f2483291887c9417d11fbc401b6e421d63
+        57                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_57 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: a8488c0a044ec2d1c8850cb784746245c942ef0b
+        58                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_58 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 2abc0bd5995d478af59234c6747c6dcc79329bc2
+        59                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_59 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: e427b3684e9a8c615341d55270e540704152f40b
+        60                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_60 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: fc8e16ab6a2bfe4d17d0caf5f312bb29e8556382
+        61                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_61 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: efec4ebf4ef4b400228ae241b089d7a41df8cbf1
+        62                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_62 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 1ddc9c40f73e941a5016c77ead79d6160e9beab9
+        63                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_63 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: df66eb76a70330a39ff36ce82def3daccc6fd115
+        64                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_64 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: efb42c109a91276d49214710c2b43e8270b1cb12
+        65                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_65 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 008d8a5a2e3ccddd469b3af783b2ecf17f9c47a1
+        66                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_66 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 8eeea79ba9b5ad909474d18d2f4848069c218e68
+        67                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_67 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 830fcaaca6fbdfcfb6e9d53a45f6e438dafeaa31
+        68                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_68 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: 7d01d62137e66d15bd1b1bbf85f0d9e90e9588e8
+        69                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_69 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 6078940b2f086494c3d92d3610e2989492c446d0
+        70                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_70 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: c3ea2739a70cfbdcffda5c5c7777b656f9970db7
+        71                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_71 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 500eb5c10edcd53ca207ec2001e2d3368af139ca
+        72                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_72 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: f5bb54752eec852beb077966b20f8da1798c77bb
+        73                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_73 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 42507900ecaac384bc17c9f98834e4f5ed590f49
+        74                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_74 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: db573e5d11f21ea9a33be9cb0281ba011d2b465b
+        75                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_75 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 44876a36f764a27d97dddf053074a8c12ea16c04
+        76                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_76 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: cb63b1ded25c9919c45c55a8f28007584f0c7e72
+        77                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_77 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 7848a00da31e2e207ae71a3766e1ae278ee739e8
+        78                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_78 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 338b41b111b7eb354d5f0a47cbac588c5a3b51c9
+        79                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_79 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 91ddc27d7d3e977ad457e255ec8e3247cf91432a
+        80                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_80 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: c77dd5b45cc011420bc5c884c75d8e753b69643e
+        81                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_81 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: b43cd2d0659a3a5e0672bf5ba37eace595cc0ac8
+        82                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_82 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: c9bb3e71330fd5910db2730420b1ebc64200ead4
+        83                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_83 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b4c5923aefa4bc285441acc6fff94195d5255cda
+        84                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_84 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: cef732be54911b069936da97db3ce2371d53cc7b
+        85                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_85 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 71b39359194b4c83164377c6fc0826e8207022b5
+        86                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_86 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 010d0874f2e466e91dfff4566b86f3facda735d3
+        87                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_87 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: abf1e76263c97dcb245e2e3c22af8672bca98a18
+        88                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_88 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: e13eefb80c6266d7b480d8043dfae0ec234ca17c
+        89                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_89 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 6346026046dc1352ba367a0be0e9af14ec6bce03
+        90                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_90 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b0239afdf06ff8f9c97dee341a1eec52b45a641c
+        91                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_91 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ElasticNet } Pipeline ID: 8dab31157f3c1267376691aa66ec5ca3d04e7c22
+        92                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_92 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 0039ef94079a8db5836db10f1536d3ff14a2eb22
+        93                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_93 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: a3769d0c01ddcd7f4bd532ce4deab9e183f81ad2
+        94                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_94 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 8bfdaa946602e8532ad51171b6fcdcb7fa6663f0
+        95                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_95 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: d1b23d5ebd6c91efa2f318f05f3ab6fb213538fd
+        96                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_96 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 552ba37832f55ca00ec609502370d4285abfe6df
+        97                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_97 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 0449e9ec70e9b776b21b3f46becab0fe42d328ca
+        98                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_98 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 88832ac20ab8b4f02acdbfc82a137a1a138b7e52
+        99                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_99 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: 7e3d653c1490eddae08063ff8e0e3ab1836f580e
+       100                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_100 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: b0ac0f5260d0329110a772979b105c2a1c4dd15f
+       101                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_101 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 8fa2ea98e12b89b9507772f2794f3661420e89e8
+       102                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_102 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ElasticNet } Pipeline ID: 934d25408d7757003f3610b01eba6b33e992a486
+       103                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_103 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: e59a29be843387316598f2ba647155e0289ecddc
+       104                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_104 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LassoLars } Pipeline ID: 0475d3d5a0a3edca8d2f7dbc6a0a06ff0d34f3b0
+       105                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_105 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 10a84c3b6c1d38940c7916a9410f82bc4ba8e5f2
+       106                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_106 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ElasticNet } Pipeline ID: 1ee8bbdda30f414fb76bee47d543cd5e109dcdf8
+       107                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_107 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 4025cde889f1d2a770b684dc2ab2e7b5e7912fd9
+       108                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_108 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 6969c4bc196d3d01f689a27908b8fe461f1c7eba
+       109                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_109 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: edaad3ccb9745d26009ceca7d20906dbc5cfc1df
+       110                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_110 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: bb493a42e9b4a52504739b280fb846592fc3e16b
+       111                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_111 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LassoLars } Pipeline ID: 9d42553d2ede705947cbc1a5f63ea8b65c16f904
+       112                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_112 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: e4d812dfcf790de553149b36ea0a5d6219bd08fa
+       113                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_113 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: c3b84e4e6bc06dd7819b397aea736960f7c56511
+       114                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_114 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: 6fa05ebf4dc0a1ae38c62f04f520f3732bf74adc
+       115                                                  0:00:21          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_115 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 347cd216e4c19c7424418094ae8de8dfdd08d6e3
+       116                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_116 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 8410b950f497e79a5a8c5da34bf6170e3ba2ae00
+       117                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_117 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, LassoLars } Pipeline ID: 217aa333036a77aaab75cc53e856f20403b1394e
+       118                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_118 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 63acdbe484fe41e937738f6e95beaaf1a6d37e68
+       119                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_119 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 60ef2309df21331ba39dcb9afe779315fd3adda3
+       120                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_120 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 9c99f5280eb03806fc18abdb5458e4473bd48579
+       121                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_121 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 0c067f2cd7fc04a736b8795d99641fa8d648d80b
+       122                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_122 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ElasticNet } Pipeline ID: 71883829407108f423de29d0eaf31e0cdd2123fd
+       123                                                  0:00:09          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_123 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 485f2cc3ce9e5f06fe07992717a5cd5d6583bdf5
+       124                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_124 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: b6ca37dd43dc716f8e9d302101305cff0437e3c3
+       125                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_125 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 366756f7271e1b0b9ddd520223f5f73dd3bce9d1
+       126                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_126 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LassoLars } Pipeline ID: a8d176c2c942dc98f950ae0f4ffe0b41dc9dd43d
+       127                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_127 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 65d7c43a91915b98bea837d39e652767814c8983
+       128                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_128 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 1f98b5b179269f421e8c40a8615c78c720ce36cb
+       129                                                  0:00:09          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_129 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: af4612d227b6cfe1b73a6e5c0ed0af3339dcd7e2
+       130                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_130 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 554227e1f4c16f47169b2207230e5808901e8b49
+       131                                                  0:00:09          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_131 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 2e7e0ca865c6605cc51770fcb5b1d5726e86fe6a
+       132                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_132 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: ed25a9a0424578acb8df828a476c4401527bd554
+       133                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_133 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 1b8bbb9205f8566114fc1b700bb125caceea2353
+       134                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_134 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 7ddbc410113b5759c489ac764fb714dfce3dfc08
+       135                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_135 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: d558a1b7224e500246ebd9af92803bfb4d8119ef
+       136                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_136 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, ElasticNet } Pipeline ID: ae729f09378486945c70eb2a2306f8aa8f4e30a7
+       137                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_137 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 07740a5aa8ec20a1b2002782d78d03853e942328
+       138                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_138 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 4a50e0397bfdb15b025b771efb7831b8ad438499
+       139                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_139 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: bde51663c6c1bb5eb1d6614e2371f01b08c2d7fd
+       140                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_140 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 43639a326fcd8cddec7358ef3027570e737eacc5
+       141                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_141 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: f31b5ce4d7cdc391ecb83b9dcb0a9e24b278cff9
+       142                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_142 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 45775e56ddc8318a29c74856c547a7727158b6eb
+       143                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_143 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 98cbace10819c257768b9e996c44088a75f8b6a7
+       144                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_144 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b85302ccc97eab9b8d00e671ef02d89202f541e8
+       145                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_145 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 8f0afd8e37c90b42ce25fdd2eface1ff10cb9d73
+       146                                                  0:00:09          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_146 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 355c4d8ddef75e551248c78b12cf2159873e2029
+       147                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_147 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: ef94eec64973b67d9c259660896bffaf50282d1e
+       148                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_148 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 79e02c93a6d0f64eab40432095873ffadd13c105
+       149                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_149 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 9720deeeed4ab69955993bb2810842727aa84142
+       150                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_150 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 456c16806682db5f1e380a86c2364985f93ff081
+       151                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_151 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 20022661aaba919ccc4ed10561762b741d040603
+       152                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_152 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 24c03070707a243b5a517c2e6a7291cbd3193c3b
+       153                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_153 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: d05b808a7baee5b54a5247c7773ef8f900934db5
+       154                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_154 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 7d69de655d15cc04aae3d547490707863261d6f0
+       155                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_155 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 3546d309c5ade2065e07b477101115fddd9e53fd
+       156                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_156 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: a98212b9c3f312ff0b40af6f5598e7835f88c56a
+       157                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_157 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 87a66be8e74324bd238d319391124ff2d1709b63
+       158                                                  0:00:08          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_158 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 9e089b98d5f695f878b2d8a074193139aa912b4f
+       159                                                  0:00:10          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_159 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 189c9086146b1f7d4670ff73d715428b01759095
+       160                                                  0:00:09          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_160 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 320360ec104f4438a0e6308002333fdd8ad6b60d
+       161                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_161 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 9b61aede74eaca05ae757107051106ab3e74b4a1
+       162                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_162 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: b3f0de5cd3feb13fe20c83aa0cdc937ae180829f
+       163                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_163 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: a3620ee26efa0a0e58ab7065033feca38f0fbfee
+       164                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_164 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: a2dfff9b17a10d3019396535f284d5a7638d36c0
+       165                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_165 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 1896cdfdf59716bddc80da864c9c8ce2414300a0
+       166                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_166 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LassoLars } Pipeline ID: b1e7b340ec4f44658215210cc948885051d315d4
+       167                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_167 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: bfce65c00e7bad5111ebbc2a005400b3ff3a7b8b
+       168                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_168 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 3cf654204e60f49eb049d917b1c328915ed6f9d3
+       169                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_169 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 3bc7cdbf1cc27c623f4f2be6658e3a7057062240
+       170                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_170 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: c8cb6ac32fbd1ea67cc9de211572d0af9ba4429d
+       171                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_171 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: b247bb53f62bb1daee57eee77fb20a7228b9825c
+       172                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_172 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 1c8e6fae4afd47d8121db8ce63633f6c55228650
+       173                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_173 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 234f64760ba84e297b7fbf21cbe79cf0fbd955c3
+       174                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_174 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 0d98c27e3c8c0f391de3cc4f768f64bf02359908
+       175                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_175 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 0dfe148dc97d74407fb462904315160e4d775f93
+       176                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_176 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 4f354cfc62bbf515211f0ac1a7b65f7f45c086bd
+       177                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_177 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, SGDRegressor } Pipeline ID: dbe203df2b50d7afe79d5b1831cbff4a61834245
+       178                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_178 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 975f66158fb68b6bfcb6679da3d9794876d6a34d
+       179                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_179 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 152796e20a81442e398aa08faf05f432feb18c98
+       180                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_180 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 193f07ec011a3af61f308a88da44f57a181b2ec3
+       181                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_181 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: cba505072e375f1ea11945d978944d96ec0e22c8
+       182                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_182 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: eac5a57d729dc5a960b994241c7ffde361978ecd
+       183                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_183 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: b1ad84cd7e9df330d2cdc2a7368c55d7c7ee7cc7
+       184                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_184 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 00bbb975f17d46994159f549c57e07cd57550022
+       185                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_185 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b1a5968bcb1a3519bed9864605519a84b65efd8a
+       186                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_186 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 7e08a5d26c7e0a18277272088afc6eeca7b5f742
+       187                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_187 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 4ee1bb1d5c07ba06cfcfc75c74dc2f05b9d7386f
+       188                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_188 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 765fe57d44a453d2ac48bdc6ddeb0c48fd14a492
+       189                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_189 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 6607f2700fda68dbdb655655ea3618aa1923ccfd
+       190                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_190 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 6c4e0ff0d1d8d7fe298ecc48917ad9f6b3dbbf47
+       191                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_191 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 89564377564be901f4df781cf9cf1bed8923bb90
+       192                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_192 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: de8965093fc37a261fde9e9e6525b46515907c0d
+       193                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_193 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: b9a66ac6da3ebf9038ff1df71c7927e3f40a3d2e
+       194                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_194 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: a71085a7daa5e801de7f4df36ae336b96022fe85
+       195                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_195 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: c33a67d95c558bc7550f7fa000a8a3e25f861591
+       196                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_196 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 24a5d01782eefa669fe25ac1521de2e183f56b1e
+       197                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_197 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: e5b4c3db0440985b4005fcad164b4f162ef9ebeb
+       198                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_198 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: d29e55ef7f5aa0d1bdb7be5ac1c0cca436ea646a
+       199                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_199 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: a335b432d561fb4f22ffef5b653b5551855b6ac5
+       200                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_200 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: eebdcfada404a2a72f0197d65bd5b00e62474501
+       201                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_201 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 9e30e538a9d825d201211159a32287031b0bbe17
+       202                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_202 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 0f42fe1a325a1fa6584ed370bb4e913f7f82118c
+       203                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_203 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: b8728868369546c244434caf555360013bbef446
+       204                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_204 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, SGDRegressor } Pipeline ID: 5db9c60e94d053f606b0446637de112be2eb8e9c
+       205                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_205 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: c3277b2368ff2dc1362779a4ef1085318c98527a
+       206                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_206 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: 1fb02cbf610649ee0b680165749a673906433fc4
+       207                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_207 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: f7b602b63f2c0e98ba0d8eb616256295e27efc7c
+       208                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_208 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: b683c6af7b79f871efb5ffc4001d58c8f0f84be9
+       209                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_209 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 6dd18f3961022623058e34c9ff2b3d09008491b4
+       210                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_210 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 042b0ac8e13cb09ccb85c13a3892ec3f489616fd
+       211                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_211 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: c3b4c1168cad680b1db05a79f13b9c99ec5787cf
+       212                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_212 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: f921b81b6f2bbe9da84b19f49d783b93d02cdab2
+       213                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_213 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 208fb0b95f122daf83ea757535461d5d88b2421c
+       214                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_214 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 4af84d0b154d71466e21484a921e63c4d6be50fa
+       215                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_215 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: ed82c8f4ee00bdb4c4c5debfad11fa4b5b7ed5df
+       216                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_216 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 8c24932f6e22d863a882e01bb73582b20c7b6539
+       217                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_217 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: b5dafaa8ba37a1d381866f0539ba1428fbf12197
+       218                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_218 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: e25ca04dcfd405bb8a21d7c5e1180c895edd0a22
+       219                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_219 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 4bc4ec47eb8df2d5d68b361cd60120e65196f757
+       220                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_220 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 040568bf836d5c840564172fdd01e6e17a2fee13
+       221                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_221 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 202d7af3887322b1dcfc068b74f69e3a3658fd8f
+       222                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_222 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 588f8c38692345f73e72d301fee510bedb921d5e
+       223                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_223 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 1105757a427e3207ba5ecd6a484404d5daae81b5
+       224                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_224 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: dbe5d75ebd11a5f432b80f8cbfee35a459e6aeec
+       225                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_225 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b9748ccd68971bcdc184342e34f1f5bfe3ed4b3b
+       226                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_226 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 12b80810fd0619871d518d912da0810104514dac
+       227                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_227 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 78cfad3fae3f6c9dece1f9b709ca171d6129f8c9
+       228                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_228 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: dd1076228660ebe0979a0ca326134d5053616445
+       229                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_229 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 1f5b78f611455420d6b92fa2ccd8b3e97a72ec1c
+       230                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_230 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 7547c6f924cbff5a78051ff4a18fccf70d2004bd
+       231                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_231 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 4b7a70ff7b35533788d456db2dd67d6a9c05c595
+       232                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_232 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ElasticNet } Pipeline ID: e55de6e14986b105c56be7248f6719f5577813f8
+       233                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_233 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 4d39bf0767635e3085e9815550b7282167f95845
+       234                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_234 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: a2a8615a5edd469038fe4eec4d8e20a779b85dbb
+       235                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_235 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 5efb379ef59e2d4edde2a4d1c0695ff7f9ac6780
+       236                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_236 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: b0b10f58710daccc16cb3f0dd28990cdffe0c404
+       237                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_237 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 31cc0fbafb66f009968a247f3ae5432b76533e86
+       238                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_238 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 58529ae2012e8861e563e678565173714188ab3f
+       239                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_239 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: eec2fa6af21d73166270b7321b2b16fa29ec8ba1
+       240                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_240 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 17b17d12784e2ff316a79a3aa0a1391eae423db7
+       241                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_241 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: d2ce25bd4d1b82939825a612bd88a6b11256b0d3
+       242                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_242 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 0bb0c2feaa43ad523600d2876545dc353bf049d7
+       243                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_243 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 7198144d5f5160bed6242db4e41f1f1dba7fddfd
+       244                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_244 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: b404e83cd433f4795a9db0e7a4da7f28c8f62156
+       245                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_245 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: ba1000355025c218abaf079ee77835fe5899ec63
+       246                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_246 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 3b0dd0eb5aabcfc260709e17d51fe65ed0ef637a
+       247                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_247 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 185ef18f3bf551a810b0cb9fb3817bfb797c8fb4
+       248                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_248 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: cd76abc995f92c9e7a9650624157b82cac1de5ab
+       249                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_249 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 1f0e013aeda950dfbad841bcb57a96eeda89873b
+       250                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_250 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 52311312b810195d7dd78bab695f15c9764edce9
+       251                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_251 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 0b30348c7544248032e73b5a333912560805eb0d
+       252                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_252 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 03234027758ce6e26e118686d0cf7a6d10e0cb21
+       253                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_253 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: dd918e49f6137f4199510afac1eb8171beb6e978
+       254                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_254 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 5945b4d324f0d6f94e2cfeb3a8790b74393151fb
+       255                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_255 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 7b57e9349a759d0bbe38abff0863e4847f0519da
+       256                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_256 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: bc9c31398385a280152fe1f8312b4ea6448b6013
+       257                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_257 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, SGDRegressor } Pipeline ID: 91d53d4d06006dcbfa657621dd43175140790799
+       258                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_258 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 8e3cbda8bb7e1d65545fef4f5fa25b63f0279a8b
+       259                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_259 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 6aa28236383d76eabeb366de67ab8f5dffc2361f
+       260                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_260 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 42729ddca4724c8051714775b63165a59d82385d
+       261                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_261 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 83634032e55e9738eee193b50f69b2af61ca7e33
+       262                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_262 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: ea2210c3ebe7d62f452b18927e4e98a2250dea62
+       263                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_263 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 84d507fe4e682e3210ae50b170d0cb49f5330d2d
+       264                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_264 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 4ccc66e732544d19d0193ba46aab0836cfcd6117
+       265                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_265 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 199f329eb925d37d2a32c3d344c32c65c616ccee
+       266                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_266 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: c9bbd38e46820307d6956c7ca9042da73534aee7
+       267                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_267 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 195c9479697d13670235f6832d0e32a9b688afc8
+       268                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_268 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 076c04abc7774b24f7930a9e0ddd184de126b019
+       269                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_269 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: ebaf836df8d1d7609edab91e7da83c38e2dd610d
+       270                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_270 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: c021e65af64f386ca2c859c1c91887e7d55917e6
+       271                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_271 failed with exception of type: PipelineRunException. Pipeline Class Names: { SparseNormalizer, LightGBMRegressor } Pipeline ID: 8217f92c6978c6264e7e28fead9cc897ab7d4a56
+       272                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_272 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 5273c129416ddcb64dc962c2b91ec972d4b25a39
+       273                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_273 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: ec0c6e7e1163af680c4c4989c7ce4153d104a836
+       274                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_274 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 210f144c87f3796536a5d885420ab1ab111bc01a
+       275                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_275 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 51d5809e853913de1955e1dbb28dfeb883a2b5f5
+       276                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_276 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: f0d1885c9743258db706fd826f66a3584eac9741
+       277                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_277 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 6e6e7f118ee1196ce7cd791f670f16cceb479df0
+       278                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_278 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 9b673227d75e1df67e0ced5b49bc1bd20541d6af
+       279                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_279 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 7f146f6b96d6b8047d500bf0110f3a96cbc4d025
+       280                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_280 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: e3bd63f098d82b14d62510cfb3d4555f3a98a408
+       281                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_281 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 8ae51e10757a1f6e98d8be17515b171c38895b39
+       282                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_282 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 454249abc1c5da3f76cf557683ef8fe9c73c7b24
+       283                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_283 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: efd95be889e1f0af37b6645084be5c8b9293ecf3
+       284                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_284 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: ec9a1a08076398a50d48a9ed67c68b722dd93c82
+       285                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_285 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b6e8597dfb3104f9e4149ad4cc32899c91f8b4dc
+       286                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_286 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 879a9f55e58c75ac3d1e5f6f21fb075992e1efd2
+       287                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_287 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 6229f7a2211a6b9956da111a423f61f74bbcf03d
+       288                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_288 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 6572b77bcde6eabd29daad6df363c7eca315159f
+       289                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_289 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: accff55ab28fd4b787d45d9160b4aa7db00cd4b6
+       290                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_290 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 1bf47f0d70b85b3a3a64a86c5ccf8b0e9043bbbd
+       291                                                  0:00:14          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_291 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: bd4b0cca7cbed76068bc63e1c66123fd95fb5220
+       292                                                  0:00:07          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_292 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: 9dbfb79c32beb4edd9f4d4a488b2eb3ab44b3aa8
+       293                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_293 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 93bfa196ce98faa653d2ee0b3c8f545d99843ab9
+       294                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_294 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 3c1ccf3781cab730b649961d576f4075f071e24f
+       295                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_295 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 41db0c81dabaf9f6fde4457e80d64177a32603da
+       296                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_296 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 5aa2385ae21d972c366b8396f2f19eeb75f3de73
+       297                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_297 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 581a19717ff2c4019a5f785007f508c06abf3b98
+       298                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_298 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, ExtraTreesRegressor } Pipeline ID: f14887ccafb1fd671408c999285262ecc13ac0c1
+       299                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_299 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 09726ba49606cfc2a58f8d23b5ed90cae2944523
+       300                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_300 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 3ec26983e6f3b22a4ea274ccb8690778e4420b27
+       301                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_301 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 14f6a8869a4c36b4eae822a8322af98ac16d97fe
+       302                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_302 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: eb113181a7b7f11ff8c1108cdc71217dde382f15
+       303                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_303 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 385b3061a0a3f192735d623470fb819dd3e9ec4a
+       304                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_304 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, SGDRegressor } Pipeline ID: 8e855441dfda166fc73a70f0865ed85e7f03161c
+       305                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_305 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 863630a198f716532c63772ce1f8a3d8f2fb9cb1
+       306                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_306 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 44aa2b7dce112127cbbff0e8a2ac91ab5394d273
+       307                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_307 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 86391cddc33afce121c4e86d0689809ce570a73a
+       308                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_308 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b16d3832d4623f00abde3f2207e830a8963058d7
+       309                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_309 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: b16c112573a5c8da097857ba76cfcf7192615d98
+       310                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_310 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 572dd313066f93b6213ac3c5509f4ca503cf76b2
+       311                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_311 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: dc72092b7becd4e08566da403db4c5fd023b18a5
+       312                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_312 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 4f231e637fca4a46d5ee83c54e221812af4071fc
+       313                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_313 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: ad67a0e0dc05626be721f6046642db75f77afc8d
+       314                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_314 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 213853252ffd3a3f57fc0cdf0e11e767cfd4d490
+       315                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_315 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 66dd3f55923a18b357b7a10c64d384fca8e8f116
+       316                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_316 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: acf7813ec29e3a38852a94eef652e15d7d3ce655
+       317                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_317 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 90e2ea050a6122339bb3fcf2f96635fdf3b99c29
+       318                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_318 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: a56230d4824d1885ddfa58b7af73026c7de1c7f0
+       319                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_319 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 2cdd2ae16605f6094b9f9a35b343c37c1da33014
+       320                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_320 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 183ef49daa426c0c3a9ebfc054b495657176dd22
+       321                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_321 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 93aabe6c5bea76660cbcb225000ae2a1cdb3de5a
+       322                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_322 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 14ba96f04bf106ed77e648e846a67cd553276a70
+       323                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_323 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 426d1afcf94488aed747ce338e50ddb869838187
+       324                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_324 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 99955a5f9117a2e16c15dcce9732e0701339055f
+       325                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_325 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: a9e110da1ed75de4bce4740b1091a8b4f15a8413
+       326                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_326 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, ExtraTreesRegressor } Pipeline ID: 4643ab7ebe70314d55f66888b6b10e20070908a1
+       327                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_327 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 5e8431e11598a9c2c0f96d98adf2e8fbc4c6a585
+       328                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_328 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 442ddb5e4256303d0bd57dd03177e231ada24cf1
+       329                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_329 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 66ad01624975f81d9d78f29e761f45aecfd4f9f7
+       330                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_330 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 69f0fe9f5b147ed4e0aee8c7a2da312e479bad0b
+       331                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_331 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 2ba6f9dcbb33f7a6c0a3f93c1cc2583b349ca273
+       332                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_332 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 65d81d774f897c40fde3b519f370630fd1cea2db
+       333                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_333 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 6bc1967d5a057fc1d3535af03291be1e4eee5d02
+       334                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_334 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: c8ed3c9029c974935c76d5fe182f834d85c031cc
+       335                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_335 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: b47a143163b495adaf9ec85a2508e77f54d609bb
+       336                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_336 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 206b868dcb5205bd8db976a582ed1cbf016fe44b
+       337                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_337 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: f0e517f4219a40d8b67c39fd1f41fde3c69ec686
+       338                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_338 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: bd86e4dffb52c87c342023adb762ba5fcfb8bde6
+       339                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_339 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 210b6957a0fc0472baca03029d76011a11961e86
+       340                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_340 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 00af09d61f662643d60d29cf95fb4b6c565669fa
+       341                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_341 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 7920c4cd15b62e7b6b6ffccb06f398a360cc3ca0
+       342                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_342 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: fc892ea5dc809d02c4e2cf52d1b10b4badea99ce
+       343                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_343 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: c6b6309c8184568b069abf012391248768734eb3
+       344                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_344 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: ee0e8405f528fa1053b35d3ff5bca28dc295f84b
+       345                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_345 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 8d9c4afb76a1bea357a4bec570056ff35c4e87bb
+       346                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_346 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: d16ded0308e9cf30615ca7bd1ddfdaf08cb864e4
+       347                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_347 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 4134edb1ecf011aeae2dafc24651df21ed80e9a5
+       348                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_348 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 1004f6a82f6ec664e48664800c00b9d7920a1b7c
+       349                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_349 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 2fd39c6177dff88216b2778d428b0410128720da
+       350                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_350 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 06e19a963e154ae7b2b375b51af59775557e0051
+       351                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_351 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, SGDRegressor } Pipeline ID: fce42c5d31f1e5294f2fdec476a98cbc5ddb152b
+       352                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_352 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 446172cb10642566a5a39bbac68ca21ce5d2fbe3
+       353                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_353 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: e9c9a13fa0d7090c6eb2d40a8099151b6f2e0bef
+       354                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_354 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 39c6aee898150792f2f5e0d90409245b553d1c1f
+       355                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_355 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 847bf0a54cbae89ac9c828002301410acf53c33f
+       356                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_356 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 1175ac88105ac0cd2a4ca98ff73e0dfb297fa8b8
+       357                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_357 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: e8332dfa96a9acdee6c641b36f9e20882e93bde9
+       358                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_358 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 594f2056c923b2007ff429f93da61396b3c2fba9
+       359                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_359 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 2f78a95450d7ff287dacf643f2f322f2fc0affc8
+       360                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_360 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 1304f9552da167ba88f34dbe90ec2bd13b492378
+       361                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_361 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 805bc24831a7fb60b4efa7df4b6ea7d62d440038
+       362                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_362 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: dd0500b628bb1f04f3f64b0ada9d125a6aee9fb5
+       363                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_363 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 4b37af7785a5432ab6ce0327c1c66ca095e7bef5
+       364                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_364 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: b1c7175e60dcd268039a47d63971f0f9acd3e0ec
+       365                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_365 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 07b4e2a203d05d56a545a4cc3cde7440a546c4bc
+       366                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_366 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: e98e54ec0fcfbe5cbfe77419b0c67b1bb9015cfa
+       367                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_367 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 9fbdd803a9e461d17f27dfa3ed58c1c89e808141
+       368                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_368 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: 518bba240f63101685504d205caed78fca0d99ff
+       369                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_369 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 8a76dfba3186de4446230b8dfab70bfb689e8dfe
+       370                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_370 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 013aabe590f5f7cece039c7505b230be1c0ee05b
+       371                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_371 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: c9d12650ccd0cbcd72810e489242880dd4286974
+       372                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_372 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: f4e79859cb6a1b3c0a7362a6a2fc086de8d6fc17
+       373                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_373 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: d5c6887ed32a35a8233abe151690c1c4941f4fc6
+       374                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_374 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: f09f7af29b8a65ecf03acfa1293f596e81012a68
+       375                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_375 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 2dd21e154fee08093cbd484a8e6134042ac0f243
+       376                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_376 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: d46d2daa85d2d4895436c94a07c28af129bb50de
+       377                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_377 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 2b582c4f70f235345d90055b24351198b042435e
+       378                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_378 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 27af6e0aa4f0246d1f752e641175c14c8d9c5f79
+       379                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_379 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 796def289741a6a88f5443da931a74cfe1e31cc0
+       380                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_380 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: aa944699f7330ccffa47170f8d726d77b0cc303b
+       381                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_381 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 3ae3e10171a17e1269a8297ea85797cf1e408a76
+       382                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_382 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 1f816692f744174dd00acff68ce8b30a60b078b9
+       383                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_383 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 3616ee080f6573c994ee42769e36340c59ec9a0f
+       384                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_384 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 675e9a42bd6ada485bd8773a76c1f9838efac44f
+       385                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_385 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 302eb252099dfbbe1becb0dc48c289d534e51c27
+       386                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_386 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 9a2b44c2250b0140b94f0fac3ce9450502576684
+       387                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_387 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: c187b9059fdac3745d59090ffa885a094204cb7e
+       388                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_388 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 0cef9040db633d487901c4cae699c5ac9591bc34
+       389                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_389 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 15c2f58354301309491ffd1e513c3d482e508d55
+       390                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_390 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: f8f4c9ed3b0112681a9c74991b3c548deba805a7
+       391                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_391 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, LightGBMRegressor } Pipeline ID: c001f8c235f3e0ac693e539edcfd648a763c95f9
+       392                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_392 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: e346118310e3be9bbc26a63236e987722dbf08e4
+       393                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_393 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: e6ed6006867156a1d521ad5f78f28622a62cf8d5
+       394                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_394 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: d56d4359ad73d3fbd4c93d9d9931e4ae4d3b004e
+       395                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_395 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 09318ca2764334999b61e3b05e57113de5a90cf8
+       396                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_396 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 9a788c84e9cd275b02421ceb9f73ab0277123932
+       397                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_397 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 9801ad4ce482c720c6c79ae523596a485cafba20
+       398                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_398 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 9f75eac26bdf768e67d7199105d7fe1c05e848dc
+       399                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_399 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: d047775e56cb3532cd28f51591e76686b315afd5
+       400                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_400 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: e6521e1c49ff21cf188c974452b0a707ae6dfa2e
+       401                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_401 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 320a437f535f1f417a93ecaaefc770333ca82e94
+       402                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_402 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b6d8ff3a0f06cd3b8e403a420c83660ed91aca04
+       403                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_403 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, LightGBMRegressor } Pipeline ID: 89af98a37bd6d49a700d9f841f1098cd50c372a4
+       404                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_404 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 27b93aaf4488bc39366a296bba6642cf01d67307
+       405                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_405 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 1debf1c9ed8039d166e7d9767b8f358094191766
+       406                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_406 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 1095ab41da4255199a3d25811f60444797de53b9
+       407                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_407 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 548bc9ab8d601368f553e5b06f27660abb5d3c8c
+       408                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_408 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 410f47e1e3baf6537275a61eb3ec0f75cc961eb0
+       409                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_409 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 0f6302811edd375f847b50584b713f83760c9f4d
+       410                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_410 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 7073e1149a4cf91278a20d353cfd225fe20be0ca
+       411                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_411 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 0e0832e211b7c6b470ff48c0f60fc95cf80ca626
+       412                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_412 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 34e084d0c74ae1a9a17ca8fe2bb8c946fbaf8678
+       413                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_413 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 26a094fc8f1f36e04fbbf962d13095ea2ad0042c
+       414                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_414 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, ElasticNet } Pipeline ID: 6d5f86fe5c338d9e13f098cc60bdf556bd0e3566
+       415                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_415 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: c2cbd8f0fd028cd5cf0d53742adb8850129ffbd8
+       416                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_416 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 603dc83e660f0bdb56179f08dc7a6bcef9224829
+       417                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_417 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 21b5d1903a37aba322aed784973a7d11ff77a18b
+       418                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_418 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: afe88b8c8943cf74404e9c8e0bfbe48c0a415f0c
+       419                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_419 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 2face60aca5d7c3d8c4d80277f4b9fea6901a22d
+       420                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_420 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 3821351505b146cadcd58bd5e0002ebb98dca2f4
+       421                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_421 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: f964051d0fc6a15d5764085e25e69140b6a07f42
+       422                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_422 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: a78b586cc9926df390a34f0f2e9296ebe6372ed1
+       423                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_423 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: c540ad21b2ed158e689dcda646db15c28318c2ac
+       424                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_424 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 87d41496a70daa2cc3e6c9838b432f0f2bcc3be6
+       425                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_425 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: fd7ff70af995d58c6b31f333d129cec672876c0c
+       426                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_426 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: ca100f4e54b3ba8f4cdf706a5c525f86e9eaaa53
+       427                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_427 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 6d75c13c491f224f105012688599a2699cf12ee8
+       428                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_428 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 0118bb146f235d51fa191279bf6e800b8533a0e2
+       429                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_429 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 22d49daecb4a32f25f6aec80a54432b29f086ad1
+       430                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_430 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 42461bef771e27d2dcbb7488f65c1880df310071
+       431                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_431 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 7302b937235ec987b6a9973ed6f93ac0707a92fa
+       432                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_432 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: a8aad0d265c8dad3184df01190b1dd9164127db6
+       433                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_433 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 9008afc61d6bcff4fd1c314bfb8b0bb00031cf6f
+       434                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_434 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 5448d90d34126acda445729379f7ff5a4a898c2c
+       435                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_435 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: b32622e9ea54ed2d06fa9416e8c226d353db19bc
+       436                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_436 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 4798468622d1b21d462a56c1122b9258c913ac8e
+       437                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_437 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 46941dd5a655ab0567e5b5572144c96c4663daa3
+       438                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_438 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 4980950beff09e0c19e5686841c7c12f52bd3eca
+       439                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_439 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: c22b63fa1a3808cac8aad9ca4411dade712d804c
+       440                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_440 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: f748da368abb59137815e931641f1bc965b209e8
+       441                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_441 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 210768194da4f19f07251fcceb41a3b10ab27a48
+       442                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_442 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: ef3e4ad570d44c3496d12418396c01111e72e5d2
+       443                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_443 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 9ebe0c59e3f73c73bba78deedc0313f80eca55c0
+       444                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_444 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: fc15999d2097090e3158052f2ce7b3db7e5967a3
+       445                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_445 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 7a06b36cfccd1e799a0699801503fb0c7e32040e
+       446                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_446 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: eea072af88fb65a0317eb170c3ba4a3d8fe066c0
+       447                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_447 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 1bf529c157cdf9aaa665938f4f256ce52688ba0c
+       448                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_448 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 1f1bd70c977c4c33718252ee92e1d46c8218cfa3
+       449                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_449 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 504729b44308479971b97626871520489fc87e37
+       450                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_450 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 9aa7edfd54321182ec55e80c5cd3ea332d52671e
+       451                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_451 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 95dd942083169dc2dc1f9e163208d722868e4cc3
+       452                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_452 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 39c4ccb780374fbe2a16a7f8bc93c517fcf56b75
+       453                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_453 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 04245a0ed9a73a0586454fdb80d5e97ba7c2383e
+       454                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_454 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: a4f3251e2d6a780d3ea699d411ceb31174a01abc
+       455                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_455 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 9fe47dea5fe4b87bd0484f9178ceb43fa3530636
+       456                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_456 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, ExtraTreesRegressor } Pipeline ID: 2749cf0aba3e0bfa3e43246b89351a75d6ce2762
+       457                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_457 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 35e183d14c1ef5019b08326a36897ef543499bae
+       458                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_458 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: bd1ecd109c5412ad6635c5a9a60e22034c787164
+       459                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_459 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: e48abbaf11c6441bd876365f435c2c94b9d78faf
+       460                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_460 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: d34b5389d79637683cf21f5f108f8a19c3bc37ae
+       461                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_461 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 51abd33c979c73d100ae337f0bffd8bfd5eac72c
+       462                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_462 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 26ad3a6ae8cad071ad861360024175c2c0ab2122
+       463                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_463 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 61bf570c1c72b872f9be4e621af6f557b818c1ff
+       464                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_464 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 2f120c38fffda143a7fc935ab36311120480126e
+       465                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_465 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: e2cb2b7a073b7bbf783eb259485e1e880945d436
+       466                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_466 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 3595ecc31dd7f8c5c0225a42b052e76affd150db
+       467                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_467 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 07f90e5267094b0b7fe5db1303e7b8ad2a060b77
+       468                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_468 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, RandomForestRegressor } Pipeline ID: 9522fee49b2490afa09dca76e0ca0d84f384f224
+       469                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_469 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ExtraTreesRegressor } Pipeline ID: 60f0a2d1dba102421e728b513f34c12be73a6a91
+       470                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_470 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 00d30e7d6b341190ecc43beb18df6c499b4dfe79
+       471                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_471 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: abad344d4eb81185faba0106670e875622d71f1a
+       472                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_472 failed with exception of type: PipelineRunException. Pipeline Class Names: { TruncatedSVDWrapper, LassoLars } Pipeline ID: dbde8830b3dd24f92c0a59479856b5ef26bc0486
+       473                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_473 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 22910c3b35ca07f0c5c29e7f86cc8bb7d02bffb2
+       474                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_474 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: f17414883487e4fd924e474cbec58cd680f6aabb
+       475                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_475 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 08d9a795e0a1ca326b44d24f481607ff09ee6063
+       476                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_476 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: bcfdc0a3b9c7785c96efb02e8356ffc0ae7d3917
+       477                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_477 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, LightGBMRegressor } Pipeline ID: 00c64294215c07e008fc4c502a444a57a403b54a
+       478                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_478 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 3574259d835d4d2d3d7acde85149fc77c14cb222
+       479                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_479 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: bc7e3db8cbddccc653411753fc715e9459db6fe9
+       480                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_480 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: d8a2ee52e23b5acd6cb4f4b8d1427973a73dca55
+       481                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_481 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 24d6492f2662e56d813d94b5220a6d24089af721
+       482                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_482 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 4dacd242410a86cb96d1de1d66e461cf4e44b4cb
+       483                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_483 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ElasticNet } Pipeline ID: 58adadc01c99529007d94d239140e4c3149d5881
+       484                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_484 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, GradientBoostingRegressor } Pipeline ID: 21e5ca270a1a141a5d738c07d24b437353537e0d
+       485                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_485 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 7a842583fb923ecb297a7f6a5c79f4c14f3e8f08
+       486                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_486 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: ae5fde1162a13b212c1fa3e39f631e545d548072
+       487                                                  0:00:04          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_487 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 8f93553fd6d7a9f29b73abc7567a9f68053bd76d
+       488                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_488 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 42485cbfabb1c38937c427f101e97543ef55d8da
+       489                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_489 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: b7d1a020ea5cc089b8bdbf3d7a0d40268c4ba303
+       490                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_490 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 327c555d3e80302cb198a934d186c8be9bff860b
+       491                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_491 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: 5ee07cb3230d699209ee7732f890b28d8da534aa
+       492                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_492 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: 0e8f5f4d07027e2251385b6a25e0c7c0f92997b4
+       493                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_493 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: 06af5092d46694642174b8711e87f3f90ec351d8
+       494                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_494 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 75d69bd3568bf9e96bf87458efa16d0b9811c02f
+       495                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_495 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 4565ce5224f63faf1fd2312277ac4fbda4f9d0bb
+       496                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_496 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: 8bfa9325899d0ea7e6b3245271ea7f43ac73b35a
+       497                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_497 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: 2e8595515824f0f156b3ed8d718ccb00fe8b4a5e
+       498                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_498 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: d8c6b608d5ee6b23703b5a842a88b18e45f86cf0
+       499                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_499 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, ExtraTreesRegressor } Pipeline ID: 509b1c82da59cf6f600565a725707fc776897f6d
+       500                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_500 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: c6115142321459ca9267bde795e1442c4c14f316
+       501                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_501 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 37bbeb63ef57e7ce445bf8917a8cd4fa4a9c8635
+       502                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_502 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: e7f9e22e3b4c7eaa8ecf3176ae49610e586c7dbe
+       503                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_503 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: b1e1dba1ae6c6e161fde604e878158112ddac71f
+       504                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_504 failed with exception of type: PipelineRunException. Pipeline Class Names: { RobustScaler, DecisionTreeRegressor } Pipeline ID: a565e6c16663abecfaa7e154869d83101f3a71f1
+       505                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_505 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: f725a28a19a4a15bfd9f48d15a1008e699a29981
+       506                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_506 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, RandomForestRegressor } Pipeline ID: a0d718f43e770dc28f25eba5de0efcc1566c89a5
+       507                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_507 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: f4f7a2ce6215ca95bd50954f50b57ff4e880f1ed
+       508                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_508 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, RandomForestRegressor } Pipeline ID: 740bef78ffc58923161ec41d15bd16e3d9361187
+       509                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_509 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, RandomForestRegressor } Pipeline ID: cf9d217a56c46c2cb5fac5a62b8fc0ccabc4b435
+       510                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_510 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 5f1b8507e1a60299b06af24eb6e979461698a928
+       511                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_511 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, DecisionTreeRegressor } Pipeline ID: 16251b5644fc1197b8f7c7c9e78cb0e63ee331da
+       512                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_512 failed with exception of type: PipelineRunException. Pipeline Class Names: { MaxAbsScaler, LightGBMRegressor } Pipeline ID: dcb8a56bb297aad69129c062d1eb5252d1307d60
+       513                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_513 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 00d922a709405e49e89db2ad26daf74d9d2f8035
+       514                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_514 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: f1ca8955dc1257804a58664717500abb966bae5e
+       515                                                  0:00:06          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_515 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, DecisionTreeRegressor } Pipeline ID: 4051ab9cd8f6ab03d5d334b1091a67722a4a5b95
+       516                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_516 failed with exception of type: PipelineRunException. Pipeline Class Names: { MinMaxScaler, DecisionTreeRegressor } Pipeline ID: 69e0c386dc1a04597934bcc161055c36c696825c
+       517                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_517 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: b9c88a8a15cff13223814bc8b7da7fe69857d0a6
+       518                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_518 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, XGBoostRegressor } Pipeline ID: d7565457887fd4aa1ba9b19497c490c9bf8a4ed1
+       519                                                  0:00:05          nan    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_519 failed with exception of type: PipelineRunException. Pipeline Class Names: { StandardScaler, ElasticNet } Pipeline ID: 7d035323a81cf93a784470bfdafe966671ee80e4
+       520   WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_common/exceptions.py:245: DeprecationWarning: 'reference_code' is deprecated. Please provide an instance of AzureMLError as a keyword argument with key 'azureml_error'
+  "with key 'azureml_error'".format(param_name), DeprecationWarning)
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/shared/exceptions.py:300: DeprecationWarning: 'reference_code' is deprecated. Please provide an instance of AzureMLError as a keyword argument with key 'azureml_error'
+  "with key 'azureml_error'".format(param_name), DeprecationWarning)
+VotingEnsemble                                 0:04:48       0.7447    0.7446
+ERROR: Run AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_520 failed with exception of type: ServiceException. Pipeline Class Names: { Ensemble } Pipeline ID: __AutoML_Ensemble__
+Stopping criteria reached at iteration 521. Ending experiment.
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+****************************************************************************************************
+numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+Current status: BestRunExplainModel. Best run model explanations started
+Current status: ModelExplanationDataSetSetup. Model explanations data setup completed
+Current status: PickSurrogateModel. Choosing LightGBM as the surrogate model for explanations
+Current status: EngineeredFeatureExplanations. Computation of engineered features started
+Setting feature_perturbation = "tree_path_dependent" because no background data was given.
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_9cb39cae-271e-4b72-a417-64203ee43b9d_1/explanation/32efef34/local_importance_values.interpret.json?sv=2019-02-02&sr=b&sig=Ui78dpFXBYSQ%2BqZa6me%2BMkvIyFH1X7KVGWJNKQuCAeg%3D&st=2020-10-03T07%3A11%3A18Z&se=2020-10-04T07%3A21%3A18Z&sp=rcw&comp=block&blockid=TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQXdNREF3TURBd01EQSUzRA%3D%3D&timeout=30
+Current status: EngineeredFeatureExplanations. Computation of engineered features completed
+Current status: BestRunExplainModel. Best run model explanations completed
+****************************************************************************************************
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Best pipeline:
+From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+0. ('timeseriestransformer', TimeSeriesTransformer(featurization_config=None,
+                      pipeline_type=<TimeSeriesPipelineType.FULL: 1>))
+1. ('MinMaxScaler', MinMaxScaler(copy=True, feature_range=(0, 1)))
+2. ('DecisionTreeRegressor', DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse', max_depth=None,
+                      max_features=0.6, max_leaf_nodes=None,
+                      min_impurity_decrease=0.0, min_impurity_split=None,
+                      min_samples_leaf=0.0024492073147059966,
+                      min_samples_split=0.03708777411774474,
+                      min_weight_fraction_leaf=0.0, presort='deprecated',
+                      random_state=None, splitter='best'))
+
+['horizon_origin', '_automl_target_col_lag1T', '_automl_target_col_min_window2T', '_automl_target_col_max_window2T', '_automl_target_col_mean_window2T', 'quarter', 'month', 'day', 'hour', 'minute', 'am_pm', 'hour12', 'wday', 'qday', 'yday']
+       RawFeatureName TypeDetected Dropped  EngineeredFeatureCount  \
+0  timestamp           DateTime     No      11                       
+1  _automl_target_col  Numeric      No      4                        
+
+                                                                                                                                                                                                                            Transformations  
+0  [MaxHorizonFeaturizer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer]  
+1  [Lag, minRollingWindow, maxRollingWindow, meanRollingWindow]                                                                                                                                                                              
+The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object
+Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass 'sort=False'.
+
+To retain the current behavior and silence the warning, pass 'sort=True'.
+
+The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object

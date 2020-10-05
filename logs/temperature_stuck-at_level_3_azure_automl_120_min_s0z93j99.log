@@ -1,0 +1,49 @@
+Performing interactive authentication. Please follow the instructions on the terminal.
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code DNSH4ZVD8 to authenticate.
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_base_sdk_common/common.py", line 579, in perform_interactive_login
+    use_cert_sn_issuer=use_cert_sn_issuer)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 228, in find_subscriptions_on_login
+    tenant, self._ad_resource_uri)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_vendor/azure_cli_core/_profile.py", line 786, in find_through_interactive_flow
+    token_entry = context.acquire_token_with_device_code(resource, code, _CLIENT_ID)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/adal/authentication_context.py", line 311, in acquire_token_with_device_code
+    return self._acquire_token(token_func, user_code_info.get('correlation_id', None))
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/adal/authentication_context.py", line 128, in _acquire_token
+    return token_func(self)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/adal/authentication_context.py", line 304, in token_func
+    token = token_request.get_token_with_device_code(user_code_info)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/adal/token_request.py", line 392, in get_token_with_device_code
+    token = client.get_token_with_polling(oauth_parameters, interval, expires_in)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/adal/oauth2_client.py", line 362, in get_token_with_polling
+    wire_response)
+adal.adal_error.AdalError: Unexpected polling state code_expired
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "azure_automl.py", line 71, in <module>
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
+  File "azure_automl.py", line 30, in main
+    ws = Workspace.from_config()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/workspace.py", line 289, in from_config
+    resource_group=resource_group)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/workspace.py", line 557, in get
+    auth = InteractiveLoginAuthentication()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/authentication.py", line 462, in __init__
+    perform_interactive_login(tenant=tenant_id, cloud_type=self._cloud_type)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_base_sdk_common/common.py", line 589, in perform_interactive_login
+    raise AuthenticationException('Unknown error occurred during authentication. Error detail: ' + str(err))
+azureml.exceptions._azureml_exception.AuthenticationException: AuthenticationException:
+	Message: Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "inner_error": {
+            "code": "Authentication"
+        },
+        "message": "Unknown error occurred during authentication. Error detail: Unexpected polling state code_expired"
+    }
+}

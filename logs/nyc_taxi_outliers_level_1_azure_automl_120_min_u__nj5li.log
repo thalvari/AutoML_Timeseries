@@ -1,0 +1,83 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Running on local machine
+Parent Run ID: AutoML_bac20c41-1ecc-47fa-a248-5afe2337924f
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[0]', Target_Rolling_Window = '0'.
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [0])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 0)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2064)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/shared/file_cache_store.py", line 106, in add
+    self._upload(k, v)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/shared/file_cache_store.py", line 310, in _upload
+    path = self._serialize(key, obj)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/shared/file_cache_store.py", line 303, in _serialize
+    local_file_path = self._serialize_object_as_pickle(key_name, obj)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/shared/file_cache_store.py", line 289, in _serialize_object_as_pickle
+    self._pickler.dump(obj, path=path)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/shared/pickler.py", line 84, in dump
+    pickle.dump(obj, f, protocol=self.protocol)
+OSError: [Errno 122] Disk quota exceeded
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "azure_automl.py", line 72, in <module>
+    main(args.train_path, args.pred_path, args.n_pred, args.dt, args.target, args.time_limit_min)
+  File "azure_automl.py", line 33, in main
+    best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/core/experiment.py", line 211, in submit
+    run = submit_func(config, self.workspace, self.name, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 100, in _automl_static_submit
+    show_output)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 258, in _start_execution
+    automl_run = _default_execution(experiment, settings_obj, fit_params, True, show_output, parent_run_id)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/automlconfig.py", line 124, in _default_execution
+    return automl_estimator.fit(**fit_params)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/_azureautomlclient.py", line 357, in fit
+    parent_run_id=parent_run_id)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/runtime/_runtime_client.py", line 347, in _fit_local
+    verifier=verifier
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/runtime/_automl_job_phases/setup_phase.py", line 62, in run
+    prep_type=prep_type)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/runtime/_automl_job_phases/utilities.py", line 111, in set_problem_info_for_featurized_data
+    feature_sweeped_state_container=feature_sweeped_state_container)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/train/automl/runtime/_automl_job_phases/utilities.py", line 173, in _transform_and_validate_input_data
+    feature_sweeping_config=feature_sweeping_config,
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/data_transformation.py", line 544, in complete_featurization
+    experiment_observer)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/data_transformation.py", line 1392, in _create_cv_splits_transformed_data
+    str(cv_split_index), featurized_cv)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/data_context.py", line 447, in _update_cache_with_featurized_data
+    self._add_to_cache(featurized_data_key, featurized_data)
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/data_context.py", line 461, in _add_to_cache
+    self.cache_store.add([k], [value])
+  File "/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/shared/file_cache_store.py", line 115, in add
+    ) from e
+azureml.automl.core.shared.exceptions.CacheException: CacheException:
+	Message: Cache operation ('add') failed due to an OS error. This is most commonly caused due to insufficient resources on the OS (e.g. process limits, disk space) or inadequate permissions on the project directory (/scratch/project_2003107/cache/tmpuehrgx6j). Error details: [Errno 122] Disk quota exceeded.
+	InnerException: OSError: [Errno 122] Disk quota exceeded
+	ErrorResponse 
+{
+    "error": {
+        "code": "UserError",
+        "message": "Cache operation ('add') failed due to an OS error. This is most commonly caused due to insufficient resources on the OS (e.g. process limits, disk space) or inadequate permissions on the project directory (/scratch/project_2003107/cache/tmpuehrgx6j). Error details: [Errno 122] Disk quota exceeded.",
+        "target": "cache-add",
+        "inner_error": {
+            "code": "Conflict",
+            "inner_error": {
+                "code": "CacheOperation"
+            }
+        }
+    }
+}

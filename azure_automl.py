@@ -26,7 +26,8 @@ def main(train_path, pred_path, n_pred, dt, target, time_limit_min):
     }
     automl_config = AutoMLConfig(task="forecasting", training_data=df_train, label_column_name=target,
                                  n_cross_validations=5, max_cores_per_iteration=-1, path=os.environ["SCRATCH"],
-                                 experiment_timeout_minutes=time_limit_min, **time_series_settings)
+                                 experiment_timeout_minutes=time_limit_min, ensemble_download_models_timeout_sec=3600,
+                                 **time_series_settings)
     ws = Workspace.from_config()
     experiment = Experiment(ws, "experiment")
     best_run, fitted_model = experiment.submit(automl_config, show_output=True).get_output()
