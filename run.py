@@ -14,7 +14,7 @@ def run_cmd(automl_name, train_path, n_pred, dt, target, time_limit_min, verbose
     unique_id = Path(mktemp(prefix="")).stem
     log_path = f"logs/{Path(train_path).stem}_{automl_name}_{time_limit_min}_min_{unique_id}.log"
     pred_path = f"pred/{Path(train_path).stem}_{automl_name}_{time_limit_min}_min_{unique_id}.csv"
-    env_name = automl_name[:-4] if automl_name[-4:] == "_hpo" else automl_name
+    env_name = automl_name[:7] if automl_name[:7] == "prophet" else automl_name
 
     cmd = f"conda run -n {env_name} bash -c 'python -u {automl_name}.py {train_path} {pred_path} " \
           f"{n_pred} {dt} {target} {time_limit_min} > {log_path} 2>&1'"
