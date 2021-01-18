@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name=python
+#SBATCH --account=project_2003107
+#SBATCH --time=12:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=40
+#SBATCH --mem=190000
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+srun python run.py analytics-zoo train/temperature_multi_stuck-at_level_1.csv 2223 datetime Montreal 360

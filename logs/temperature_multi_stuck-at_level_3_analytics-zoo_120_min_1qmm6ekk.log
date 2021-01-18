@@ -8028,3 +8028,58 @@ TERMINATED trials:
  - train_func_84_batch_size_log=5.0,bayes_feature_Albuquerque=1.0,bayes_feature_Atlanta=0.3,bayes_feature_Boston=1.0,bayes_feature_Charlotte=0.3,bayes_feature_Chicago=0.3,bayes_feature_DAY(datetime)=0.3,bayes_feature_Dallas=1.0,bayes_feature_Denver=1.0,bayes_feature_Detroit=0.3,bayes_feature_HOUR(datetime)=0.3,bayes_feature_Houston=1.0,bayes_feature_IS_AWAKE(datetime)=1.0,bayes_feature_IS_BUSY_HOURS(datetime)=1.0,bayes_feature_IS_WEEKEND(datetime)=1.0,bayes_feature_Indianapolis=1.0,bayes_feature_Jacksonville=0.3,bayes_feature_Kansas City=1.0,bayes_feature_Las Vegas=1.0,bayes_feature_Los Angeles=1.0,bayes_feature_MONTH(datetime)=0.3,bayes_feature_Miami=1.0,bayes_feature_Minneapolis=1.0,bayes_feature_Nashville=1.0,bayes_feature_New York=0.3,bayes_feature_Philadelphia=1.0,bayes_feature_Phoenix=0.3,bayes_feature_Pittsburgh=0.3,bayes_feature_Portland=1.0,bayes_feature_Saint Louis=0.3,bayes_feature_San Antonio=0.3,bayes_feature_San Diego=1.0,bayes_feature_San Francisco=0.3,bayes_feature_Seattle=1.0,bayes_feature_Toronto=0.3,bayes_feature_Vancouver=1.0,bayes_feature_WEEKDAY(datetime)=0.3,dropout_1=0.2,dropout_2=0.2,epochs=5,lr=0.01,lstm_1_units_float=38.22,lstm_2_units_float=106.84,past_seq_len=2:	TERMINATED, [4 CPUs, 0 GPUs], [pid=79536], 66 s, 5 iter
  - train_func_85_batch_size_log=5.0,bayes_feature_Albuquerque=1.0,bayes_feature_Atlanta=0.3,bayes_feature_Boston=1.0,bayes_feature_Charlotte=1.0,bayes_feature_Chicago=0.3,bayes_feature_DAY(datetime)=0.3,bayes_feature_Dallas=1.0,bayes_feature_Denver=1.0,bayes_feature_Detroit=0.3,bayes_feature_HOUR(datetime)=1.0,bayes_feature_Houston=1.0,bayes_feature_IS_AWAKE(datetime)=1.0,bayes_feature_IS_BUSY_HOURS(datetime)=1.0,bayes_feature_IS_WEEKEND(datetime)=1.0,bayes_feature_Indianapolis=1.0,bayes_feature_Jacksonville=0.3,bayes_feature_Kansas City=1.0,bayes_feature_Las Vegas=1.0,bayes_feature_Los Angeles=1.0,bayes_feature_MONTH(datetime)=0.3,bayes_feature_Miami=1.0,bayes_feature_Minneapolis=0.3,bayes_feature_Nashville=1.0,bayes_feature_New York=0.3,bayes_feature_Philadelphia=1.0,bayes_feature_Phoenix=0.3,bayes_feature_Pittsburgh=0.3,bayes_feature_Portland=1.0,bayes_feature_Saint Louis=0.3,bayes_feature_San Antonio=0.3,bayes_feature_San Diego=1.0,bayes_feature_San Francisco=0.3,bayes_feature_Seattle=1.0,bayes_feature_Toronto=0.3,bayes_feature_Vancouver=1.0,bayes_feature_WEEKDAY(datetime)=0.3,dropout_1=0.2,dropout_2=0.2,epochs=5,lr=0.01,lstm_1_units_float=37.88,lstm_2_units_float=106.52,past_seq_len=2:	TERMINATED, [4 CPUs, 0 GPUs], [pid=79374], 72 s, 5 iter
 
+2021-01-16 10:15:03,002	ERROR worker.py:1672 -- The reporter on node r15c10.bullx failed with the following error:
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_common.py", line 449, in wrapper
+    ret = self._cache[fun]
+AttributeError: _cache
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_pslinux.py", line 1515, in wrapper
+    return fun(self, *args, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_common.py", line 452, in wrapper
+    return fun(self)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_pslinux.py", line 1557, in _parse_stat_file
+    with open_binary("%s/%s/stat" % (self._procfs_path, self.pid)) as f:
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_common.py", line 713, in open_binary
+    return open(fname, "rb", **kwargs)
+FileNotFoundError: [Errno 2] No such file or directory: '/proc/101935/stat'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/ray/reporter.py", line 176, in run
+    self.perform_iteration()
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/ray/reporter.py", line 165, in perform_iteration
+    stats = self.get_all_stats()
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/ray/reporter.py", line 156, in get_all_stats
+    "workers": self.get_workers(),
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/ray/reporter.py", line 131, in get_workers
+    ]) for x in psutil.process_iter() if running_worker(x.name())
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/ray/reporter.py", line 131, in <listcomp>
+    ]) for x in psutil.process_iter() if running_worker(x.name())
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/__init__.py", line 634, in name
+    name = self._proc.name()
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_pslinux.py", line 1515, in wrapper
+    return fun(self, *args, **kwargs)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_pslinux.py", line 1610, in name
+    name = self._parse_stat_file()['name']
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/psutil/_pslinux.py", line 1522, in wrapper
+    raise NoSuchProcess(self.pid, self._name)
+psutil.NoSuchProcess: psutil.NoSuchProcess process no longer exists (pid=101935)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/ray/reporter.py", line 218, in <module>
+    reporter.run()
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/site-packages/ray/reporter.py", line 178, in run
+    traceback.print_exc()
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/traceback.py", line 163, in print_exc
+    print_exception(*sys.exc_info(), limit=limit, file=file, chain=chain)
+  File "/projappl/project_2003107/anaconda3/envs/analytics-zoo/lib/python3.6/traceback.py", line 105, in print_exception
+    print(line, file=file, end="")
+OSError: [Errno 28] No space left on device
+
