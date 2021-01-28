@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name=python
+#SBATCH --account=project_2003107
+#SBATCH --time=12:00:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=40
+#SBATCH --mem=190000
+
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+srun python run.py azure_automl train/temperature_stuck-at_level_3.csv 2223 datetime Montreal 360

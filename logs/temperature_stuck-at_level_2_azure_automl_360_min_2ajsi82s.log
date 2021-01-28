@@ -1,0 +1,623 @@
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Running on local machine
+Parent Run ID: AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a
+
+Current status: DatasetFeaturization. Beginning to featurize the dataset.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the dataset.
+Heuristic parameters: Target_Lag = '[1]', Target_Rolling_Window = '2'.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/_restclient/workspace_client.py:380: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  self._logger.warn('Converting non-string tag to string: (%s: %s)', key, val)
+WARNING - Converting non-string tag to string: (forecasting_target_lags: [1])
+WARNING - Converting non-string tag to string: (forecasting_target_rolling_window_size: 2)
+WARNING - Converting non-string tag to string: (forecasting_max_horizon: 2223)
+Current status: DatasetCrossValidationSplit. Generating individually featurized CV splits.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "center" is not a configurable window option.
+  'a configurable window option.')
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/runtime/featurizer/transformer/timeseries/rolling_window.py:260: UserWarning: RollingWindow: "closed" is not a configurable window option.
+  'a configurable window option.')
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+Current status: DatasetFeaturization. Beginning to featurize the CV split.
+Current status: DatasetFeaturizationCompleted. Completed featurizing the CV split.
+
+****************************************************************************************************
+DATA GUARDRAILS: 
+
+TYPE:         Frequency detection
+STATUS:       PASSED
+DESCRIPTION:  The time series was analyzed, all data points are aligned with detected frequency.
+              
+
+****************************************************************************************************
+
+TYPE:         Missing feature values imputation
+STATUS:       PASSED
+DESCRIPTION:  No feature missing values were detected in the training data.
+              Learn more about missing value imputation: https://aka.ms/AutomatedMLFeaturization
+
+****************************************************************************************************
+
+TYPE:         Memory Issues Detection
+STATUS:       PASSED
+DESCRIPTION:  The selected horizon, lag and rolling window values were analyzed, and no potential memory issues were detected.
+              Learn more about time-series forecasting configurations: https://aka.ms/AutomatedMLForecastingConfiguration
+
+****************************************************************************************************
+Current status: ModelSelection. Beginning model selection.
+
+****************************************************************************************************
+ITERATION: The iteration being evaluated.
+PIPELINE: A summary description of the pipeline being evaluated.
+DURATION: Time taken for the current iteration.
+METRIC: The result of computing score on the fitted pipeline.
+BEST: The best observed score thus far.
+****************************************************************************************************
+
+ ITERATION   PIPELINE                                       DURATION      METRIC      BEST
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:81: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_start_time = time.clock()
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/azureml/automl/core/_downloader.py:89: DeprecationWarning: time.clock has been deprecated in Python 3.3 and will be removed from Python 3.8: use time.perf_counter or time.process_time instead
+  download_end_time = time.clock()
+         0   /projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+RobustScaler LassoLars                         0:04:42       0.2036    0.2036
+         1   RobustScaler DecisionTree                      0:09:38       0.0465    0.0465
+         2   StandardScalerWrapper DecisionTree             0:09:09       0.0456    0.0456
+         3   RobustScaler DecisionTree                      0:09:21       0.0470    0.0456
+         4   StandardScalerWrapper ElasticNet               0:08:21       0.1898    0.0456
+         5   MinMaxScaler DecisionTree                      0:08:09       0.0536    0.0456
+         6   MinMaxScaler ElasticNet                        0:21:49       0.1964    0.0456
+         7   StandardScalerWrapper DecisionTree             0:08:51       0.0455    0.0455
+         8   StandardScalerWrapper DecisionTree             0:07:55       0.0453    0.0453
+         9   RobustScaler DecisionTree                      0:10:04       0.0474    0.0453
+        10   RobustScaler ElasticNet                        0:17:17       0.2028    0.0453
+        11   RobustScaler DecisionTree                      0:09:27       0.0453    0.0453
+        12   RobustScaler DecisionTree                      0:09:19       0.0453    0.0453
+        13   StandardScalerWrapper DecisionTree             0:07:56       0.0435    0.0435
+        14   MinMaxScaler DecisionTree                      0:09:48       0.0453    0.0435
+        15   MinMaxScaler DecisionTree                      0:09:49       0.0473    0.0435
+        16   RobustScaler DecisionTree                      0:09:20       0.0456    0.0435
+        17   StandardScalerWrapper DecisionTree             0:10:43       0.0456    0.0435
+        18   MinMaxScaler DecisionTree                      0:08:56       0.0440    0.0435
+        19   StandardScalerWrapper LassoLars                0:04:48       0.2038    0.0435
+        20   StandardScalerWrapper DecisionTree             0:10:01       0.0470    0.0435
+        21   StandardScalerWrapper RandomForest             0:14:50       0.0513    0.0435
+        22   MinMaxScaler RandomForest                      0:05:20       0.0954    0.0435
+        23   RobustScaler RandomForest                      0:08:46       0.0562    0.0435
+        24                                                  2:06:08          nan    0.0435
+ERROR:                                                 
+        25   WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_10/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=25yjALyLsRkRNUpLrlDSGSz%2Fbg7IBazbPjBLTOUbADc%3D&st=2021-01-21T19%3A16%3A09Z&se=2021-01-22T03%3A26%3A09Z&sp=r
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_1/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=%2Ba3udkhDuMWfvCCS4M%2FebKSNILbQFPIorQk5h8y%2BDoA%3D&st=2021-01-21T19%3A16%3A09Z&se=2021-01-22T03%3A26%3A09Z&sp=r
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_1/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=%2Ba3udkhDuMWfvCCS4M%2FebKSNILbQFPIorQk5h8y%2BDoA%3D&st=2021-01-21T19%3A16%3A09Z&se=2021-01-22T03%3A26%3A09Z&sp=r
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_14/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=Wl%2BMg16qa1Mrz5%2F61H3vyPYdsTeNpUx1lbLwcG3fIfw%3D&st=2021-01-21T19%3A16%3A09Z&se=2021-01-22T03%3A26%3A09Z&sp=r
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_17/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=hgSmAHLSI%2B7aMZS6oyoiemKg2NJLnhQ2Ycd%2BNzhokuE%3D&st=2021-01-21T19%3A16%3A09Z&se=2021-01-22T03%3A26%3A09Z&sp=r
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_17/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=hgSmAHLSI%2B7aMZS6oyoiemKg2NJLnhQ2Ycd%2BNzhokuE%3D&st=2021-01-21T19%3A16%3A09Z&se=2021-01-22T03%3A26%3A09Z&sp=r
+WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))': /azureml/ExperimentRun/dcid.AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_11/outputs/internal_cross_validated_models.pkl?sv=2019-02-02&sr=b&sig=N8IT6ViQTxxsSqr5obPIlnWAPFUGU728xMbvMYriz34%3D&st=2021-01-21T19%3A16%3A09Z&se=2021-01-22T03%3A26%3A09Z&sp=r
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+WARNING - Connection pool is full, discarding connection: automltimeseri1542891604.blob.core.windows.net
+ERROR - Failed to download file with error: AzureMLException:
+	Message: downloaded file did not match blob: {} bytes downloaded but {} bytes present in blob.
+	InnerException None
+	ErrorResponse 
+{
+    "error": {
+        "message": "downloaded file did not match blob: {} bytes downloaded but {} bytes present in blob."
+    }
+}
+/projappl/project_2003107/anaconda3/envs/azure_automl/lib/python3.7/site-packages/sklearn/base.py:197: FutureWarning: From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+  FutureWarning)
+VotingEnsemble                                 0:14:16       0.0428    0.0428
+ERROR: RunStateChangeException:
+	Message: Failed to mark the Run AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_25 as Completed. Last known status: Canceled
+	InnerException: None
+	ErrorResponse 
+{
+    "error": {
+        "code": "System",
+        "inner_error": {
+            "code": "Service",
+            "inner_error": {
+                "code": "StateChange"
+            }
+        },
+        "message": "Failed to mark the Run AutoML_eb8854be-f157-47bc-8dbb-39eb023f933a_25 as Completed. Last known status: Canceled",
+        "target": "MarkRunComplete",
+        "reference_code": "MarkRunComplete"
+    }
+}
+Stopping criteria reached at iteration 26. Ending experiment.
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+****************************************************************************************************
+numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
+Current status: BestRunExplainModel. Best run model explanations started
+Current status: ModelExplanationDataSetSetup. Model explanations data setup completed
+Current status: PickSurrogateModel. Choosing LightGBM as the surrogate model for explanations
+Current status: EngineeredFeatureExplanations. Computation of engineered features started
+Setting feature_perturbation = "tree_path_dependent" because no background data was given.
+Current status: EngineeredFeatureExplanations. Computation of engineered features completed
+Current status: BestRunExplainModel. Best run model explanations completed
+****************************************************************************************************
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+WARNING - Received unrecognized parameter ensemble_download_models_timeout_sec
+Best pipeline:
+From version 0.24, get_params will raise an AttributeError if a parameter cannot be retrieved as an instance attribute. Previously it would return None.
+0. ('timeseriestransformer', TimeSeriesTransformer(featurization_config=None,
+                      pipeline_type=<TimeSeriesPipelineType.FULL: 1>))
+1. ('StandardScalerWrapper', <azureml.automl.runtime.shared.model_wrappers.StandardScalerWrapper object at 0x7fba2519a810>)
+2. ('DecisionTreeRegressor', DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse', max_depth=None,
+                      max_features=0.8, max_leaf_nodes=None,
+                      min_impurity_decrease=0.0, min_impurity_split=None,
+                      min_samples_leaf=0.013373400896808276,
+                      min_samples_split=0.026024633095283807,
+                      min_weight_fraction_leaf=0.0, presort='deprecated',
+                      random_state=None, splitter='best'))
+
+['horizon_origin', '_automl_target_col_lag1H', '_automl_target_col_min_window2H', '_automl_target_col_max_window2H', '_automl_target_col_mean_window2H', 'year', 'half', 'quarter', 'month', 'day', 'hour', 'am_pm', 'hour12', 'wday', 'qday', 'week']
+       RawFeatureName TypeDetected Dropped  EngineeredFeatureCount  \
+0  datetime            DateTime     No      12                       
+1  _automl_target_col  Numeric      No      4                        
+
+                                                                                                                                                                                                                                                 Transformations  
+0  [MaxHorizonFeaturizer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer, DateTimeTransformer]  
+1  [Lag, minRollingWindow, maxRollingWindow, meanRollingWindow]                                                                                                                                                                                                   
+The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object
+Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass 'sort=False'.
+
+To retain the current behavior and silence the warning, pass 'sort=True'.
+
+The concatenated objects may have different ts_value_colname values, result using the ts_value_colname of the first object
